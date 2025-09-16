@@ -9,7 +9,7 @@ export function activate(contextIn: vscode.ExtensionContext) {
 
 // 'err' 'info' 'nomod' 'errmsg'
 
-const outputChannel = vscode.window.createOutputChannel('function-explorer');
+const outputChannel = vscode.window.createOutputChannel('function-separators');
 
 export function getLog(module: string) : {
   log:   (...args: any[]) => void;
@@ -90,3 +90,22 @@ export function getLog(module: string) : {
 
   return { log, start, end };
 }
+
+export function findMiddleOfText(code: string): number {
+  const blankLineRegex = /^\s*$(?:\r?\n|$)/gm;
+  const middleIdx = Math.floor(code.length / 2);
+  let match;
+  let minDist = code.length;
+  let closest = -1;
+  while ((match = blankLineRegex.exec(code)) !== null) {
+    const idx  = match.index;
+    const dist = Math.abs(idx - middleIdx);
+    if (dist < minDist) {
+      minDist = dist;
+      closest = idx;
+    } else if (dist > minDist) break;
+  }
+  return closest;
+}
+
+

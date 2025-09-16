@@ -9,15 +9,43 @@
   "categories": [
     "Other"
   ],
-  "activationEvents": ["*"],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
       {
-        "command": "vscode-function-separators.helloWorld",
-        "title": "Hello World"
+        "command": "vscode-function-separators.insertComments",
+        "title": "Insert Function Separator Comments"
+      },
+      {
+        "command": "vscode-function-separators.removeComments",
+        "title": "Remove Function Separator Comments"
+      },
+      {
+        "command": "vscode-function-separators.jumpNext",
+        "title": "Jump To Next Function Separator Comment"
+      },
+      {
+        "command": "vscode-function-separators.jumpPrev",
+        "title": "Jump To Previous Function Separator Comment"
       }
-    ]
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "vscode-function-separators.insertComments",
+          "when": "editorTextFocus",
+          "group": "1_modification"
+        },
+        {
+          "command": "vscode-function-separators.removeComments",
+          "when": "editorTextFocus",
+          "group": "2_modification"
+        }
+      ]
+    }
   },
   "scripts": {
     "build": "npm run compile",
@@ -30,14 +58,17 @@
     "test": "vscode-test"
   },
   "devDependencies": {
-    "@types/vscode": "^1.104.0",
     "@types/mocha": "^10.0.10",
     "@types/node": "22.x",
+    "@types/vscode": "^1.104.0",
     "@typescript-eslint/eslint-plugin": "^8.42.0",
     "@typescript-eslint/parser": "^8.42.0",
-    "eslint": "^9.34.0",
-    "typescript": "^5.9.2",
     "@vscode/test-cli": "^0.0.11",
-    "@vscode/test-electron": "^2.5.2"
+    "@vscode/test-electron": "^2.5.2",
+    "eslint": "^9.34.0",
+    "typescript": "^5.9.2"
+  },
+  "dependencies": {
+    "web-tree-sitter": "^0.25.9"
   }
 }

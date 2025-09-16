@@ -1,17 +1,48 @@
 import * as vscode from 'vscode';
-import { getLog } from './utils';
+import { getLog }  from './utils';
+import * as cmds   from './commands';
+import * as parse  from './parse';
 const { log, start, end } = getLog('extn');
 
-export function activate(context: vscode.ExtensionContext) {
-  log('info', 'Extension activated');
+export async function activate(context: vscode.ExtensionContext) {
+  log('Extension activated');
 
-	const disposable = vscode.commands.registerCommand(
-                                'vscode-function-separators.helloWorld', () => {
-		vscode.window.showInformationMessage('Hello from Function Separators!');
-	});
+  await parse.activate(context);
 
-	context.subscriptions.push(disposable);
+	const insertComments = vscode.commands.registerCommand(
+                        'vscode-function-separators.insertComments', 
+    async () => { 
+      if (vscode.window.activeTextEditor?.document.uri.scheme === 'file') 
+        await cmds.insertComments(); 
+    }
+  );
+
+  const removeComments = vscode.commands.registerCommand(
+                        'vscode-function-separators.removeComments', 
+    async () => { 
+      if (vscode.window.activeTextEditor?.document.uri.scheme === 'file') 
+        await cmds.removeComments();
+    }
+  );
+  const jumpNext = vscode.commands.registerCommand(
+                  'vscode-function-separators.jumpNext', 
+    async () => { 
+      if (vscode.window.activeTextEditor?.document.uri.scheme === 'file') 
+        await cmds.jumpNext();
+    }
+  );
+
+  const jumpPrev = vscode.commands.registerCommand(
+                  'vscode-function-separators.jumpPrev', 
+    async () => { 
+      if (vscode.window.activeTextEditor?.document.uri.scheme === 'file') 
+        await cmds.jumpPrev();
+    }
+  );
+
+context.subscriptions.push(insertComments, removeComments, jumpNext, jumpPrev);
 }
 
-// This method is called when your extension is deactivated
-export function deactivate() {}
+export function deactivate() {
+  log('Extension deactivated');
+}
