@@ -7,7 +7,7 @@ import * as utils                          from './utils';
 const {log, start, end} = utils.getLog('pars');
 
 const PARSE_DUMP_TYPE: string = '';  
-const PARSE_DUMP_NAME: string = 'handleMsg';
+const PARSE_DUMP_NAME: string = '';
 
 let context: vscode.ExtensionContext;
 type SyntaxNode = NonNullable<ReturnType<Parser['parse']>>['rootNode'];
@@ -105,11 +105,12 @@ function getParentFuncId(node: SyntaxNode,
 
 let lastParseErrFsPath = '';
 
-export async function parseCode(code: string, fsPath: string, 
-                                doc: vscode.TextDocument, 
+export async function parseCode(doc: vscode.TextDocument, 
                                 retrying = false): Promise<FuncData[]> {
   start('parseCode', true);
-  const lang = getLangByFsPath(fsPath);
+  const fsPath = doc.uri.fsPath;
+  const code   = doc.getText();
+  const lang   = getLangByFsPath(fsPath);
   if(lang === null) return [];
 
   const language = await getLangFromWasm(lang);

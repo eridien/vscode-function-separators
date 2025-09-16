@@ -1,8 +1,8 @@
 [extn] Extension deactivated
-[extn] Extension activated
-(node:10235) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(node:29052) ExperimentalWarning: SQLite is an experimental feature and might change at any time
 (Use `node --trace-warnings ...` to show where the warning was created)
-[pars] parser.parse ended, 13ms
+[extn] Extension activated
+[pars] parser.parse ended, 7ms
 [pars] program (0,5474) ?program
 [pars]     lexical_declaration (0,46) ?lexical_declaration
 [pars]         const (0,5)
@@ -1005,251 +1005,39 @@
 [pars]             ; (3056,3057)
 [pars]     lexical_declaration (3059,3194) ?lexical_declaration
 [pars]         const (3059,3064)
-[pars] parseCode ended, 40181ms
-[cmds] [
-  {
-    "name": "openWs",
-    "startName": 62,
-    "endName": 68,
-    "startBody": 62,
-    "endBody": 102
-  },
-  {
-    "name": "ws.onmessage",
-    "startName": 189,
-    "endName": 201,
-    "startBody": 189,
-    "endBody": 288
-  },
-  {
-    "name": "ws.onopen",
-    "startName": 290,
-    "endName": 299,
-    "startBody": 290,
-    "endBody": 441
-  },
-  {
-    "name": "ws.onclose",
-    "startName": 444,
-    "endName": 454,
-    "startBody": 444,
-    "endBody": 579
-  },
-  {
-    "name": "ws.onerror",
-    "startName": 582,
-    "endName": 592,
-    "startBody": 582,
-    "endBody": 673
-  },
-  {
-    "name": "fCall",
-    "startName": 1069,
-    "endName": 1074,
-    "startBody": 1069,
-    "endBody": 1478
-  },
-  {
-    "name": "handleMsg",
-    "startName": 1480,
-    "endName": 1489,
-    "startBody": 1480,
-    "endBody": 2599
-  },
-  {
-    "name": "deleteShowFromSrvr",
-    "startName": 2623,
-    "endName": 2641,
-    "startBody": 2608,
-    "endBody": 3021
-  },
-  {
-    "name": "updateLastViewedCache",
-    "startName": 3065,
-    "endName": 3086,
-    "startBody": 3065,
-    "endBody": 3194
-  },
-  {
-    "name": "getAllShows",
-    "startName": 3300,
-    "endName": 3311,
-    "startBody": 3291,
-    "endBody": 3361
-  },
-  {
-    "name": "deletePath",
-    "startName": 3378,
-    "endName": 3388,
-    "startBody": 3369,
-    "endBody": 3444
-  },
-  {
-    "name": "updateTvdb",
-    "startName": 3461,
-    "endName": 3471,
-    "startBody": 3452,
-    "endBody": 3520
-  },
-  {
-    "name": "getDevices",
-    "startName": 3538,
-    "endName": 3548,
-    "startBody": 3529,
-    "endBody": 3597
-  },
-  {
-    "name": "getLastViewed",
-    "startName": 3614,
-    "endName": 3627,
-    "startBody": 3605,
-    "endBody": 3679
-  },
-  {
-    "name": "getBlockedWaits",
-    "startName": 3697,
-    "endName": 3712,
-    "startBody": 3688,
-    "endBody": 3768
-  },
-  {
-    "name": "addBlockedWait",
-    "startName": 3785,
-    "endName": 3799,
-    "startBody": 3776,
-    "endBody": 3864
-  },
-  {
-    "name": "delBlockedWait",
-    "startName": 3881,
-    "endName": 3895,
-    "startBody": 3872,
-    "endBody": 3954
-  },
-  {
-    "name": "getBlockedGaps",
-    "startName": 3972,
-    "endName": 3986,
-    "startBody": 3963,
-    "endBody": 4041
-  },
-  {
-    "name": "addBlockedGap",
-    "startName": 4058,
-    "endName": 4071,
-    "startBody": 4049,
-    "endBody": 4135
-  },
-  {
-    "name": "delBlockedGap",
-    "startName": 4152,
-    "endName": 4165,
-    "startBody": 4143,
-    "endBody": 4223
-  },
-  {
-    "name": "getRejects",
-    "startName": 4241,
-    "endName": 4251,
-    "startBody": 4232,
-    "endBody": 4301
-  },
-  {
-    "name": "addReject",
-    "startName": 4318,
-    "endName": 4327,
-    "startBody": 4309,
-    "endBody": 4383
-  },
-  {
-    "name": "delReject",
-    "startName": 4400,
-    "endName": 4409,
-    "startBody": 4391,
-    "endBody": 4465
-  },
-  {
-    "name": "getPickups",
-    "startName": 4483,
-    "endName": 4493,
-    "startBody": 4474,
-    "endBody": 4543
-  },
-  {
-    "name": "addPickup",
-    "startName": 4560,
-    "endName": 4569,
-    "startBody": 4551,
-    "endBody": 4625
-  },
-  {
-    "name": "delPickup",
-    "startName": 4642,
-    "endName": 4651,
-    "startBody": 4633,
-    "endBody": 4707
-  },
-  {
-    "name": "getNoEmbys",
-    "startName": 4737,
-    "endName": 4747,
-    "startBody": 4728,
-    "endBody": 4797
-  },
-  {
-    "name": "addNoEmby",
-    "startName": 4814,
-    "endName": 4823,
-    "startBody": 4805,
-    "endBody": 4879
-  },
-  {
-    "name": "delNoEmby",
-    "startName": 4896,
-    "endName": 4905,
-    "startBody": 4887,
-    "endBody": 4961
-  },
-  {
-    "name": "getGaps",
-    "startName": 4979,
-    "endName": 4986,
-    "startBody": 4970,
-    "endBody": 5033
-  },
-  {
-    "name": "addGap",
-    "startName": 5050,
-    "endName": 5056,
-    "startBody": 5041,
-    "endBody": 5125
-  },
-  {
-    "name": "delGap",
-    "startName": 5142,
-    "endName": 5148,
-    "startBody": 5133,
-    "endBody": 5211
-  },
-  {
-    "name": "getAllTvdb",
-    "startName": 5229,
-    "endName": 5239,
-    "startBody": 5220,
-    "endBody": 5292
-  },
-  {
-    "name": "getNewTvdb",
-    "startName": 5309,
-    "endName": 5319,
-    "startBody": 5300,
-    "endBody": 5380
-  },
-  {
-    "name": "setTvdbFields",
-    "startName": 5397,
-    "endName": 5410,
-    "startBody": 5388,
-    "endBody": 5473
-  }
-]
+[pars] parseCode ended, 254ms
+[cmds] Inserting comment for function at 4:7 started
+[cmds] Inserting comment for function at 12:1 started
+[cmds] Inserting comment for function at 17:1 started
+[cmds] Inserting comment for function at 24:1 started
+[cmds] Inserting comment for function at 30:1 started
+[cmds] Inserting comment for function at 51:7 started
+[cmds] Inserting comment for function at 68:1 started
+[cmds] Inserting comment for function at 108:8 started
+[cmds] Inserting comment for function at 123:7 started
+[cmds] Inserting comment for function at 131:8 started
+[cmds] Inserting comment for function at 133:8 started
+[cmds] Inserting comment for function at 135:8 started
+[cmds] Inserting comment for function at 138:8 started
+[cmds] Inserting comment for function at 140:8 started
+[cmds] Inserting comment for function at 143:8 started
+[cmds] Inserting comment for function at 145:8 started
+[cmds] Inserting comment for function at 147:8 started
+[cmds] Inserting comment for function at 150:8 started
+[cmds] Inserting comment for function at 152:8 started
+[cmds] Inserting comment for function at 154:8 started
+[cmds] Inserting comment for function at 157:8 started
+[cmds] Inserting comment for function at 159:8 started
+[cmds] Inserting comment for function at 161:8 started
+[cmds] Inserting comment for function at 164:8 started
+[cmds] Inserting comment for function at 166:8 started
+[cmds] Inserting comment for function at 168:8 started
+[cmds] Inserting comment for function at 171:8 started
+[cmds] Inserting comment for function at 173:8 started
+[cmds] Inserting comment for function at 175:8 started
+[cmds] Inserting comment for function at 178:8 started
+[cmds] Inserting comment for function at 180:8 started
+[cmds] Inserting comment for function at 182:8 started
+[cmds] Inserting comment for function at 185:8 started
+[cmds] Inserting comment for function at 187:8 started
+[cmds] Inserting comment for function at 189:8 started

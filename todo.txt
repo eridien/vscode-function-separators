@@ -2,4 +2,4 @@
 todo ...
   support arrow function
   more languages
-  
+  limit actions to selection
