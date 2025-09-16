@@ -14,6 +14,7 @@ export async function insertComments() {
   }
   const code = doc.getText();
   const funcs = await pars.parseCode(code, editor.document.uri.fsPath, doc);
+  
   log(funcs);
 };
 

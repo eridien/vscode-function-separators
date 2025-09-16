@@ -2,14 +2,13 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "npm: compile",
+      "label": "tsc: watch",
       "type": "npm",
-      "script": "compile",
-      "problemMatcher": "$tsc",
-      "group": "build",
-      "options": {
-        "cwd": "${workspaceFolder}"
-      }
+      "script": "watch",
+      "isBackground": true,
+      "problemMatcher": "$tsc-watch",
+      "options": { "cwd": "${workspaceFolder}" },
+      "runOptions": { "runOn": "folderOpen" }
     }
   ]
 }

@@ -55,7 +55,8 @@
     "rebuild": "rm -rf node_modules package-lock.json && npm install",
     "pretest": "npm run compile && npm run lint",
     "lint": "eslint src --ext .ts,.tsx",
-    "test": "vscode-test"
+    "test": "vscode-test",
+    "lint:watch": "echo 'eslint:watch not used , running eslint extension instead'"
   },
   "devDependencies": {
     "@types/mocha": "^10.0.10",

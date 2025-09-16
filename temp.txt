@@ -1,16 +1,1074 @@
+[extn] Extension deactivated
 [extn] Extension activated
-[pars] parser.parse ended, 11ms
-[pars] parseCode ended, 1270ms
-[extn] []
-[pars] parser.parse ended, 6ms
-[pars] parseCode ended, 26ms
-[extn] [
+(node:10235) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+[pars] parser.parse ended, 13ms
+[pars] program (0,5474) ?program
+[pars]     lexical_declaration (0,46) ?lexical_declaration
+[pars]         const (0,5)
+[pars]         variable_declarator (6,45) URL?variable_declarator
+[pars]             identifier (6,9) ?identifier
+[pars]             = (10,11)
+[pars]             string (12,45) ?string
+[pars]                 ' (12,13)
+[pars]                 string_fragment (13,44) ?string_fragment
+[pars]                 ' (44,45)
+[pars]         ; (45,46)
+[pars]     lexical_declaration (48,55) ?lexical_declaration
+[pars]         let (48,51)
+[pars]         variable_declarator (52,54) ws?variable_declarator
+[pars]             identifier (52,54) ?identifier
+[pars]         ; (54,55)
+[pars]     lexical_declaration (56,103) ?lexical_declaration
+[pars]         const (56,61)
+[pars]         variable_declarator (62,102) openWs?variable_declarator
+[pars]             identifier (62,68) ?identifier
+[pars]             = (69,70)
+[pars]             arrow_function (71,102) ?arrow_function
+[pars]                 formal_parameters (71,73) ?formal_parameters
+[pars]                     ( (71,72)
+[pars]                     ) (72,73)
+[pars]                 => (74,76)
+[pars]                 statement_block (77,102) ?statement_block
+[pars]                     { (77,78)
+[pars]                     expression_statement (78,101) ?expression_statement
+[pars]                         assignment_expression (78,101) ?assignment_expression
+[pars]                             identifier (78,80) ?identifier
+[pars]                             = (81,82)
+[pars]                             new_expression (83,101) ?new_expression
+[pars]                                 new (83,86)
+[pars]                                 identifier (87,96) ?identifier
+[pars]                                 arguments (96,101) ?arguments
+[pars]                                     ( (96,97)
+[pars]                                     identifier (97,100) ?identifier
+[pars]                                     ) (100,101)
+[pars]                     } (101,102)
+[pars]         ; (102,103)
+[pars]     expression_statement (104,113) ?expression_statement
+[pars]         call_expression (104,112) ?call_expression
+[pars]             identifier (104,110) ?identifier
+[pars]             arguments (110,112) ?arguments
+[pars]                 ( (110,111)
+[pars]                 ) (111,112)
+[pars]         ; (112,113)
+[pars]     lexical_declaration (115,137) ?lexical_declaration
+[pars]         let (115,118)
+[pars]         variable_declarator (119,136) handleMsg?variable_declarator
+[pars]             identifier (119,128) ?identifier
+[pars]             = (130,131)
+[pars]             null (132,136) ?null
+[pars]         ; (136,137)
+[pars]     lexical_declaration (138,161) ?lexical_declaration
+[pars]         let (138,141)
+[pars]         variable_declarator (142,160) haveSocket?variable_declarator
+[pars]             identifier (142,152) ?identifier
+[pars]             = (153,154)
+[pars]             false (155,160) ?false
+[pars]         ; (160,161)
+[pars]     lexical_declaration (163,187) ?lexical_declaration
+[pars]         const (163,168)
+[pars]         variable_declarator (169,186) waitingSends?variable_declarator
+[pars]             identifier (169,181) ?identifier
+[pars]             = (182,183)
+[pars]             array (184,186) ?array
+[pars]                 [ (184,185)
+[pars]                 ] (185,186)
+[pars]         ; (186,187)
+[pars]     expression_statement (189,288) ?expression_statement
+[pars]         assignment_expression (189,288) ?assignment_expression
+[pars]             member_expression (189,201) ?member_expression
+[pars]                 identifier (189,191) ?identifier
+[pars]                 . (191,192)
+[pars]                 property_identifier (192,201) ?property_identifier
+[pars]             = (202,203)
+[pars]             arrow_function (204,288) ?arrow_function
+[pars]                 formal_parameters (204,211) ?formal_parameters
+[pars]                     ( (204,205)
+[pars]                     required_parameter (205,210) ?required_parameter
+[pars]                         identifier (205,210) ?identifier
+[pars]                     ) (210,211)
+[pars]                 => (212,214)
+[pars]                 statement_block (215,288) ?statement_block
+[pars]                     { (215,216)
+[pars]                     comment (219,261) ?comment
+[pars]                     expression_statement (264,286) ?expression_statement
+[pars]                         call_expression (264,285) ?call_expression
+[pars]                             identifier (264,273) ?identifier
+[pars]                             arguments (273,285) ?arguments
+[pars]                                 ( (273,274)
+[pars]                                 member_expression (274,284) ?member_expression
+[pars]                                     identifier (274,279) ?identifier
+[pars]                                     . (279,280)
+[pars]                                     property_identifier (280,284) ?property_identifier
+[pars]                                 ) (284,285)
+[pars]                         ; (285,286)
+[pars]                     } (287,288)
+[pars]     expression_statement (290,442) ?expression_statement
+[pars]         assignment_expression (290,441) ?assignment_expression
+[pars]             member_expression (290,299) ?member_expression
+[pars]                 identifier (290,292) ?identifier
+[pars]                 . (292,293)
+[pars]                 property_identifier (293,299) ?property_identifier
+[pars]             = (300,301)
+[pars]             arrow_function (302,441) ?arrow_function
+[pars]                 formal_parameters (302,304) ?formal_parameters
+[pars]                     ( (302,303)
+[pars]                     ) (303,304)
+[pars]                 => (305,307)
+[pars]                 statement_block (308,441) ?statement_block
+[pars]                     { (308,309)
+[pars]                     expression_statement (312,344) ?expression_statement
+[pars]                         call_expression (312,343) ?call_expression
+[pars]                             member_expression (312,323) ?member_expression
+[pars]                                 identifier (312,319) ?identifier
+[pars]                                 . (319,320)
+[pars]                                 property_identifier (320,323) ?property_identifier
+[pars]                             arguments (323,343) ?arguments
+[pars]                                 ( (323,324)
+[pars]                                 string (324,342) ?string
+[pars]                                     " (324,325)
+[pars]                                     string_fragment (325,341) ?string_fragment
+[pars]                                     " (341,342)
+[pars]                                 ) (342,343)
+[pars]                         ; (343,344)
+[pars]                     expression_statement (347,365) ?expression_statement
+[pars]                         assignment_expression (347,364) ?assignment_expression
+[pars]                             identifier (347,357) ?identifier
+[pars]                             = (358,359)
+[pars]                             true (360,364) ?true
+[pars]                         ; (364,365)
+[pars]                     for_in_statement (368,412) ?for_in_statement
+[pars]                         for (368,371)
+[pars]                         ( (371,372)
+[pars]                         const (372,377)
+[pars]                         identifier (378,381) ?identifier
+[pars]                         of (382,384)
+[pars]                         identifier (385,397) ?identifier
+[pars]                         ) (397,398)
+[pars]                         expression_statement (399,412) ?expression_statement
+[pars]                             call_expression (399,411) ?call_expression
+[pars]                                 member_expression (399,406) ?member_expression
+[pars]                                     identifier (399,401) ?identifier
+[pars]                                     . (401,402)
+[pars]                                     property_identifier (402,406) ?property_identifier
+[pars]                                 arguments (406,411) ?arguments
+[pars]                                     ( (406,407)
+[pars]                                     identifier (407,410) ?identifier
+[pars]                                     ) (410,411)
+[pars]                             ; (411,412)
+[pars]                     expression_statement (415,439) ?expression_statement
+[pars]                         assignment_expression (415,438) ?assignment_expression
+[pars]                             member_expression (415,434) ?member_expression
+[pars]                                 identifier (415,427) ?identifier
+[pars]                                 . (427,428)
+[pars]                                 property_identifier (428,434) ?property_identifier
+[pars]                             = (435,436)
+[pars]                             number (437,438) ?number
+[pars]                         ; (438,439)
+[pars]                     } (440,441)
+[pars]         ; (441,442)
+[pars]     expression_statement (444,580) ?expression_statement
+[pars]         assignment_expression (444,579) ?assignment_expression
+[pars]             member_expression (444,454) ?member_expression
+[pars]                 identifier (444,446) ?identifier
+[pars]                 . (446,447)
+[pars]                 property_identifier (447,454) ?property_identifier
+[pars]             = (455,456)
+[pars]             arrow_function (457,579) ?arrow_function
+[pars]                 formal_parameters (457,459) ?formal_parameters
+[pars]                     ( (457,458)
+[pars]                     ) (458,459)
+[pars]                 => (460,462)
+[pars]                 statement_block (463,579) ?statement_block
+[pars]                     { (463,464)
+[pars]                     expression_statement (464,527) ?expression_statement
+[pars]                         arrow_function (464,526) ?arrow_function
+[pars]                             formal_parameters (464,466) ?formal_parameters
+[pars]                                 ( (464,465)
+[pars]                                 ) (465,466)
+[pars]                             => (467,469)
+[pars]                             call_expression (472,526) ?call_expression
+[pars]                                 member_expression (472,483) ?member_expression
+[pars]                                     identifier (472,479) ?identifier
+[pars]                                     . (479,480)
+[pars]                                     property_identifier (480,483) ?property_identifier
+[pars]                                 arguments (483,526) ?arguments
+[pars]                                     ( (483,484)
+[pars]                                     string (484,525) ?string
+[pars]                                         " (484,485)
+[pars]                                         string_fragment (485,524) ?string_fragment
+[pars]                                         " (524,525)
+[pars]                                     ) (525,526)
+[pars]                         ; (526,527)
+[pars]                     expression_statement (530,549) ?expression_statement
+[pars]                         assignment_expression (530,548) ?assignment_expression
+[pars]                             identifier (530,540) ?identifier
+[pars]                             = (541,542)
+[pars]                             false (543,548) ?false
+[pars]                         ; (548,549)
+[pars]                     expression_statement (552,577) ?expression_statement
+[pars]                         call_expression (552,576) ?call_expression
+[pars]                             identifier (552,562) ?identifier
+[pars]                             arguments (562,576) ?arguments
+[pars]                                 ( (562,563)
+[pars]                                 identifier (563,569) ?identifier
+[pars]                                 , (569,570)
+[pars]                                 number (571,575) ?number
+[pars]                                 ) (575,576)
+[pars]                         ; (576,577)
+[pars]                     } (578,579)
+[pars]         ; (579,580)
+[pars]     expression_statement (582,674) ?expression_statement
+[pars]         assignment_expression (582,673) ?assignment_expression
+[pars]             member_expression (582,592) ?member_expression
+[pars]                 identifier (582,584) ?identifier
+[pars]                 . (584,585)
+[pars]                 property_identifier (585,592) ?property_identifier
+[pars]             = (593,594)
+[pars]             arrow_function (595,673) ?arrow_function
+[pars]                 formal_parameters (595,600) ?formal_parameters
+[pars]                     ( (595,596)
+[pars]                     required_parameter (596,599) ?required_parameter
+[pars]                         identifier (596,599) ?identifier
+[pars]                     ) (599,600)
+[pars]                 => (601,603)
+[pars]                 statement_block (604,673) ?statement_block
+[pars]                     { (604,605)
+[pars]                     expression_statement (608,649) ?expression_statement
+[pars]                         call_expression (608,648) ?call_expression
+[pars]                             member_expression (608,621) ?member_expression
+[pars]                                 identifier (608,615) ?identifier
+[pars]                                 . (615,616)
+[pars]                                 property_identifier (616,621) ?property_identifier
+[pars]                             arguments (621,648) ?arguments
+[pars]                                 ( (621,622)
+[pars]                                 parenthesized_expression (622,647) ?parenthesized_expression
+[pars]                                     ( (622,623)
+[pars]                                     sequence_expression (623,646) ?sequence_expression
+[pars]                                         string (623,641) ?string
+[pars]                                             " (623,624)
+[pars]                                             string_fragment (624,640) ?string_fragment
+[pars]                                             " (640,641)
+[pars]                                         , (641,642)
+[pars]                                         identifier (643,646) ?identifier
+[pars]                                     ) (646,647)
+[pars]                                 ) (647,648)
+[pars]                         ; (648,649)
+[pars]                     expression_statement (652,671) ?expression_statement
+[pars]                         assignment_expression (652,670) ?assignment_expression
+[pars]                             identifier (652,662) ?identifier
+[pars]                             = (663,664)
+[pars]                             false (665,670) ?false
+[pars]                         ; (670,671)
+[pars]                     } (672,673)
+[pars]         ; (673,674)
+[pars]     lexical_declaration (676,698) ?lexical_declaration
+[pars]         const (676,681)
+[pars]         variable_declarator (682,697) calls?variable_declarator
+[pars]             identifier (682,687) ?identifier
+[pars]             = (693,694)
+[pars]             array (695,697) ?array
+[pars]                 [ (695,696)
+[pars]                 ] (696,697)
+[pars]         ; (697,698)
+[pars]     lexical_declaration (699,721) ?lexical_declaration
+[pars]         const (699,704)
+[pars]         variable_declarator (705,720) fCallQueue?variable_declarator
+[pars]             identifier (705,715) ?identifier
+[pars]             = (716,717)
+[pars]             array (718,720) ?array
+[pars]                 [ (718,719)
+[pars]                 ] (719,720)
+[pars]         ; (720,721)
+[pars]     lexical_declaration (722,743) ?lexical_declaration
+[pars]         let (722,725)
+[pars]         variable_declarator (728,742) nextId?variable_declarator
+[pars]             identifier (728,734) ?identifier
+[pars]             = (739,740)
+[pars]             number (741,742) ?number
+[pars]         ; (742,743)
+[pars]     lexical_declaration (744,768) ?lexical_declaration
+[pars]         let (744,747)
+[pars]         variable_declarator (750,767) clint?variable_declarator
+[pars]             identifier (750,755) ?identifier
+[pars]             = (761,762)
+[pars]             null (763,767) ?null
+[pars]         ; (767,768)
+[pars]     comment (770,785) ?comment
+[pars]     comment (786,818) ?comment
+[pars]     comment (819,867) ?comment
+[pars]     comment (868,887) ?comment
+[pars]     comment (888,916) ?comment
+[pars]     comment (917,981) ?comment
+[pars]     comment (982,1032) ?comment
+[pars]     comment (1033,1041) ?comment
+[pars]     comment (1042,1056) ?comment
+[pars]     comment (1057,1061) ?comment
+[pars]     lexical_declaration (1063,1478) ?lexical_declaration
+[pars]         const (1063,1068)
+[pars]         variable_declarator (1069,1478) fCall?variable_declarator
+[pars]             identifier (1069,1074) ?identifier
+[pars]             = (1075,1076)
+[pars]             arrow_function (1077,1478) ?arrow_function
+[pars]                 formal_parameters (1077,1091) ?formal_parameters
+[pars]                     ( (1077,1078)
+[pars]                     required_parameter (1078,1083) ?required_parameter
+[pars]                         identifier (1078,1083) ?identifier
+[pars]                     , (1083,1084)
+[pars]                     required_parameter (1085,1090) ?required_parameter
+[pars]                         identifier (1085,1090) ?identifier
+[pars]                     ) (1090,1091)
+[pars]                 => (1092,1094)
+[pars]                 statement_block (1095,1478) ?statement_block
+[pars]                     { (1095,1096)
+[pars]                     lexical_declaration (1099,1119) ?lexical_declaration
+[pars]                         const (1099,1104)
+[pars]                         variable_declarator (1105,1118) id?variable_declarator
+[pars]                             identifier (1105,1107) ?identifier
+[pars]                             = (1108,1109)
+[pars]                             update_expression (1110,1118) ?update_expression
+[pars]                                 ++ (1110,1112)
+[pars]                                 identifier (1112,1118) ?identifier
+[pars]                         ; (1118,1119)
+[pars]                     lexical_declaration (1122,1231) ?lexical_declaration
+[pars]                         const (1122,1127)
+[pars]                         variable_declarator (1128,1230) promise?variable_declarator
+[pars]                             identifier (1128,1135) ?identifier
+[pars]                             = (1136,1137)
+[pars]                             new_expression (1138,1230) ?new_expression
+[pars]                                 new (1138,1141)
+[pars]                                 identifier (1142,1149) ?identifier
+[pars]                                 arguments (1149,1230) ?arguments
+[pars]                                     ( (1149,1150)
+[pars]                                     arrow_function (1150,1229) ?arrow_function
+[pars]                                         formal_parameters (1150,1167) ?formal_parameters
+[pars]                                             ( (1150,1151)
+[pars]                                             required_parameter (1151,1158) ?required_parameter
+[pars]                                                 identifier (1151,1158) ?identifier
+[pars]                                             , (1158,1159)
+[pars]                                             required_parameter (1160,1166) ?required_parameter
+[pars]                                                 identifier (1160,1166) ?identifier
+[pars]                                             ) (1166,1167)
+[pars]                                         => (1168,1170)
+[pars]                                         statement_block (1171,1229) ?statement_block
+[pars]                                             { (1171,1172)
+[pars]                                             expression_statement (1177,1225) ?expression_statement
+[pars]                                                 call_expression (1177,1224) ?call_expression
+[pars]                                                     member_expression (1177,1187) ?member_expression
+[pars]                                                         identifier (1177,1182) ?identifier
+[pars]                                                         . (1182,1183)
+[pars]                                                         property_identifier (1183,1187) ?property_identifier
+[pars]                                                     arguments (1187,1224) ?arguments
+[pars]                                                         ( (1187,1188)
+[pars]                                                         object (1188,1223) ?object
+[pars]                                                             { (1188,1189)
+[pars]                                                             shorthand_property_identifier (1189,1191) ?shorthand_property_identifier
+[pars]                                                             , (1191,1192)
+[pars]                                                             shorthand_property_identifier (1193,1198) ?shorthand_property_identifier
+[pars]                                                             , (1198,1199)
+[pars]                                                             shorthand_property_identifier (1200,1205) ?shorthand_property_identifier
+[pars]                                                             , (1205,1206)
+[pars]                                                             shorthand_property_identifier (1207,1214) ?shorthand_property_identifier
+[pars]                                                             , (1214,1215)
+[pars]                                                             shorthand_property_identifier (1216,1222) ?shorthand_property_identifier
+[pars]                                                             } (1222,1223)
+[pars]                                                         ) (1223,1224)
+[pars]                                                 ; (1224,1225)
+[pars]                                             } (1228,1229)
+[pars]                                     ) (1229,1230)
+[pars]                         ; (1230,1231)
+[pars]                     if_statement (1234,1302) ?if_statement
+[pars]                         if (1234,1236)
+[pars]                         parenthesized_expression (1236,1262) ?parenthesized_expression
+[pars]                             ( (1236,1237)
+[pars]                             binary_expression (1237,1261) ?binary_expression
+[pars]                                 unary_expression (1237,1249) ?unary_expression
+[pars]                                     typeof (1237,1243)
+[pars]                                     identifier (1244,1249) ?identifier
+[pars]                                 == (1250,1252)
+[pars]                                 string (1253,1261) ?string
+[pars]                                     ' (1253,1254)
+[pars]                                     string_fragment (1254,1260) ?string_fragment
+[pars]                                     ' (1260,1261)
+[pars]                             ) (1261,1262)
+[pars]                         expression_statement (1272,1302) ?expression_statement
+[pars]                             assignment_expression (1272,1301) ?assignment_expression
+[pars]                                 identifier (1272,1277) ?identifier
+[pars]                                 = (1278,1279)
+[pars]                                 call_expression (1280,1301) ?call_expression
+[pars]                                     member_expression (1280,1294) ?member_expression
+[pars]                                         identifier (1280,1284) ?identifier
+[pars]                                         . (1284,1285)
+[pars]                                         property_identifier (1285,1294) ?property_identifier
+[pars]                                     arguments (1294,1301) ?arguments
+[pars]                                         ( (1294,1295)
+[pars]                                         identifier (1295,1300) ?identifier
+[pars]                                         ) (1300,1301)
+[pars]                             ; (1301,1302)
+[pars]                     lexical_declaration (1305,1347) ?lexical_declaration
+[pars]                         const (1305,1310)
+[pars]                         variable_declarator (1311,1346) msg?variable_declarator
+[pars]                             identifier (1311,1314) ?identifier
+[pars]                             = (1315,1316)
+[pars]                             template_string (1317,1346) ?template_string
+[pars]                                 ` (1317,1318)
+[pars]                                 template_substitution (1318,1323) ?template_substitution
+[pars]                                     ${ (1318,1320)
+[pars]                                     identifier (1320,1322) ?identifier
+[pars]                                     } (1322,1323)
+[pars]                                 string_fragment (1323,1326) ?string_fragment
+[pars]                                 template_substitution (1326,1334) ?template_substitution
+[pars]                                     ${ (1326,1328)
+[pars]                                     identifier (1328,1333) ?identifier
+[pars]                                     } (1333,1334)
+[pars]                                 string_fragment (1334,1337) ?string_fragment
+[pars]                                 template_substitution (1337,1345) ?template_substitution
+[pars]                                     ${ (1337,1339)
+[pars]                                     identifier (1339,1344) ?identifier
+[pars]                                     } (1344,1345)
+[pars]                                 ` (1345,1346)
+[pars]                         ; (1346,1347)
+[pars]                     if_statement (1351,1458) ?if_statement
+[pars]                         if (1351,1353)
+[pars]                         parenthesized_expression (1353,1366) ?parenthesized_expression
+[pars]                             ( (1353,1354)
+[pars]                             unary_expression (1354,1365) ?unary_expression
+[pars]                                 ! (1354,1355)
+[pars]                                 identifier (1355,1365) ?identifier
+[pars]                             ) (1365,1366)
+[pars]                         expression_statement (1367,1390) ?expression_statement
+[pars]                             call_expression (1367,1389) ?call_expression
+[pars]                                 member_expression (1367,1384) ?member_expression
+[pars]                                     identifier (1367,1379) ?identifier
+[pars]                                     . (1379,1380)
+[pars]                                     property_identifier (1380,1384) ?property_identifier
+[pars]                                 arguments (1384,1389) ?arguments
+[pars]                                     ( (1384,1385)
+[pars]                                     identifier (1385,1388) ?identifier
+[pars]                                     ) (1388,1389)
+[pars]                             ; (1389,1390)
+[pars]                         else_clause (1393,1458) ?else_clause
+[pars]                             else (1393,1397)
+[pars]                             statement_block (1398,1458) ?statement_block
+[pars]                                 { (1398,1399)
+[pars]                                 comment (1404,1436) ?comment
+[pars]                                 expression_statement (1441,1454) ?expression_statement
+[pars]                                     call_expression (1441,1453) ?call_expression
+[pars]                                         member_expression (1441,1448) ?member_expression
+[pars]                                             identifier (1441,1443) ?identifier
+[pars]                                             . (1443,1444)
+[pars]                                             property_identifier (1444,1448) ?property_identifier
+[pars]                                         arguments (1448,1453) ?arguments
+[pars]                                             ( (1448,1449)
+[pars]                                             identifier (1449,1452) ?identifier
+[pars]                                             ) (1452,1453)
+[pars]                                     ; (1453,1454)
+[pars]                                 } (1457,1458)
+[pars]                     return_statement (1461,1476) ?return_statement
+[pars]                         return (1461,1467)
+[pars]                         identifier (1468,1475) ?identifier
+[pars]                         ; (1475,1476)
+[pars]                     } (1477,1478)
+[pars]     expression_statement (1480,2599) ?expression_statement
+[pars]         assignment_expression (1480,2599) ?assignment_expression
+[pars]             identifier (1480,1489) ?identifier
+[pars]             = (1490,1491)
+[pars]             arrow_function (1492,2599) ?arrow_function
+[pars]                 async (1492,1497)
+[pars]                 formal_parameters (1498,1503) ?formal_parameters
+[pars]                     ( (1498,1499)
+[pars]                     required_parameter (1499,1502) ?required_parameter
+[pars]                         identifier (1499,1502) ?identifier
+[pars]                     ) (1502,1503)
+[pars]                 => (1504,1506)
+[pars]                 statement_block (1507,2599) ?statement_block
+[pars]                     { (1507,1508)
+[pars]                     if_statement (1512,1638) ?if_statement
+[pars]                         if (1512,1514)
+[pars]                         parenthesized_expression (1514,1535) ?parenthesized_expression
+[pars]                             ( (1514,1515)
+[pars]                             binary_expression (1515,1534) ?binary_expression
+[pars]                                 identifier (1515,1518) ?identifier
+[pars]                                 instanceof (1519,1529)
+[pars]                                 identifier (1530,1534) ?identifier
+[pars]                             ) (1534,1535)
+[pars]                         statement_block (1536,1638) ?statement_block
+[pars]                             { (1536,1537)
+[pars]                             lexical_declaration (1542,1572) ?lexical_declaration
+[pars]                                 const (1542,1547)
+[pars]                                 variable_declarator (1548,1571) text?variable_declarator
+[pars]                                     identifier (1548,1552) ?identifier
+[pars]                                     = (1553,1554)
+[pars]                                     await_expression (1555,1571) ?await_expression
+[pars]                                         await (1555,1560)
+[pars]                                         call_expression (1561,1571) ?call_expression
+[pars]                                             member_expression (1561,1569) ?member_expression
+[pars]                                                 identifier (1561,1564) ?identifier
+[pars]                                                 . (1564,1565)
+[pars]                                                 property_identifier (1565,1569) ?property_identifier
+[pars]                                             arguments (1569,1571) ?arguments
+[pars]                                                 ( (1569,1570)
+[pars]                                                 ) (1570,1571)
+[pars]                                 ; (1571,1572)
+[pars]                             expression_statement (1577,1622) ?expression_statement
+[pars]                                 call_expression (1577,1621) ?call_expression
+[pars]                                     member_expression (1577,1588) ?member_expression
+[pars]                                         identifier (1577,1584) ?identifier
+[pars]                                         . (1584,1585)
+[pars]                                         property_identifier (1585,1588) ?property_identifier
+[pars]                                     arguments (1588,1621) ?arguments
+[pars]                                         ( (1588,1589)
+[pars]                                         string (1589,1607) ?string
+[pars]                                             " (1589,1590)
+[pars]                                             string_fragment (1590,1606) ?string_fragment
+[pars]                                             " (1606,1607)
+[pars]                                         , (1607,1608)
+[pars]                                         member_expression (1609,1620) ?member_expression
+[pars]                                             identifier (1609,1613) ?identifier
+[pars]                                             . (1613,1614)
+[pars]                                             property_identifier (1614,1620) ?property_identifier
+[pars]                                         ) (1620,1621)
+[pars]                                 ; (1621,1622)
+[pars]                             return_statement (1627,1634) ?return_statement
+[pars]                                 return (1627,1633)
+[pars]                                 ; (1633,1634)
+[pars]                             } (1637,1638)
+[pars]                     expression_statement (1641,1662) ?expression_statement
+[pars]                         assignment_expression (1641,1661) ?assignment_expression
+[pars]                             identifier (1641,1644) ?identifier
+[pars]                             = (1645,1646)
+[pars]                             call_expression (1647,1661) ?call_expression
+[pars]                                 member_expression (1647,1659) ?member_expression
+[pars]                                     identifier (1647,1650) ?identifier
+[pars]                                     . (1650,1651)
+[pars]                                     property_identifier (1651,1659) ?property_identifier
+[pars]                                 arguments (1659,1661) ?arguments
+[pars]                                     ( (1659,1660)
+[pars]                                     ) (1660,1661)
+[pars]                         ; (1661,1662)
+[pars]                     lexical_declaration (1665,1712) ?lexical_declaration
+[pars]                         const (1665,1670)
+[pars]                         variable_declarator (1671,1711) parts?variable_declarator
+[pars]                             identifier (1671,1676) ?identifier
+[pars]                             = (1677,1678)
+[pars]                             call_expression (1679,1711) ?call_expression
+[pars]                                 member_expression (1679,1706) ?member_expression
+[pars]                                     regex (1679,1701) ?regex
+[pars]                                         / (1679,1680)
+[pars]                                         regex_pattern (1680,1700) ?regex_pattern
+[pars]                                         / (1700,1701)
+[pars]                                     . (1701,1702)
+[pars]                                     property_identifier (1702,1706) ?property_identifier
+[pars]                                 arguments (1706,1711) ?arguments
+[pars]                                     ( (1706,1707)
+[pars]                                     identifier (1707,1710) ?identifier
+[pars]                                     ) (1710,1711)
+[pars]                         ; (1711,1712)
+[pars]                     if_statement (1715,1792) ?if_statement
+[pars]                         if (1715,1717)
+[pars]                         parenthesized_expression (1717,1725) ?parenthesized_expression
+[pars]                             ( (1717,1718)
+[pars]                             unary_expression (1718,1724) ?unary_expression
+[pars]                                 ! (1718,1719)
+[pars]                                 identifier (1719,1724) ?identifier
+[pars]                             ) (1724,1725)
+[pars]                         statement_block (1726,1792) ?statement_block
+[pars]                             { (1726,1727)
+[pars]                             expression_statement (1732,1776) ?expression_statement
+[pars]                                 call_expression (1732,1775) ?call_expression
+[pars]                                     member_expression (1732,1745) ?member_expression
+[pars]                                         identifier (1732,1739) ?identifier
+[pars]                                         . (1739,1740)
+[pars]                                         property_identifier (1740,1745) ?property_identifier
+[pars]                                     arguments (1745,1775) ?arguments
+[pars]                                         ( (1745,1746)
+[pars]                                         string (1746,1769) ?string
+[pars]                                             ' (1746,1747)
+[pars]                                             string_fragment (1747,1768) ?string_fragment
+[pars]                                             ' (1768,1769)
+[pars]                                         , (1769,1770)
+[pars]                                         identifier (1771,1774) ?identifier
+[pars]                                         ) (1774,1775)
+[pars]                                 ; (1775,1776)
+[pars]                             return_statement (1781,1788) ?return_statement
+[pars]                                 return (1781,1787)
+[pars]                                 ; (1787,1788)
+[pars]                             } (1791,1792)
+[pars]                     lexical_declaration (1795,1839) ?lexical_declaration
+[pars]                         const (1795,1800)
+[pars]                         variable_declarator (1801,1838) [id, status, result]?variable_declarator
+[pars]                             array_pattern (1801,1821) ?array_pattern
+[pars]                                 [ (1801,1802)
+[pars]                                 identifier (1802,1804) ?identifier
+[pars]                                 , (1804,1805)
+[pars]                                 identifier (1806,1812) ?identifier
+[pars]                                 , (1812,1813)
+[pars]                                 identifier (1814,1820) ?identifier
+[pars]                                 ] (1820,1821)
+[pars]                             = (1822,1823)
+[pars]                             call_expression (1824,1838) ?call_expression
+[pars]                                 member_expression (1824,1835) ?member_expression
+[pars]                                     identifier (1824,1829) ?identifier
+[pars]                                     . (1829,1830)
+[pars]                                     property_identifier (1830,1835) ?property_identifier
+[pars]                                 arguments (1835,1838) ?arguments
+[pars]                                     ( (1835,1836)
+[pars]                                     number (1836,1837) ?number
+[pars]                                     ) (1837,1838)
+[pars]                         ; (1838,1839)
+[pars]                     comment (1842,1886) ?comment
+[pars]                     if_statement (1889,1910) ?if_statement
+[pars]                         if (1889,1891)
+[pars]                         parenthesized_expression (1891,1902) ?parenthesized_expression
+[pars]                             ( (1891,1892)
+[pars]                             binary_expression (1892,1901) ?binary_expression
+[pars]                                 identifier (1892,1894) ?identifier
+[pars]                                 == (1895,1897)
+[pars]                                 string (1898,1901) ?string
+[pars]                                     ' (1898,1899)
+[pars]                                     string_fragment (1899,1900) ?string_fragment
+[pars]                                     ' (1900,1901)
+[pars]                             ) (1901,1902)
+[pars]                         return_statement (1903,1910) ?return_statement
+[pars]                             return (1903,1909)
+[pars]                             ; (1909,1910)
+[pars]                     lexical_declaration (1914,1970) ?lexical_declaration
+[pars]                         const (1914,1919)
+[pars]                         variable_declarator (1920,1969) callIdx?variable_declarator
+[pars]                             identifier (1920,1927) ?identifier
+[pars]                             = (1928,1929)
+[pars]                             call_expression (1930,1969) ?call_expression
+[pars]                                 member_expression (1930,1945) ?member_expression
+[pars]                                     identifier (1930,1935) ?identifier
+[pars]                                     . (1935,1936)
+[pars]                                     property_identifier (1936,1945) ?property_identifier
+[pars]                                 arguments (1945,1969) ?arguments
+[pars]                                     ( (1945,1946)
+[pars]                                     arrow_function (1946,1968) ?arrow_function
+[pars]                                         identifier (1946,1950) ?identifier
+[pars]                                         => (1951,1953)
+[pars]                                         binary_expression (1955,1968) ?binary_expression
+[pars]                                             member_expression (1955,1962) ?member_expression
+[pars]                                                 identifier (1955,1959) ?identifier
+[pars]                                                 . (1959,1960)
+[pars]                                                 property_identifier (1960,1962) ?property_identifier
+[pars]                                             == (1963,1965)
+[pars]                                             identifier (1966,1968) ?identifier
+[pars]                                     ) (1968,1969)
+[pars]                         ; (1969,1970)
+[pars]                     if_statement (1973,2057) ?if_statement
+[pars]                         if (1973,1975)
+[pars]                         parenthesized_expression (1975,1988) ?parenthesized_expression
+[pars]                             ( (1975,1976)
+[pars]                             binary_expression (1976,1987) ?binary_expression
+[pars]                                 identifier (1976,1983) ?identifier
+[pars]                                 < (1984,1985)
+[pars]                                 number (1986,1987) ?number
+[pars]                             ) (1987,1988)
+[pars]                         statement_block (1989,2057) ?statement_block
+[pars]                             { (1989,1990)
+[pars]                             expression_statement (1995,2041) ?expression_statement
+[pars]                                 call_expression (1995,2040) ?call_expression
+[pars]                                     member_expression (1995,2008) ?member_expression
+[pars]                                         identifier (1995,2002) ?identifier
+[pars]                                         . (2002,2003)
+[pars]                                         property_identifier (2003,2008) ?property_identifier
+[pars]                                     arguments (2008,2040) ?arguments
+[pars]                                         ( (2008,2009)
+[pars]                                         string (2009,2035) ?string
+[pars]                                             " (2009,2010)
+[pars]                                             string_fragment (2010,2034) ?string_fragment
+[pars]                                             " (2034,2035)
+[pars]                                         , (2035,2036)
+[pars]                                         identifier (2037,2039) ?identifier
+[pars]                                         ) (2039,2040)
+[pars]                                 ; (2040,2041)
+[pars]                             return_statement (2046,2053) ?return_statement
+[pars]                                 return (2046,2052)
+[pars]                                 ; (2052,2053)
+[pars]                             } (2056,2057)
+[pars]                     lexical_declaration (2060,2088) ?lexical_declaration
+[pars]                         const (2060,2065)
+[pars]                         variable_declarator (2066,2087) call?variable_declarator
+[pars]                             identifier (2066,2070) ?identifier
+[pars]                             = (2071,2072)
+[pars]                             subscript_expression (2073,2087) ?subscript_expression
+[pars]                                 identifier (2073,2078) ?identifier
+[pars]                                 [ (2078,2079)
+[pars]                                 identifier (2079,2086) ?identifier
+[pars]                                 ] (2086,2087)
+[pars]                         ; (2087,2088)
+[pars]                     expression_statement (2091,2116) ?expression_statement
+[pars]                         call_expression (2091,2115) ?call_expression
+[pars]                             member_expression (2091,2103) ?member_expression
+[pars]                                 identifier (2091,2096) ?identifier
+[pars]                                 . (2096,2097)
+[pars]                                 property_identifier (2097,2103) ?property_identifier
+[pars]                             arguments (2103,2115) ?arguments
+[pars]                                 ( (2103,2104)
+[pars]                                 identifier (2104,2111) ?identifier
+[pars]                                 , (2111,2112)
+[pars]                                 number (2113,2114) ?number
+[pars]                                 ) (2114,2115)
+[pars]                         ; (2115,2116)
+[pars]                     lexical_declaration (2119,2164) ?lexical_declaration
+[pars]                         const (2119,2124)
+[pars]                         variable_declarator (2125,2163) {fname, param, resolve, reject}?variable_declarator
+[pars]                             object_pattern (2125,2156) ?object_pattern
+[pars]                                 { (2125,2126)
+[pars]                                 shorthand_property_identifier_pattern (2126,2131) ?shorthand_property_identifier_pattern
+[pars]                                 , (2131,2132)
+[pars]                                 shorthand_property_identifier_pattern (2133,2138) ?shorthand_property_identifier_pattern
+[pars]                                 , (2138,2139)
+[pars]                                 shorthand_property_identifier_pattern (2140,2147) ?shorthand_property_identifier_pattern
+[pars]                                 , (2147,2148)
+[pars]                                 shorthand_property_identifier_pattern (2149,2155) ?shorthand_property_identifier_pattern
+[pars]                                 } (2155,2156)
+[pars]                             = (2157,2158)
+[pars]                             identifier (2159,2163) ?identifier
+[pars]                         ; (2163,2164)
+[pars]                     if_statement (2167,2285) ?if_statement
+[pars]                         if (2167,2169)
+[pars]                         parenthesized_expression (2169,2185) ?parenthesized_expression
+[pars]                             ( (2169,2170)
+[pars]                             binary_expression (2170,2184) ?binary_expression
+[pars]                                 identifier (2170,2176) ?identifier
+[pars]                                 != (2177,2179)
+[pars]                                 string (2180,2184) ?string
+[pars]                                     ' (2180,2181)
+[pars]                                     string_fragment (2181,2183) ?string_fragment
+[pars]                                     ' (2183,2184)
+[pars]                             ) (2184,2185)
+[pars]                         expression_statement (2191,2285) ?expression_statement
+[pars]                             call_expression (2191,2284) ?call_expression
+[pars]                                 member_expression (2191,2204) ?member_expression
+[pars]                                     identifier (2191,2198) ?identifier
+[pars]                                     . (2198,2199)
+[pars]                                     property_identifier (2199,2204) ?property_identifier
+[pars]                                 arguments (2204,2284) ?arguments
+[pars]                                     ( (2204,2205)
+[pars]                                     string (2205,2226) ?string
+[pars]                                         ' (2205,2206)
+[pars]                                         string_fragment (2206,2225) ?string_fragment
+[pars]                                         ' (2225,2226)
+[pars]                                     , (2226,2227)
+[pars]                                     object (2249,2283) ?object
+[pars]                                         { (2249,2250)
+[pars]                                         shorthand_property_identifier (2250,2252) ?shorthand_property_identifier
+[pars]                                         , (2252,2253)
+[pars]                                         shorthand_property_identifier (2254,2259) ?shorthand_property_identifier
+[pars]                                         , (2259,2260)
+[pars]                                         shorthand_property_identifier (2261,2266) ?shorthand_property_identifier
+[pars]                                         , (2266,2267)
+[pars]                                         shorthand_property_identifier (2268,2274) ?shorthand_property_identifier
+[pars]                                         , (2274,2275)
+[pars]                                         shorthand_property_identifier (2276,2282) ?shorthand_property_identifier
+[pars]                                         } (2282,2283)
+[pars]                                     ) (2283,2284)
+[pars]                             ; (2284,2285)
+[pars]                     try_statement (2288,2597) ?try_statement
+[pars]                         try (2288,2291)
+[pars]                         statement_block (2292,2463) ?statement_block
+[pars]                             { (2292,2293)
+[pars]                             comment (2298,2349) ?comment
+[pars]                             lexical_declaration (2354,2385) ?lexical_declaration
+[pars]                                 const (2354,2359)
+[pars]                                 variable_declarator (2360,2384) res?variable_declarator
+[pars]                                     identifier (2360,2363) ?identifier
+[pars]                                     = (2364,2365)
+[pars]                                     call_expression (2366,2384) ?call_expression
+[pars]                                         member_expression (2366,2376) ?member_expression
+[pars]                                             identifier (2366,2370) ?identifier
+[pars]                                             . (2370,2371)
+[pars]                                             property_identifier (2371,2376) ?property_identifier
+[pars]                                         arguments (2376,2384) ?arguments
+[pars]                                             ( (2376,2377)
+[pars]                                             identifier (2377,2383) ?identifier
+[pars]                                             ) (2383,2384)
+[pars]                                 ; (2384,2385)
+[pars]                             if_statement (2390,2459) ?if_statement
+[pars]                                 if (2390,2392)
+[pars]                                 parenthesized_expression (2392,2408) ?parenthesized_expression
+[pars]                                     ( (2392,2393)
+[pars]                                     binary_expression (2393,2407) ?binary_expression
+[pars]                                         identifier (2393,2399) ?identifier
+[pars]                                         == (2400,2402)
+[pars]                                         string (2403,2407) ?string
+[pars]                                             ' (2403,2404)
+[pars]                                             string_fragment (2404,2406) ?string_fragment
+[pars]                                             ' (2406,2407)
+[pars]                                     ) (2407,2408)
+[pars]                                 expression_statement (2409,2422) ?expression_statement
+[pars]                                     call_expression (2409,2421) ?call_expression
+[pars]                                         identifier (2409,2416) ?identifier
+[pars]                                         arguments (2416,2421) ?arguments
+[pars]                                             ( (2416,2417)
+[pars]                                             identifier (2417,2420) ?identifier
+[pars]                                             ) (2420,2421)
+[pars]                                     ; (2421,2422)
+[pars]                                 else_clause (2427,2459) ?else_clause
+[pars]                                     else (2427,2431)
+[pars]                                     expression_statement (2447,2459) ?expression_statement
+[pars]                                         call_expression (2447,2458) ?call_expression
+[pars]                                             identifier (2447,2453) ?identifier
+[pars]                                             arguments (2453,2458) ?arguments
+[pars]                                                 ( (2453,2454)
+[pars]                                                 identifier (2454,2457) ?identifier
+[pars]                                                 ) (2457,2458)
+[pars]                                         ; (2458,2459)
+[pars]                             } (2462,2463)
+[pars]                         catch_clause (2466,2597) ?catch_clause
+[pars]                             catch (2466,2471)
+[pars]                             ( (2471,2472)
+[pars]                             identifier (2472,2475) ?identifier
+[pars]                             ) (2475,2476)
+[pars]                             statement_block (2477,2597) ?statement_block
+[pars]                                 { (2477,2478)
+[pars]                                 lexical_declaration (2483,2533) ?lexical_declaration
+[pars]                                     const (2483,2488)
+[pars]                                     variable_declarator (2489,2532) msg?variable_declarator
+[pars]                                         identifier (2489,2492) ?identifier
+[pars]                                         = (2493,2494)
+[pars]                                         template_string (2495,2532) ?template_string
+[pars]                                             ` (2495,2496)
+[pars]                                             string_fragment (2496,2531) ?string_fragment
+[pars]                                             ` (2531,2532)
+[pars]                                     ; (2532,2533)
+[pars]                                 expression_statement (2538,2576) ?expression_statement
+[pars]                                     call_expression (2538,2575) ?call_expression
+[pars]                                         member_expression (2538,2551) ?member_expression
+[pars]                                             identifier (2538,2545) ?identifier
+[pars]                                             . (2545,2546)
+[pars]                                             property_identifier (2546,2551) ?property_identifier
+[pars]                                         arguments (2551,2575) ?arguments
+[pars]                                             ( (2551,2552)
+[pars]                                             identifier (2552,2555) ?identifier
+[pars]                                             , (2555,2556)
+[pars]                                             object (2557,2574) ?object
+[pars]                                                 { (2557,2558)
+[pars]                                                 shorthand_property_identifier (2558,2560) ?shorthand_property_identifier
+[pars]                                                 , (2560,2561)
+[pars]                                                 shorthand_property_identifier (2562,2568) ?shorthand_property_identifier
+[pars]                                                 , (2568,2569)
+[pars]                                                 shorthand_property_identifier (2570,2573) ?shorthand_property_identifier
+[pars]                                                 } (2573,2574)
+[pars]                                             ) (2574,2575)
+[pars]                                     ; (2575,2576)
+[pars]                                 expression_statement (2581,2593) ?expression_statement
+[pars]                                     call_expression (2581,2592) ?call_expression
+[pars]                                         identifier (2581,2587) ?identifier
+[pars]                                         arguments (2587,2592) ?arguments
+[pars]                                             ( (2587,2588)
+[pars]                                             identifier (2588,2591) ?identifier
+[pars]                                             ) (2591,2592)
+[pars]                                     ; (2592,2593)
+[pars]                                 } (2596,2597)
+[pars]                     } (2598,2599)
+[pars]     export_statement (2601,3021) ?export_statement
+[pars]         export (2601,2607)
+[pars]         function_declaration (2608,3021) deleteShowFromSrvr?function_declaration
+[pars]             async (2608,2613)
+[pars]             function (2614,2622)
+[pars]             identifier (2623,2641) ?identifier
+[pars]             formal_parameters (2641,2647) ?formal_parameters
+[pars]                 ( (2641,2642)
+[pars]                 required_parameter (2642,2646) ?required_parameter
+[pars]                     identifier (2642,2646) ?identifier
+[pars]                 ) (2646,2647)
+[pars]             statement_block (2648,3021) ?statement_block
+[pars]                 { (2648,2649)
+[pars]                 expression_statement (2652,2684) ?expression_statement
+[pars]                     await_expression (2652,2683) ?await_expression
+[pars]                         await (2652,2657)
+[pars]                         call_expression (2658,2683) ?call_expression
+[pars]                             identifier (2658,2672) ?identifier
+[pars]                             arguments (2672,2683) ?arguments
+[pars]                                 ( (2672,2673)
+[pars]                                 member_expression (2673,2682) ?member_expression
+[pars]                                     identifier (2673,2677) ?identifier
+[pars]                                     . (2677,2678)
+[pars]                                     property_identifier (2678,2682) ?property_identifier
+[pars]                                 ) (2682,2683)
+[pars]                     ; (2683,2684)
+[pars]                 expression_statement (2687,2718) ?expression_statement
+[pars]                     await_expression (2687,2717) ?await_expression
+[pars]                         await (2687,2692)
+[pars]                         call_expression (2693,2717) ?call_expression
+[pars]                             identifier (2693,2706) ?identifier
+[pars]                             arguments (2706,2717) ?arguments
+[pars]                                 ( (2706,2707)
+[pars]                                 member_expression (2707,2716) ?member_expression
+[pars]                                     identifier (2707,2711) ?identifier
+[pars]                                     . (2711,2712)
+[pars]                                     property_identifier (2712,2716) ?property_identifier
+[pars]                                 ) (2716,2717)
+[pars]                     ; (2717,2718)
+[pars]                 expression_statement (2721,2751) ?expression_statement
+[pars]                     await_expression (2721,2750) ?await_expression
+[pars]                         await (2721,2726)
+[pars]                         call_expression (2727,2750) ?call_expression
+[pars]                             identifier (2727,2733) ?identifier
+[pars]                             arguments (2733,2750) ?arguments
+[pars]                                 ( (2733,2734)
+[pars]                                 array (2734,2749) ?array
+[pars]                                     [ (2734,2735)
+[pars]                                     member_expression (2735,2742) ?member_expression
+[pars]                                         identifier (2735,2739) ?identifier
+[pars]                                         . (2739,2740)
+[pars]                                         property_identifier (2740,2742) ?property_identifier
+[pars]                                     , (2742,2743)
+[pars]                                     true (2744,2748) ?true
+[pars]                                     ] (2748,2749)
+[pars]                                 ) (2749,2750)
+[pars]                     ; (2750,2751)
+[pars]                 if_statement (2754,2798) ?if_statement
+[pars]                     if (2754,2756)
+[pars]                     parenthesized_expression (2756,2769) ?parenthesized_expression
+[pars]                         ( (2756,2757)
+[pars]                         member_expression (2757,2768) ?member_expression
+[pars]                             identifier (2757,2761) ?identifier
+[pars]                             . (2761,2762)
+[pars]                             property_identifier (2762,2768) ?property_identifier
+[pars]                         ) (2768,2769)
+[pars]                     expression_statement (2771,2798) ?expression_statement
+[pars]                         await_expression (2771,2797) ?await_expression
+[pars]                             await (2771,2776)
+[pars]                             call_expression (2777,2797) ?call_expression
+[pars]                                 identifier (2777,2786) ?identifier
+[pars]                                 arguments (2786,2797) ?arguments
+[pars]                                     ( (2786,2787)
+[pars]                                     member_expression (2787,2796) ?member_expression
+[pars]                                         identifier (2787,2791) ?identifier
+[pars]                                         . (2791,2792)
+[pars]                                         property_identifier (2792,2796) ?property_identifier
+[pars]                                     ) (2796,2797)
+[pars]                         ; (2797,2798)
+[pars]                 expression_statement (2801,2828) ?expression_statement
+[pars]                     await_expression (2801,2827) ?await_expression
+[pars]                         await (2801,2806)
+[pars]                         call_expression (2807,2827) ?call_expression
+[pars]                             identifier (2807,2816) ?identifier
+[pars]                             arguments (2816,2827) ?arguments
+[pars]                                 ( (2816,2817)
+[pars]                                 member_expression (2817,2826) ?member_expression
+[pars]                                     identifier (2817,2821) ?identifier
+[pars]                                     . (2821,2822)
+[pars]                                     property_identifier (2822,2826) ?property_identifier
+[pars]                                 ) (2826,2827)
+[pars]                     ; (2827,2828)
+[pars]                 expression_statement (2831,2859) ?expression_statement
+[pars]                     await_expression (2831,2858) ?await_expression
+[pars]                         await (2831,2836)
+[pars]                         call_expression (2837,2858) ?call_expression
+[pars]                             identifier (2837,2847) ?identifier
+[pars]                             arguments (2847,2858) ?arguments
+[pars]                                 ( (2847,2848)
+[pars]                                 member_expression (2848,2857) ?member_expression
+[pars]                                     identifier (2848,2852) ?identifier
+[pars]                                     . (2852,2853)
+[pars]                                     property_identifier (2853,2857) ?property_identifier
+[pars]                                 ) (2857,2858)
+[pars]                     ; (2858,2859)
+[pars]                 comment (2862,2895) ?comment
+[pars]                 comment (2898,2931) ?comment
+[pars]                 comment (2934,2964) ?comment
+[pars]                 expression_statement (2967,3019) ?expression_statement
+[pars]                     call_expression (2967,3018) ?call_expression
+[pars]                         member_expression (2967,2978) ?member_expression
+[pars]                             identifier (2967,2974) ?identifier
+[pars]                             . (2974,2975)
+[pars]                             property_identifier (2975,2978) ?property_identifier
+[pars]                         arguments (2978,3018) ?arguments
+[pars]                             ( (2978,2979)
+[pars]                             string (2979,3006) ?string
+[pars]                                 " (2979,2980)
+[pars]                                 string_fragment (2980,3005) ?string_fragment
+[pars]                                 " (3005,3006)
+[pars]                             , (3006,3007)
+[pars]                             member_expression (3008,3017) ?member_expression
+[pars]                                 identifier (3008,3012) ?identifier
+[pars]                                 . (3012,3013)
+[pars]                                 property_identifier (3013,3017) ?property_identifier
+[pars]                             ) (3017,3018)
+[pars]                     ; (3018,3019)
+[pars]                 } (3020,3021)
+[pars]     export_statement (3023,3057) ?export_statement
+[pars]         export (3023,3029)
+[pars]         lexical_declaration (3030,3057) ?lexical_declaration
+[pars]             const (3030,3035)
+[pars]             variable_declarator (3036,3056) lastViewedCache?variable_declarator
+[pars]                 identifier (3036,3051) ?identifier
+[pars]                 = (3052,3053)
+[pars]                 object (3054,3056) ?object
+[pars]                     { (3054,3055)
+[pars]                     } (3055,3056)
+[pars]             ; (3056,3057)
+[pars]     lexical_declaration (3059,3194) ?lexical_declaration
+[pars]         const (3059,3064)
+[pars] parseCode ended, 40181ms
+[cmds] [
+  {
+    "name": "openWs",
+    "startName": 62,
+    "endName": 68,
+    "startBody": 62,
+    "endBody": 102
+  },
+  {
+    "name": "ws.onmessage",
+    "startName": 189,
+    "endName": 201,
+    "startBody": 189,
+    "endBody": 288
+  },
+  {
+    "name": "ws.onopen",
+    "startName": 290,
+    "endName": 299,
+    "startBody": 290,
+    "endBody": 441
+  },
+  {
+    "name": "ws.onclose",
+    "startName": 444,
+    "endName": 454,
+    "startBody": 444,
+    "endBody": 579
+  },
+  {
+    "name": "ws.onerror",
+    "startName": 582,
+    "endName": 592,
+    "startBody": 582,
+    "endBody": 673
+  },
+  {
+    "name": "fCall",
+    "startName": 1069,
+    "endName": 1074,
+    "startBody": 1069,
+    "endBody": 1478
+  },
+  {
+    "name": "handleMsg",
+    "startName": 1480,
+    "endName": 1489,
+    "startBody": 1480,
+    "endBody": 2599
+  },
   {
     "name": "deleteShowFromSrvr",
     "startName": 2623,
     "endName": 2641,
     "startBody": 2608,
     "endBody": 3021
+  },
+  {
+    "name": "updateLastViewedCache",
+    "startName": 3065,
+    "endName": 3086,
+    "startBody": 3065,
+    "endBody": 3194
   },
   {
     "name": "getAllShows",

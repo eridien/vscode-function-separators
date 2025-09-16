@@ -7,7 +7,7 @@ import * as utils                          from './utils';
 const {log, start, end} = utils.getLog('pars');
 
 const PARSE_DUMP_TYPE: string = '';  
-const PARSE_DUMP_NAME: string = '';
+const PARSE_DUMP_NAME: string = 'handleMsg';
 
 let context: vscode.ExtensionContext;
 type SyntaxNode = NonNullable<ReturnType<Parser['parse']>>['rootNode'];

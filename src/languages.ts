@@ -12,7 +12,12 @@ export const langs: Langs = {
 
 ///////////////////////////// typescript ///////////////////////////
   typescript: {
-    sExpr: `(function_declaration (identifier) @name) @body`,
+    sExpr: `[
+      (function_declaration  (identifier)        @name)
+      (variable_declarator   (identifier)        @name (arrow_function))
+      (assignment_expression (identifier)        @name (arrow_function))
+      (assignment_expression (member_expression) @name (arrow_function))
+    ] @body`,
     suffixes: new Set(['.js', '.ts', '.tsx', '.jsx'])
   },
 
