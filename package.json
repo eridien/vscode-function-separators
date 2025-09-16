@@ -9,9 +9,7 @@
   "categories": [
     "Other"
   ],
-  "activationEvents": [
-    "*"
-  ],
+  "activationEvents": ["*"],
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
@@ -22,22 +20,24 @@
     ]
   },
   "scripts": {
+    "build": "npm run compile",
+    "vscode:prepublish": "npm run compile",
     "compile": "tsc -p .",
     "watch": "tsc -p . -w",
-    "lint": "eslint . --ext .ts,.tsx,.js",
-    "lint:watch": "eslint . --ext .ts,.tsx,.js --cache --cache-location node_modules/.cache/eslint --max-warnings=0 --watch",
-    "watch:both": "concurrently -k -n TSC,ESLINT -c auto \"npm:watch\" \"npm:lint:watch\""
+    "rebuild": "rm -rf node_modules package-lock.json && npm install",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext .ts,.tsx",
+    "test": "vscode-test"
   },
   "devDependencies": {
+    "@types/vscode": "^1.104.0",
     "@types/mocha": "^10.0.10",
     "@types/node": "22.x",
-    "@types/vscode": "^1.104.0",
-    "@typescript-eslint/eslint-plugin": "^8.44.0",
-    "@typescript-eslint/parser": "^8.44.0",
+    "@typescript-eslint/eslint-plugin": "^8.42.0",
+    "@typescript-eslint/parser": "^8.42.0",
+    "eslint": "^9.34.0",
+    "typescript": "^5.9.2",
     "@vscode/test-cli": "^0.0.11",
-    "@vscode/test-electron": "^2.5.2",
-    "concurrently": "^9.2.1",
-    "eslint": "^9.35.0",
-    "typescript": "^5.9.2"
+    "@vscode/test-electron": "^2.5.2"
   }
 }
