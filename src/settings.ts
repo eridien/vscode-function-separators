@@ -10,12 +10,20 @@ interface FunctionSeparatorsSettings {
   minFuncHeight:   number;
   blankLinesAbove: number;
   blankLinesBelow: number;
+  indent:          number; // -1: match func indent
+  fillStr:         string;
+  fixedWidth:      number; // max width if widthOption is 'max', 0:unlimited
+  widthOption:     'fixed' | 'func' | 'max';
 }
 
 export let sett: FunctionSeparatorsSettings = {
-  minFuncHeight:   3,
-  blankLinesAbove: 2,
-  blankLinesBelow: 1,
+  minFuncHeight:     3,
+  blankLinesAbove:   2,
+  blankLinesBelow:   1,
+  indent:            0,
+  fillStr:         '=',
+  fixedWidth:       80,
+  widthOption:   'max',
 };
 
 // let excludeCfg: string;

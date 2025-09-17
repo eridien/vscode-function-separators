@@ -45,7 +45,32 @@ export async function insertComments() {
     log(`Inserting ${func.name} comment at line ${
                      commentLineNum+1} for func line ${funcLineStart+1}`);
 
-    let commentLineText = `// === ${func.name} ===`;
+    const maxDocWidth  = Math.max(...(doc.getText().split(/\r?\n/)
+                                      .map(line => line.length)));
+    const maxLineWidth = sett.fixedWidth == 0 ? maxDocWidth :
+                         Math.min(maxDocWidth, sett.fixedWidth);
+    let indent = sett.indent;
+    let width;
+    switch(sett.widthOption) {  
+      case 'fixed': width = sett.fixedWidth; break;
+      case 'func': {
+        const funcLineText = doc.lineAt(funcLineStart).text;
+        const funcStartCol = funcLineText.search(/\S/);
+        const funcEndCol   = funcLineText.trimEnd().length;
+        if(sett.indent >= 0) indent = sett.indent; else indent = funcStartCol;
+        width  = funcEndCol - funcStartCol; 
+        break;
+      }
+      case 'max': width = maxLineWidth; break;
+    }
+
+    const sideFill = Math.max(1, 70 - func.name.length - sett.indent - 2);
+
+
+
+    // let commentLineText = 
+    //       `${' '.repeat(sett.indent)}${lang.lineComment} ${
+    //         sett.fillStr.repeat(256).slice(0, leftFill)} ${func.name} ${sett.fillStr.repeat(10)}`;
 
     const start = new vscode.Position(firstOldBlankLineNum, 0);
     const end   = new vscode.Position(funcLineStart,        0);
