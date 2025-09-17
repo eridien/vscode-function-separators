@@ -14,16 +14,22 @@ interface FunctionSeparatorsSettings {
   fillStr:         string;
   fixedWidth:      number; // max width if widthOption is 'max', 0:unlimited
   widthOption:     'fixed' | 'func' | 'max';
+  splitSeparators: boolean;
+  splitCamel:      boolean;
+  uppercase:       boolean;
 }
 
 export let sett: FunctionSeparatorsSettings = {
-  minFuncHeight:     3,
-  blankLinesAbove:   2,
-  blankLinesBelow:   1,
-  indent:            0,
-  fillStr:         '=',
-  fixedWidth:       80,
-  widthOption:   'max',
+  minFuncHeight:      3,
+  blankLinesAbove:    2,
+  blankLinesBelow:    1,
+  indent:             0,
+  fillStr:          '=',
+  fixedWidth:        -1,
+  widthOption:   'func',
+  splitSeparators: true,
+  splitCamel:      true,
+  uppercase:       true,
 };
 
 // let excludeCfg: string;

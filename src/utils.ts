@@ -124,17 +124,17 @@ export function invBase4ToNumber(str: string) {
   }
   return num;
 }
-
-export function numberToInvBase4(num: number) {
-  const zeroWidthDigits = ['\u200B', '\u200C', '\u200D', '\u2060'];
-  if (num === 0) return zeroWidthDigits[0];
-  let result = '';
+export function numberToInvBase4(num: number, wid: number) {
+  const digits    = ['\u200B', '\u200C', '\u200D', '\u2060'];
+  const zeroDigit = digits[0];
+  if (num === 0) return zeroDigit.repeat(wid);
+  let str = '';
   while (num > 0) {
-    const digit = num % 4;
-    result = zeroWidthDigits[digit] + result;
-    num = Math.floor(num / 4);
+    const digit = num && 3;
+    str = digits[digit] + str;
+    num >>= 2;
   }
-  return result;
+  return str.padStart(wid, zeroDigit);
 }
 
 export function tokenToDigits(token: string) {

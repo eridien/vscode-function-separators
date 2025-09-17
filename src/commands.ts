@@ -2,8 +2,10 @@ import * as vscode from 'vscode';
 import * as parse  from './parse';
 import * as langs  from './languages';
 import {sett}      from './settings';
-import { getLog }  from './utils';
-const { log, start, end } = getLog('cmds');
+import * as utils  from './utils';
+const { log, start, end } = utils.getLog('cmds');
+
+const NUM_INVIS_DIGITS = 5; // max 4^5 = 1024
 
 export async function insertComments() {
   const editor = vscode.window.activeTextEditor;  
@@ -41,45 +43,68 @@ export async function insertComments() {
       if(lineText.length > 0) break;
     }
     const firstOldBlankLineNum = lineNum + 1;
+    const numOldBlankLines     = funcLineStart - firstOldBlankLineNum;
     const commentLineNum       = funcLineStart - sett.blankLinesBelow - 1;
     log(`Inserting ${func.name} comment at line ${
                      commentLineNum+1} for func line ${funcLineStart+1}`);
+    const funcLineText = doc.lineAt(funcLineStart).text;
+    const funcStartCol = funcLineText.search(/\S/);
+    let adjName        = func.name;
+    if(sett.splitCamel)
+      adjName = adjName.replace(/([a-z])([A-Z])/g,      "$1 $2")
+                       .replace(/([A-Z])([A-Z][a-z])/g, "$1 $2");
+    if(sett.splitSeparators) adjName = adjName.replace(/[\._]/g, ' ');
+    if(sett.uppercase) adjName = adjName.toUpperCase();
 
-    const maxDocWidth  = Math.max(...(doc.getText().split(/\r?\n/)
-                                      .map(line => line.length)));
-    const maxLineWidth = sett.fixedWidth == 0 ? maxDocWidth :
-                         Math.min(maxDocWidth, sett.fixedWidth);
-    let indent = sett.indent;
-    let width;
+    /*
+      iiiiSSvvvvv-llll-name-rrrr             (lineWidth)
+      SSvvvvv-llll-name-rrrr                 (commWidth)
+      SSvvvvv--name-                         (bodyWidth)
+      -       space                          (1)
+      iiii:   indent spaces                  (indentWidth)
+      SS:     line comment symbol, // or #   (symbolWidth)
+      vvvvv:  invisible old blank line count (NUM_INVIS_DIGITS)
+      llll:   left fill string               (leftFillWidth)
+      name:   adjusted name                  (adjName.length)
+      rrrr:   right fill string              (rightFillWidth)
+    */
+    const indentWidth = sett.indent < 0 ? funcStartCol : sett.indent;
+    const symbolWidth = lang.lineComment.length;
+    const bodyWidth   = symbolWidth + NUM_INVIS_DIGITS + adjName.length + 3;
+    let commWidth;
     switch(sett.widthOption) {  
-      case 'fixed': width = sett.fixedWidth; break;
-      case 'func': {
-        const funcLineText = doc.lineAt(funcLineStart).text;
-        const funcStartCol = funcLineText.search(/\S/);
-        const funcEndCol   = funcLineText.trimEnd().length;
-        if(sett.indent >= 0) indent = sett.indent; else indent = funcStartCol;
-        width  = funcEndCol - funcStartCol; 
+      case 'fixed': 
+        commWidth = sett.fixedWidth; 
+        break;
+      case 'func':  
+        commWidth = funcLineText.trimEnd().length - funcStartCol; 
+        break;
+      case 'max': {
+        const maxDocWidth  = Math.max(...(doc.getText().split(/\r?\n/)
+                                             .map(line => line.length)));
+        let lineEndCol = maxDocWidth;
+        if (sett.fixedWidth >= 0)
+          lineEndCol = Math.min(maxDocWidth, indentWidth + sett.fixedWidth);
+        commWidth = lineEndCol - indentWidth;
         break;
       }
-      case 'max': width = maxLineWidth; break;
     }
-
-    const sideFill = Math.max(1, 70 - func.name.length - sett.indent - 2);
-
-
-
-    // let commentLineText = 
-    //       `${' '.repeat(sett.indent)}${lang.lineComment} ${
-    //         sett.fillStr.repeat(256).slice(0, leftFill)} ${func.name} ${sett.fillStr.repeat(10)}`;
-
+    const allFillWidth   = Math.max(commWidth - bodyWidth, 0);
+    const leftFillWidth  = Math.floor(allFillWidth / 2);
+    const rightFillWidth = allFillWidth - leftFillWidth;
+    const maxFillStr = sett.fillStr.repeat(1024);
+    let commentLineText = `${' '.repeat(indentWidth)}${lang.lineComment}${
+        utils.numberToInvBase4(numOldBlankLines, NUM_INVIS_DIGITS)} ${
+        maxFillStr.slice(0, leftFillWidth)} ${adjName} ${
+        maxFillStr.slice(0, rightFillWidth)}`;
     const start = new vscode.Position(firstOldBlankLineNum, 0);
     const end   = new vscode.Position(funcLineStart,        0);
     const range = new vscode.Range(start, end);
     const eol   = doc.eol === vscode.EndOfLine.LF ? "\n" : "\r\n";
-    let commentText = eol.repeat(sett.blankLinesAbove) +
-                      commentLineText                  + 
-                      eol.repeat(sett.blankLinesBelow+1);
-    await editor.edit(edit => edit.replace(range, commentText));
+    let newText = eol.repeat(sett.blankLinesAbove) +
+                  commentLineText                  + 
+                  eol.repeat(sett.blankLinesBelow + 1);
+    await editor.edit(edit => edit.replace(range, newText));
   }
 };
 

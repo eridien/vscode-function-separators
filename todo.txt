@@ -1,5 +1,6 @@
 
 todo ...
-  support arrow function
   more languages
   limit actions to selection
+  handle nested
+  func width narrow by invis width
