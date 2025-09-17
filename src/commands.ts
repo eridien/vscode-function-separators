@@ -1,8 +1,8 @@
-import * as vscode           from 'vscode';
-import * as parse            from './parse';
-import {extensionsSupported} from './languages';
-import {sett}                from './settings';
-import { getLog }            from './utils';
+import * as vscode from 'vscode';
+import * as parse  from './parse';
+import * as lang   from './languages';
+import {sett}      from './settings';
+import { getLog }  from './utils';
 const { log, start, end } = getLog('cmds');
 
 export async function insertComments() {
@@ -11,8 +11,8 @@ export async function insertComments() {
   const doc      = editor.document;
   const fileName = doc.fileName.toLowerCase();
   const sfx      = fileName.slice(fileName.lastIndexOf('.'));
-  if (!extensionsSupported.has(sfx)) {
-    log('info', `Function Separators: Language not supported: ${sfx}`);
+  if (!lang.extensionsSupported.has(sfx)) {
+    log('info', `Function Separators: ${sfx} language not supported`);
     return;
   }
   await removeComments();
@@ -26,6 +26,15 @@ export async function insertComments() {
     if(funcLineEnd < (funcLineStart + sett.minFuncHeight)) continue;
     log(`checking ${func.name} for comment at line ${funcLineStart+1}`);
     const prevLineText = doc.lineAt(funcLineStart-1).text;
+    function escapeRegex(str: unknown): string {
+      return String(str).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    }
+    const lineComment = escapeRegex(lang.langs.lineComment);
+    const lineCommentRegex = new RegExp(String.raw`^\s*${lineComment}`);
+    const openComment = escapeRegex(lang.langs.openComment);
+    const openCommentRegex = new RegExp(String.raw`^(?=.*\\\*)(?!.*${openComment}).*`);
+    const closeComment = escapeRegex(lang.langs.closeComment);
+    const closeCommentRegex = new RegExp(String.raw`^\s*${closeComment}`);
     if(/^\s*\/\//               .test(prevLineText) || // has // comment
        /^(?=.*\\\*)(?!.*\*\/).*/.test(prevLineText) || // has /* comment
        /^(?!.*\/\*).*?\*\/.*/   .test(prevLineText))   // has */ comment
@@ -36,13 +45,20 @@ export async function insertComments() {
       if(lineText.length > 0) break;
     }
     const firstOldBlankLineNum = lineNum + 1;
-    const numOldBlankLines     = funcLineStart - firstOldBlankLineNum;
     const commentLineNum       = funcLineStart - sett.blankLinesBelow - 1;
     log(`Inserting ${func.name} comment at line ${
                      commentLineNum+1} for func at line ${funcLineStart+1}`);
-    const topBlankLine = commentLineNum - sett.blankLinesAbove;
 
-    
+    let commentLineText = `// === ${func.name} ===`;
+
+    const start = new vscode.Position(firstOldBlankLineNum, 0);
+    const end   = new vscode.Position(funcLineStart,        0);
+    const range = new vscode.Range(start, end);
+    const eol   = doc.eol === vscode.EndOfLine.LF ? "\n" : "\r\n";
+    let commentText = eol.repeat(sett.blankLinesAbove) +
+                      commentLineText                  + 
+                      eol.repeat(sett.blankLinesBelow+1);
+    await editor.edit(edit => edit.replace(range, commentText));
   }
 };
 

@@ -1,7 +1,10 @@
 
 type LangConfig = {
-  sExpr:    string;
-  suffixes: Set<string>;
+  sExpr:         string;
+  suffixes:  Set<string>;
+  lineComment:   string;
+  openComment?:  string;
+  closeComment?: string;
 };
 
 export type Langs = {
@@ -18,44 +21,51 @@ export const langs: Langs = {
       (assignment_expression (identifier)        @name (arrow_function))
       (assignment_expression (member_expression) @name (arrow_function))
     ] @body`,
-    suffixes: new Set(['.js', '.ts', '.tsx', '.jsx'])
+    suffixes: new Set(['.js', '.ts', '.tsx', '.jsx']),
+    lineComment: '//'
   },
 
 ///////////////////////////// python ///////////////////////////
   python: {
     sExpr: `(function_definition name: (identifier) @name ) @body`,
-    suffixes: new Set(['.py'])
+    suffixes: new Set(['.py']),
+    lineComment: '#'
   },
 
 ///////////////////////////// cpp ///////////////////////////
   cpp: {
     sExpr: `(function_definition 
               (function_declarator (identifier) @name)) @body`,
-    suffixes: new Set(['.c','.cpp'])
+    suffixes: new Set(['.c','.cpp']),
+    lineComment: '//'
   },
 
 ///////////////////////////// java ///////////////////////////
   java: {
     sExpr: `(method_declaration (identifier) @name )  @body`,
-    suffixes: new Set(['.java'])
+    suffixes: new Set(['.java']),
+    lineComment: '//'
   },
 
 ///////////////////////////// c-sharp ///////////////////////////
   "c-sharp": {
     sExpr: `(method_declaration name: (identifier) @name)  @body`,
-    suffixes: new Set(['.cs'])
+    suffixes: new Set(['.cs']),
+    lineComment: '//'
   },
 
 ///////////////////////////// go ///////////////////////////
   go: {
     sExpr: `(function_declaration name: (identifier) @name) @body`,
-    suffixes: new Set(['.go'])
+    suffixes: new Set(['.go']),
+    lineComment: '//'
   },
 
 ///////////////////////////// rust ///////////////////////////
   rust: {
     sExpr: `(function_item (identifier) @name) @body`,
-    suffixes: new Set(['.rs'])
+    suffixes: new Set(['.rs']),
+    lineComment: '//'
   },
 };
 
