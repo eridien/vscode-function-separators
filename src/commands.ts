@@ -1,6 +1,6 @@
 import * as vscode from 'vscode';
 import * as parse  from './parse';
-import * as lang   from './languages';
+import * as langs  from './languages';
 import {sett}      from './settings';
 import { getLog }  from './utils';
 const { log, start, end } = getLog('cmds');
@@ -11,7 +11,7 @@ export async function insertComments() {
   const doc      = editor.document;
   const fileName = doc.fileName.toLowerCase();
   const sfx      = fileName.slice(fileName.lastIndexOf('.'));
-  if (!lang.extensionsSupported.has(sfx)) {
+  if (!langs.extensionsSupported.has(sfx)) {
     log('info', `Function Separators: ${sfx} language not supported`);
     return;
   }
@@ -24,20 +24,16 @@ export async function insertComments() {
     const posEnd      = doc.positionAt(func.endBody);
     const funcLineEnd = posEnd.line;
     if(funcLineEnd < (funcLineStart + sett.minFuncHeight)) continue;
-    log(`checking ${func.name} for comment at line ${funcLineStart+1}`);
+    log(`checking ${func.name} for comment before func line ${
+                    funcLineStart+1}`);
     const prevLineText = doc.lineAt(funcLineStart-1).text;
-    function escapeRegex(str: unknown): string {
-      return String(str).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-    }
-    const lineComment = escapeRegex(lang.langs.lineComment);
+    const [_, lang]    = langs.getLangByExt(sfx);
+    const lineComment  = String(lang.lineComment)
+                         .replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
     const lineCommentRegex = new RegExp(String.raw`^\s*${lineComment}`);
-    const openComment = escapeRegex(lang.langs.openComment);
-    const openCommentRegex = new RegExp(String.raw`^(?=.*\\\*)(?!.*${openComment}).*`);
-    const closeComment = escapeRegex(lang.langs.closeComment);
-    const closeCommentRegex = new RegExp(String.raw`^\s*${closeComment}`);
-    if(/^\s*\/\//               .test(prevLineText) || // has // comment
-       /^(?=.*\\\*)(?!.*\*\/).*/.test(prevLineText) || // has /* comment
-       /^(?!.*\/\*).*?\*\/.*/   .test(prevLineText))   // has */ comment
+    if(lineCommentRegex.test(prevLineText)             || // has //
+       prevLineText.includes(String(lang.openComment)) || // has /*
+       prevLineText.includes(String(lang.closeComment)))  // has */
       continue;
     let lineNum;
     for(lineNum = funcLineStart - 1; lineNum >= 0; lineNum--) {
@@ -47,7 +43,7 @@ export async function insertComments() {
     const firstOldBlankLineNum = lineNum + 1;
     const commentLineNum       = funcLineStart - sett.blankLinesBelow - 1;
     log(`Inserting ${func.name} comment at line ${
-                     commentLineNum+1} for func at line ${funcLineStart+1}`);
+                     commentLineNum+1} for func line ${funcLineStart+1}`);
 
     let commentLineText = `// === ${func.name} ===`;
 

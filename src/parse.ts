@@ -1,9 +1,9 @@
-import * as vscode                         from 'vscode';
-import path                                from 'path';
-import {langs}                             from './languages';
+import * as vscode                 from 'vscode';
+import path                        from 'path';
+import * as langs                  from './languages';
 import { Tree, QueryMatch,
-         Parser, Language, Query }         from 'web-tree-sitter';
-import * as utils                          from './utils';
+         Parser, Language, Query } from 'web-tree-sitter';
+import * as utils                  from './utils';
 const {log, start, end} = utils.getLog('pars');
 
 const PARSE_DUMP_TYPE: string = '';  
@@ -71,17 +71,6 @@ function parseDebug(rootNode: SyntaxNode) {
   });
 }
 
-export function getLangByFsPath(fsPath: string): string | null {
-  const ext = path.extname(fsPath);
-  for (const [lang, {suffixes}] of Object.entries(langs) as any) {
-    if(suffixes.has(ext)) return lang;
-  }
-  log('infoerr', `Function Explorer: Language for ${ext} not supported.`);
-  return null;
-}
-
-let typeCounts: Map<string, number> = new Map();
-
 function idNodeName(node: SyntaxNode, 
                     symbolsByType: Map<string, string> | null = null): string {
   if(!node.isNamed) return '';
@@ -92,40 +81,31 @@ function idNodeName(node: SyntaxNode,
   name = nameNode ? nameNode.text : '';
   return name + "\x02" + symbol + grammarType + "\x01";
 }
-function getParentFuncId(node: SyntaxNode, 
-                         symbolsByType: Map<string, string>): string {
-  let parentFuncId = '';
-  let parent = node.parent;
-  while (parent) {
-    parentFuncId += idNodeName(parent, symbolsByType);
-    parent = parent.parent;
-  }
-  return parentFuncId;
-}
 
 let lastParseErrFsPath = '';
 
 export async function parseCode(doc: vscode.TextDocument, 
+                                code = doc.getText(),
                                 retrying = false): Promise<FuncData[]> {
   start('parseCode', true);
   const fsPath = doc.uri.fsPath;
-  const code   = doc.getText();
-  const lang   = getLangByFsPath(fsPath);
-  if(lang === null) return [];
+  const ext    = path.extname(fsPath);
+  const [lang, {sExpr}] = langs.getLangByExt(ext);
+  if(lang === null) {
+    log('infoerr', `Function Explorer: Language ${ext} not supported.`);
+    return [];
+  }
 
   const language = await getLangFromWasm(lang);
   if (!language) return [];
 
-  const {sExpr} = langs[lang];
   const parser  = new Parser();
   parser.setLanguage(language);
   let tree: Tree | null;
   try {
-    start('parser.parse', true);
     tree = parser.parse(code) as Tree | null;
-    end('parser.parse', false);
     if(!tree) {
-      log('err', 'parser.parse returned null tree for', path.basename(fsPath));
+      log('parser.parse returned null tree for', path.basename(fsPath));
       return [];
     }
   }
@@ -135,16 +115,16 @@ export async function parseCode(doc: vscode.TextDocument,
       return [];
     }
     const middle = utils.findMiddleOfText(code);
-    if(lastParseErrFsPath !== fsPath)
+    if(lastParseErrFsPath !== fsPath) // just to avoid a lot of log lines
       log('err', 'parse exception, retrying in two halves split at', middle,
                                  (e as any).message, path.basename(fsPath));
     lastParseErrFsPath = fsPath;
     const firstHalf = code.slice(0, middle);
-    const res1 = await parseCode(firstHalf,  fsPath, doc);
+    const res1 = await parseCode(doc, firstHalf);
     if(!res1) return [];
 
     const secondHalf = code.slice(middle);
-    const res2 = await parseCode(secondHalf, fsPath, doc);
+    const res2 = await parseCode(doc, secondHalf);
     if (!res2) return [];
 
     for (const node of res2) {

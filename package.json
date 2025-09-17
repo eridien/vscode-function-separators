@@ -42,7 +42,7 @@
         {
           "command": "vscode-function-separators.removeComments",
           "when": "editorTextFocus",
-          "group": "2_modification"
+          "group": "1_modification"
         }
       ]
     }

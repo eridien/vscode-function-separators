@@ -11,7 +11,7 @@ export type Langs = {
   [lang: string]: LangConfig;
 };
 
-export const langs: Langs = {
+const langs: Langs = {
 
 ///////////////////////////// typescript ///////////////////////////
   typescript: {
@@ -22,7 +22,9 @@ export const langs: Langs = {
       (assignment_expression (member_expression) @name (arrow_function))
     ] @body`,
     suffixes: new Set(['.js', '.ts', '.tsx', '.jsx']),
-    lineComment: '//'
+    lineComment:  '//',
+    openComment:  '/*',
+    closeComment: '*/',
   },
 
 ///////////////////////////// python ///////////////////////////
@@ -68,6 +70,14 @@ export const langs: Langs = {
     lineComment: '//'
   },
 };
+
+export function getLangByExt(ext: string) {
+  for (const entry of Object.entries(langs) as any) {
+    const [_, {suffixes}] = entry;
+    if(suffixes.has(ext)) return entry;
+  }
+  return [null, null];
+}
 
 export const extensionsSupported = new Set<string>();
 for (const [_, {suffixes}] of Object.entries(langs) as any) {
