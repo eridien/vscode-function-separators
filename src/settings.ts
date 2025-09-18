@@ -21,12 +21,12 @@ interface FunctionSeparatorsSettings {
 export let sett: FunctionSeparatorsSettings = {
   minFuncHeight:      3,
   includeNested:  false,
-  blankLinesAbove:    2,
+  blankLinesAbove:    0,
   blankLinesBelow:    1,
   fillStr:          '*',
-  indent:             2, // -1: match func indent
-  width:              1, // -1: widest line in file
-  splitName:       true,
+  indent:             0, // -1: match func indent
+  width:             -1, // -1: widest line in file
+  splitName:      false,
   case:     'Uppercase',
 };
 

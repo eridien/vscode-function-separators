@@ -1,7 +1,9 @@
 bugs ...
   fcall width wrong:  indent:2, fixedWidth:20, widthOption:'max',
+  remove slow 
 
 todo ...
+  add comment if empty selection in func line
   more languages
   handle nested
   remove comment when either comment line or func line in selection
