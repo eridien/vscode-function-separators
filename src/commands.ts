@@ -68,9 +68,6 @@ export async function insertComments() {
     }
     const firstOldBlankLineNum = lineNum + 1;
     const numOldBlankLines     = funcLineStart - firstOldBlankLineNum;
-    const commentLineNum       = funcLineStart - sett.blankLinesBelow - 1;
-    log(`Inserting ${func.name} comment at line ${
-                     commentLineNum+1} for func line ${funcLineStart+1}`);
     const funcLineText = doc.lineAt(funcLineStart).text;
     const funcStartCol = funcLineText.search(/\S/);
     let adjName        = func.name;
@@ -173,9 +170,13 @@ export async function removeComments() {
   }
   const eol = (doc.eol === vscode.EndOfLine.LF) ? "\n" : "\r\n";
   await editor.edit(editBuilder => {
+    let lastRangeEndLine = -1;
     for (const rangeToDelete of rangesToDelete) {
+      const range = rangeToDelete[0];
+      if(range.start.line <= lastRangeEndLine) continue;
+      lastRangeEndLine = range.end.line;
       const blankLines = eol.repeat(rangeToDelete[1]);
-      editBuilder.replace(rangeToDelete[0], blankLines);
+      editBuilder.replace(range, blankLines);
     }
   }, { undoStopBefore: true, undoStopAfter: true });
 }

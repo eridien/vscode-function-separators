@@ -114,7 +114,7 @@ export function numberToInvBase4(num: number, wid: number) {
   if (num === 0) return zeroDigit.repeat(wid);
   let str = '';
   while (num > 0) {
-    const digit = num && 3;
+    const digit = num & 3;
     str = digits[digit] + str;
     num >>= 2;
   }
