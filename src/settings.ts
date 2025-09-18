@@ -7,29 +7,27 @@ import * as utils            from './utils';
 const {log, start, end} = utils.getLog('sett');
 
 interface FunctionSeparatorsSettings {
-  minFuncHeight:   number;
-  blankLinesAbove: number;
-  blankLinesBelow: number;
-  fillStr:         string;
-  indent:          number; // -1: match func indent
-  fixedWidth:      number; // max width if widthOption is 'max', 0:unlimited
-  widthOption:     'fixed' | 'func' | 'max';
-  splitSeparators: boolean;
-  splitCamel:      boolean;
-  uppercase:       boolean;
+  minFuncHeight:    number;
+  includeNested:   boolean;
+  blankLinesAbove:  number;
+  blankLinesBelow:  number;
+  fillStr:          string;
+  indent:           number; // -1: match func indent
+  width:            number; // -1: widest line in file
+  splitName:       boolean;
+  case:           'Original' | 'Capitalize' | 'Uppercase';
 }
 
 export let sett: FunctionSeparatorsSettings = {
   minFuncHeight:      3,
+  includeNested:  false,
   blankLinesAbove:    2,
   blankLinesBelow:    1,
-  fillStr:          '-',
-  indent:             2,
-  fixedWidth:        20,
-  widthOption:  'max',
-  splitSeparators: true,
-  splitCamel:      true,
-  uppercase:       true,
+  fillStr:          '*',
+  indent:             2, // -1: match func indent
+  width:              1, // -1: widest line in file
+  splitName:       true,
+  case:     'Uppercase',
 };
 
 // let excludeCfg: string;

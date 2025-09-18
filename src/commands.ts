@@ -36,9 +36,13 @@ export async function insertComments() {
   const fileName = doc.fileName.toLowerCase();
   const sfx      = fileName.slice(fileName.lastIndexOf('.'));
   if (!langs.extensionsSupported.has(sfx)) {
-    log('info', `Function Separators: ${sfx} language not supported`);
+    log('infoerr', `Function Separators: ${sfx} language not supported`);
     return;
   }
+  const [_, lang]   = langs.getLangByExt(sfx);
+  const lineComment = String(lang.lineComment)
+                            .replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const lineCommentRegex = new RegExp(String.raw`^\s*${lineComment}`);
   await removeComments();
   type Edit = { range: vscode.Range; text: string };
   const edits: Edit[] = [];
@@ -50,13 +54,7 @@ export async function insertComments() {
     const posEnd      = doc.positionAt(func.endBody);
     const funcLineEnd = posEnd.line;
     if(funcLineEnd < (funcLineStart + sett.minFuncHeight)) continue;
-    log(`checking ${func.name} for comment before func line ${
-                    funcLineStart+1}`);
     const prevLineText = doc.lineAt(funcLineStart-1).text;
-    const [_, lang]    = langs.getLangByExt(sfx);
-    const lineComment  = String(lang.lineComment)
-                         .replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-    const lineCommentRegex = new RegExp(String.raw`^\s*${lineComment}`);
     if(lineCommentRegex.test(prevLineText)             || // has //
        prevLineText.includes(String(lang.openComment)) || // has /*
        prevLineText.includes(String(lang.closeComment)))  // has */
@@ -70,52 +68,33 @@ export async function insertComments() {
     const numOldBlankLines     = funcLineStart - firstOldBlankLineNum;
     const funcLineText = doc.lineAt(funcLineStart).text;
     const funcStartCol = funcLineText.search(/\S/);
-    let adjName        = func.name;
-    if(sett.splitCamel)
+    let adjName = func.name;
+    if(sett.splitName) {
       adjName = adjName.replace(/([a-z])([A-Z])/g,      "$1 $2")
-                       .replace(/([A-Z])([A-Z][a-z])/g, "$1 $2");
-    if(sett.splitSeparators) adjName = adjName.replace(/[\._]/g, ' ');
-    if(sett.uppercase) adjName = adjName.toUpperCase();
-
-    /*
-      iiiiSSvvvvv-llll-adjname-rrrr          (lineWidth)
-      SSvvvvv-llll-adjname-rrrr              (commWidth)
-      SSvvvvv--adjname-                      (bodyWidth)
-      -       space                          (1)
-      iiii:   indent spaces                  (indentWidth)
-      SS:     line comment symbol, // or #   (symbolWidth)
-      vvvvv:  invisible old blank line count (NUM_INVIS_DIGITS)
-      llll:   left fill string               (leftFillWidth)
-      name:   adjusted name                  (adjName.length)
-      rrrr:   right fill string              (rightFillWidth)
-    */
-    const indentWidth = sett.indent < 0 ? funcStartCol : sett.indent;
-    const symbolWidth = lang.lineComment.length;
-    const bodyWidth   = symbolWidth + NUM_INVIS_DIGITS + adjName.length + 3;
-    let commWidth;
-    switch(sett.widthOption) {  
-      case 'fixed': 
-        commWidth = NUM_INVIS_DIGITS + sett.fixedWidth; 
-        break;
-      case 'func':  
-        commWidth = funcLineText.trimEnd().length - funcStartCol + NUM_INVIS_DIGITS; 
-        break;
-      case 'max': {
-        const maxDocWidth  = Math.max(...(doc.getText().split(/\r?\n/)
-                                             .map(line => line.length)));
-        let lineEndCol = maxDocWidth;
-        if (sett.fixedWidth > 0)
-          lineEndCol = Math.min(maxDocWidth, indentWidth + sett.fixedWidth);
-        commWidth = lineEndCol - indentWidth;
-        break;
-      }
+                       .replace(/([A-Z])([A-Z][a-z])/g, "$1 $2")
+                       .replace(/[\._]/g, ' ');
     }
-    const allFillWidth   = Math.max(commWidth - bodyWidth, 0);
+    if(sett.case == 'Uppercase') adjName = adjName.toUpperCase();
+    else if(sett.case == 'Capitalize') {
+      const words = adjName.split(' ');
+      let capWords = [];
+      for(const word of words)
+        capWords.push(word.charAt(0).toUpperCase() + 
+                      word.slice(1) .toLowerCase());
+      adjName = capWords.join(' ');
+    }
+    const startCol    = sett.indent < 0 ? funcStartCol : sett.indent;
+    const symbolWidth = lang.lineComment.length;
+    const bodyWidth   = symbolWidth + 1 + adjName.length + 1;
+    const endCol      = (sett.width > 0) ? sett.width :
+                          Math.max(...(doc.getText().split(/\r?\n/)
+                                          .map(line => line.length)));
+    const allFillWidth   = Math.max(endCol - startCol - bodyWidth, 0);
     const leftFillWidth  = Math.floor(allFillWidth / 2);
     const rightFillWidth = allFillWidth - leftFillWidth;
-    const maxFillStr = sett.fillStr.repeat(1024);
-    let commentLineText = `${' '.repeat(indentWidth)}${lang.lineComment}${
-        utils.numberToInvBase4(numOldBlankLines, NUM_INVIS_DIGITS)} ${
+    const maxFillStr     = sett.fillStr.repeat(1024);
+    let commentLineText  = `${' '.repeat(startCol)}${lang.lineComment}${
+        utils.numberToInvBase4(numOldBlankLines, NUM_INVIS_DIGITS)}${
         maxFillStr.slice(0, leftFillWidth)} ${adjName} ${
         maxFillStr.slice(0, rightFillWidth)}`;
     const start = new vscode.Position(firstOldBlankLineNum, 0);

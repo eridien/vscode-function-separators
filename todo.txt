@@ -3,8 +3,8 @@ bugs ...
 
 todo ...
   more languages
-  limit actions to selection
   handle nested
+  remove comment when either comment line or func line in selection
 
 testing ...
 
@@ -19,9 +19,8 @@ testing ...
   settings ...
 
     position
-      widthOption: fixed func func max
-      indent:      0
-      fixedWidth:  0
+      indent: 0 2 0
+      width:  0 0 2
 
     name appearance  ThisIs_AName.forsure
       splitSeparators: off  off  on   on
