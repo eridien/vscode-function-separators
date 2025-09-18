@@ -110,6 +110,9 @@ export async function insertComments() {
   }, { undoStopBefore: true, undoStopAfter: true });
 };
 
+
+
+
 export async function removeComments() {
   const editor = vscode.window.activeTextEditor;  
   if(!editor) return;
@@ -159,6 +162,9 @@ export async function removeComments() {
     }
   }, { undoStopBefore: true, undoStopAfter: true });
 }
+
+
+
 
 export async function jumpPrevNext(next = true, jumpNextEditor = false) {
   let editor = vscode.window.activeTextEditor;  
@@ -211,11 +217,13 @@ export async function jumpPrevNext(next = true, jumpNextEditor = false) {
     if(!jumpNextEditor) await jumpPrevNext(next, true);
     return;
   }
-  let newCommentLineNum     = -1;
-  let nextMatchIsNewComment = jumpNextEditor;
+  let match;
+  let newCommentLineNum = -1;
+  utils.invRegEx.lastIndex = 0;
+  const onCommentLine   = utils.invRegEx.test(firstNonBlankText);
+  let nextMatchIsNewComment = (!onCommentLine || jumpNextEditor);
   utils.invRegEx.lastIndex  = 
              doc.offsetAt(new vscode.Position(firstNonBlankLine, 0));
-  let match;
   while ((match = utils.invRegEx.exec(docText)) !== null) {
     const tokenStr = match[0];
     const oldBlankLineCount = utils.invBase4ToNumber(tokenStr);
