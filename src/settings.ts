@@ -16,18 +16,20 @@ interface FunctionSeparatorsSettings {
   width:            number; // -1: widest line in file
   splitName:       boolean;
   case:           'Original' | 'Capitalize' | 'Uppercase';
+  fileWrap:        boolean;
 }
 
 export let sett: FunctionSeparatorsSettings = {
   minFuncHeight:      3,
   includeNested:  false,
-  blankLinesAbove:    0,
+  blankLinesAbove:    1,
   blankLinesBelow:    1,
   fillStr:          '*',
   indent:             0, // -1: match func indent
   width:             -1, // -1: widest line in file
   splitName:      false,
   case:     'Uppercase',
+  fileWrap:        true,
 };
 
 // let excludeCfg: string;

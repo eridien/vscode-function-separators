@@ -164,6 +164,4 @@ export function tokenToStr(token: string) {
               .replaceAll('\u2060', '~3');
 }
 
-export const tokenRegEx  = new RegExp("[\\u200B\\u200C\\u200D\\u2060]+");
-
-export const tokenRegExG = new RegExp("[\\u200B\\u200C\\u200D\\u2060]+", 'g');
+export const invRegEx = new RegExp("[\\u200B\\u200C\\u200D\\u2060]+", 'g');

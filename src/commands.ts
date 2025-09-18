@@ -118,8 +118,8 @@ export async function removeComments() {
   const docText = doc.getText();
   const rangesToDelete: [vscode.Range, number][] = [];
   let match;
-  utils.tokenRegExG.lastIndex = 0;
-  while ((match = utils.tokenRegExG.exec(docText)) !== null) {
+  utils.invRegEx.lastIndex = 0;
+  while ((match = utils.invRegEx.exec(docText)) !== null) {
     const commentLineNum = doc.positionAt(match.index).line;
     const tokenStr = match[0];
     const oldBlankLineCount = utils.invBase4ToNumber(tokenStr);
@@ -160,10 +160,87 @@ export async function removeComments() {
   }, { undoStopBefore: true, undoStopAfter: true });
 }
 
-export async function jumpNext() {
-
+export async function jumpPrevNext(next = true, jumpNextEditor = false) {
+  let editor = vscode.window.activeTextEditor;  
+  if(!editor) return;
+  if(sett.fileWrap && jumpNextEditor) {
+    const editors = vscode.window.visibleTextEditors;
+    let haveNextEditor = false;
+    let editorIdx = editors.findIndex(ed => ed === editor) + 1;
+    for (; editorIdx < editors.length; editorIdx++) {
+      const text = editors[editorIdx].document.getText();
+      if(utils.invRegEx.test(text)) {
+          haveNextEditor = true;
+          editor = editors[editorIdx];
+          break;
+      }
+    }
+    for (editorIdx = 0; 
+       !haveNextEditor && editorIdx < editors.length; editorIdx++) {
+      const nextEditor = editors[editorIdx];
+      const text       = nextEditor.document.getText();
+      if(nextEditor === editor || utils.invRegEx.test(text)) {
+        haveNextEditor = true;
+        editor = nextEditor;
+        break;
+      }
+    }
+    if(!haveNextEditor) return;
+  }
+  const doc     = editor.document;
+  const docText = doc.getText();
+  let lineNum = 0;
+  if(!jumpNextEditor) {
+    const firstRange = editor.visibleRanges[0];
+    if(!firstRange) { 
+      await jumpPrevNext(next, true); 
+      return; 
+    }
+    lineNum = firstRange.start.line;
+  }
+  let firstNonBlankLine = -1;
+  let firstNonBlankText = '';
+  for(; lineNum < doc.lineCount; lineNum++) {
+    const lineText = doc.lineAt(lineNum).text;
+    if(lineText.trim().length === 0) continue;
+    firstNonBlankLine = lineNum;
+    firstNonBlankText = lineText;
+    break;
+  }
+  if(firstNonBlankLine == -1) {
+    if(!jumpNextEditor) await jumpPrevNext(next, true);
+    return;
+  }
+  let newCommentLineNum     = -1;
+  let nextMatchIsNewComment = jumpNextEditor;
+  utils.invRegEx.lastIndex  = 
+             doc.offsetAt(new vscode.Position(firstNonBlankLine, 0));
+  let match;
+  while ((match = utils.invRegEx.exec(docText)) !== null) {
+    const tokenStr = match[0];
+    const oldBlankLineCount = utils.invBase4ToNumber(tokenStr);
+    if(tokenStr.length !== NUM_INVIS_DIGITS ||
+        oldBlankLineCount === null) {
+      log('err', `invalid oldBlankLineCount at line ${newCommentLineNum
+                }\nLine: ${utils.tokenToStr(doc.lineAt(newCommentLineNum).text)}`);
+      continue;
+    }
+    if (nextMatchIsNewComment) {
+      newCommentLineNum = doc.positionAt(match.index).line;
+      break;
+    }
+    nextMatchIsNewComment = true;
+  }
+  if(newCommentLineNum == -1) {
+    if(!jumpNextEditor) await jumpPrevNext(next, true);
+    return;
+  }
+  let topLineNumber = doc.lineAt(newCommentLineNum).range.start.line;
+  topLineNumber -= sett.blankLinesAbove;
+  topLineNumber  = Math.max(topLineNumber, 0);
+  const range = new vscode.Range(topLineNumber, 0, topLineNumber, 0);
+  editor.revealRange(range, vscode.TextEditorRevealType.AtTop);
 }
 
-export async function jumpPrev() {
-
-}
+export async function jumpPrev() { await jumpPrevNext(false); }
+export async function jumpNext() { await jumpPrevNext(true); }
