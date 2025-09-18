@@ -10,8 +10,8 @@ interface FunctionSeparatorsSettings {
   minFuncHeight:   number;
   blankLinesAbove: number;
   blankLinesBelow: number;
-  indent:          number; // -1: match func indent
   fillStr:         string;
+  indent:          number; // -1: match func indent
   fixedWidth:      number; // max width if widthOption is 'max', 0:unlimited
   widthOption:     'fixed' | 'func' | 'max';
   splitSeparators: boolean;
@@ -23,10 +23,10 @@ export let sett: FunctionSeparatorsSettings = {
   minFuncHeight:      3,
   blankLinesAbove:    2,
   blankLinesBelow:    1,
-  indent:             0,
-  fillStr:          '=',
-  fixedWidth:        -1,
-  widthOption:   'func',
+  fillStr:          '-',
+  indent:             2,
+  fixedWidth:        20,
+  widthOption:  'max',
   splitSeparators: true,
   splitCamel:      true,
   uppercase:       true,

@@ -1,6 +1,45 @@
+bugs ...
+  fcall width wrong:  indent:2, fixedWidth:20, widthOption:'max',
 
 todo ...
   more languages
   limit actions to selection
   handle nested
-  func width narrow by invis width
+
+testing ...
+
+  skip insert
+    comments line above
+      */               skip, end jsdoc
+      xxx // comment   don't skip, harmless
+        // comment     skip, already there
+    nested
+    selection
+
+  settings ...
+
+    position
+      widthOption: fixed func func max
+      indent:      0
+      fixedWidth:  0
+
+    name appearance  ThisIs_AName.forsure
+      splitSeparators: off  off  on   on
+      splitCamel:      off  on   off  on
+      uppercase:       on   off  off  off
+
+    minFuncHeight:   0  2  3
+
+    blankLinesAbove: 0
+    blankLinesBelow: 0
+
+    fillStr:  =  !@#$%  **
+      
+  remove
+    nested
+    selection
+    corrupt line
+      invis alone
+      wrong number vis
+
+  

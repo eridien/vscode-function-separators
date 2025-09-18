@@ -32,20 +32,32 @@
         "title": "Jump To Previous Function Separator Comment"
       }
     ],
-    "menus": {
-      "editor/context": [
-        {
-          "command": "vscode-function-separators.insertComments",
-          "when": "editorTextFocus",
-          "group": "1_modification"
-        },
-        {
-          "command": "vscode-function-separators.removeComments",
-          "when": "editorTextFocus",
-          "group": "1_modification"
-        }
-      ]
-    }
+    "keybindings": [
+      {
+        "command": "vscode-function-separators.insertComments",
+        "key": "ctrl+alt+shift+/",
+        "mac":  "cmd+alt+shift+/",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "vscode-function-separators.removeComments",
+        "key": "ctrl+alt+shift+'",
+        "mac":  "cmd+alt+shift+'",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "vscode-function-separators.jumpNext",
+        "key": "ctrl+alt+shift+.",
+        "mac":  "cmd+alt+shift+.",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "vscode-function-separators.jumpPrev",
+        "key": "ctrl+alt+shift+,",
+        "mac":  "cmd+alt+shift+,",
+        "when": "editorTextFocus"
+      }
+    ]
   },
   "scripts": {
     "build": "npm run compile",

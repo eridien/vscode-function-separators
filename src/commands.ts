@@ -7,10 +7,32 @@ const { log, start, end } = utils.getLog('cmds');
 
 const NUM_INVIS_DIGITS = 5; // max 4^5 = 1024
 
+const selLimits: [number, number][] = [];
+function setSelLimits (editor: vscode.TextEditor) {
+  selLimits.length = 0;
+  const selections = editor.selections;
+  for(const sel of selections) {
+    if(sel.isEmpty) continue;
+    const startLine = sel.start.line;
+    let   endLine   = sel.end.line;
+    if(sel.end.character === 0) endLine--;
+    selLimits.push([startLine, endLine]);
+  }
+}
+function inSelection(lineNum: number) {
+  if(selLimits.length === 0) return true;
+  for(const lim of selLimits) {
+    if(lineNum >= lim[0] && lineNum <= lim[1]) return true;
+  }
+  return false;
+}
+
 export async function insertComments() {
   const editor = vscode.window.activeTextEditor;  
   if(!editor) return;
+  setSelLimits(editor);
   const doc      = editor.document;
+  const eol      = doc.eol === vscode.EndOfLine.LF ? "\n" : "\r\n";
   const fileName = doc.fileName.toLowerCase();
   const sfx      = fileName.slice(fileName.lastIndexOf('.'));
   if (!langs.extensionsSupported.has(sfx)) {
@@ -18,11 +40,13 @@ export async function insertComments() {
     return;
   }
   await removeComments();
+  type Edit = { range: vscode.Range; text: string };
+  const edits: Edit[] = [];
   const funcs = await parse.parseCode(doc);
   for(const func of funcs) {
     const posStart      = doc.positionAt(func.startBody);
     const funcLineStart = posStart.line;
-    if(funcLineStart < 1) continue;
+    if(funcLineStart < 1 || !inSelection(funcLineStart)) continue;
     const posEnd      = doc.positionAt(func.endBody);
     const funcLineEnd = posEnd.line;
     if(funcLineEnd < (funcLineStart + sett.minFuncHeight)) continue;
@@ -57,9 +81,9 @@ export async function insertComments() {
     if(sett.uppercase) adjName = adjName.toUpperCase();
 
     /*
-      iiiiSSvvvvv-llll-name-rrrr             (lineWidth)
-      SSvvvvv-llll-name-rrrr                 (commWidth)
-      SSvvvvv--name-                         (bodyWidth)
+      iiiiSSvvvvv-llll-adjname-rrrr          (lineWidth)
+      SSvvvvv-llll-adjname-rrrr              (commWidth)
+      SSvvvvv--adjname-                      (bodyWidth)
       -       space                          (1)
       iiii:   indent spaces                  (indentWidth)
       SS:     line comment symbol, // or #   (symbolWidth)
@@ -74,16 +98,16 @@ export async function insertComments() {
     let commWidth;
     switch(sett.widthOption) {  
       case 'fixed': 
-        commWidth = sett.fixedWidth; 
+        commWidth = NUM_INVIS_DIGITS + sett.fixedWidth; 
         break;
       case 'func':  
-        commWidth = funcLineText.trimEnd().length - funcStartCol; 
+        commWidth = funcLineText.trimEnd().length - funcStartCol + NUM_INVIS_DIGITS; 
         break;
       case 'max': {
         const maxDocWidth  = Math.max(...(doc.getText().split(/\r?\n/)
                                              .map(line => line.length)));
         let lineEndCol = maxDocWidth;
-        if (sett.fixedWidth >= 0)
+        if (sett.fixedWidth > 0)
           lineEndCol = Math.min(maxDocWidth, indentWidth + sett.fixedWidth);
         commWidth = lineEndCol - indentWidth;
         break;
@@ -100,14 +124,19 @@ export async function insertComments() {
     const start = new vscode.Position(firstOldBlankLineNum, 0);
     const end   = new vscode.Position(funcLineStart,        0);
     const range = new vscode.Range(start, end);
-    const eol   = doc.eol === vscode.EndOfLine.LF ? "\n" : "\r\n";
     let newText = eol.repeat(sett.blankLinesAbove) +
                   commentLineText                  + 
                   eol.repeat(sett.blankLinesBelow + 1);
-    await editor.edit(edit => edit.replace(range, newText));
+    edits.push({ range, text: newText });
   }
+  await editor.edit(editBuilder => {
+    for (const e of edits) editBuilder.replace(e.range, e.text);
+  }, { undoStopBefore: true, undoStopAfter: true });
 };
 
+//​​​​⁠ ----------------------------- WS ONMESSAGE -----------------------------
+//​​​​⁠  WS ONMESSAGE 
+//  symbolWidth + NUM_INVIS_DIGITS + adjName.length + 3;
 export async function removeComments() {
 
 }
