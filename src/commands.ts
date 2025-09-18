@@ -134,11 +134,50 @@ export async function insertComments() {
   }, { undoStopBefore: true, undoStopAfter: true });
 };
 
-//​​​​⁠ ----------------------------- WS ONMESSAGE -----------------------------
-//​​​​⁠  WS ONMESSAGE 
-//  symbolWidth + NUM_INVIS_DIGITS + adjName.length + 3;
 export async function removeComments() {
-
+  const editor = vscode.window.activeTextEditor;  
+  if(!editor) return;
+  setSelLimits(editor);
+  const doc = editor.document;
+  const docText = doc.getText();
+  const rangesToDelete: [vscode.Range, number][] = [];
+  let match;
+  utils.tokenRegExG.lastIndex = 0;
+  while ((match = utils.tokenRegExG.exec(docText)) !== null) {
+    const commentLineNum = doc.positionAt(match.index).line;
+    const tokenStr = match[0];
+    const oldBlankLineCount = utils.invBase4ToNumber(tokenStr);
+    if(tokenStr.length !== NUM_INVIS_DIGITS ||
+       oldBlankLineCount === null) {
+      log('err', `invalid oldBlankLineCount at line ${commentLineNum
+               }\nLine: ${utils.tokenToStr(doc.lineAt(commentLineNum).text)}`);
+      rangesToDelete.push(
+         [new vscode.Range(commentLineNum, 0, commentLineNum + 1, 0), 0]);
+      continue;
+    }
+    if(!inSelection(commentLineNum)) continue;
+    let topBlankLine;
+    for(topBlankLine = commentLineNum-1;
+        doc.lineAt(topBlankLine).text.trim() === '';
+        topBlankLine--) {
+    }
+    topBlankLine++;
+    let botBlankLine;
+    for(botBlankLine = commentLineNum+1;
+        doc.lineAt(botBlankLine).text.trim() === '';
+        botBlankLine++) {
+    }
+    botBlankLine--;
+    rangesToDelete.push(
+      [new vscode.Range(topBlankLine, 0, botBlankLine+1, 0), oldBlankLineCount]);
+  }
+  const eol = (doc.eol === vscode.EndOfLine.LF) ? "\n" : "\r\n";
+  await editor.edit(editBuilder => {
+    for (const rangeToDelete of rangesToDelete) {
+      const blankLines = eol.repeat(rangeToDelete[1]);
+      editBuilder.replace(rangeToDelete[0], blankLines);
+    }
+  }, { undoStopBefore: true, undoStopAfter: true });
 }
 
 export async function jumpNext() {

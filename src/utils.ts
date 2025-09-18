@@ -108,22 +108,6 @@ export function findMiddleOfText(code: string): number {
   return closest;
 }
 
-export function invBase4ToNumber(str: string) {
-  const digitMap: Record<string, number> = {
-    '\u200B': 0, // Zero Width Space
-    '\u200C': 1, // Zero Width Non-Joiner
-    '\u200D': 2, // Zero Width Joiner
-    '\u2060': 3  // Word Joiner
-  };
-  let num = 0;
-  for (const char of str) {
-    const digit = digitMap[char];
-    if (digit === undefined)
-      throw new Error('Invalid character in zero-width base-4 string');
-    num = num * 4 + digit;
-  }
-  return num;
-}
 export function numberToInvBase4(num: number, wid: number) {
   const digits    = ['\u200B', '\u200C', '\u200D', '\u2060'];
   const zeroDigit = digits[0];
@@ -135,6 +119,25 @@ export function numberToInvBase4(num: number, wid: number) {
     num >>= 2;
   }
   return str.padStart(wid, zeroDigit);
+}
+
+export function invBase4ToNumber(str: string) {
+  const digitMap: Record<string, number> = {
+    '\u200B': 0, // Zero Width Space
+    '\u200C': 1, // Zero Width Non-Joiner
+    '\u200D': 2, // Zero Width Joiner
+    '\u2060': 3  // Word Joiner
+  };
+  let num = 0;
+  for (const char of str) {
+    const digit = digitMap[char];
+    if (digit === undefined) {
+      log('err', `invBase4ToNumber: invalid char ${char}`);
+      return null;
+    }
+    num = num * 4 + digit;
+  }
+  return num;
 }
 
 export function tokenToDigits(token: string) {
@@ -155,16 +158,12 @@ export function tokenToDigits(token: string) {
 
 export function tokenToStr(token: string) {
   if(!token) return '';
-  return token.replaceAll('\u200B', '0')
-              .replaceAll('\u200C', '1')
-              .replaceAll('\u200D', '2')
-              .replaceAll('\u2060', '3');
+  return token.replaceAll('\u200B', '~0')
+              .replaceAll('\u200C', '~1')
+              .replaceAll('\u200D', '~2')
+              .replaceAll('\u2060', '~3');
 }
 
-export function getTokenRegEx() {
-  return new RegExp("[\\u200B\\u200C\\u200D\\u2060]+");
-}
+export const tokenRegEx  = new RegExp("[\\u200B\\u200C\\u200D\\u2060]+");
 
-export function getTokenRegExG() {
-  return new RegExp("[\\u200B\\u200C\\u200D\\u2060]+", 'g');
-}
+export const tokenRegExG = new RegExp("[\\u200B\\u200C\\u200D\\u2060]+", 'g');
