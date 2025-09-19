@@ -7,11 +7,11 @@ interface FunctionSeparatorsSettings {
   includeNested:   boolean;
   blankLinesAbove:  number;
   blankLinesBelow:  number;
-  fillStr:          string;
+  fillString:          string;
   indent:           number; // -1: match func indent
   width:            number; // -1: widest line in file
   splitName:       boolean;
-  case:           'Original' | 'Capitalize' | 'Uppercase';
+  case:           'Original' | 'Lowercase' | 'Capitalize' | 'Uppercase';
   fileWrap:        boolean;
 }
 
@@ -20,7 +20,7 @@ export let settings: FunctionSeparatorsSettings = {
   includeNested:  false,
   blankLinesAbove:    1,
   blankLinesBelow:    1,
-  fillStr:          '=',
+  fillString:          '=',
   indent:             0, // -1: match func indent
   width:             80, // -1: widest line in file
   splitName:       true,
@@ -35,7 +35,7 @@ export function loadSettings() {
     includeNested:   config.get('includeNested', false),
     blankLinesAbove: config.get('blankLinesAbove', 1),
     blankLinesBelow: config.get('blankLinesBelow', 1),
-    fillStr:         config.get('fillStr', '='),
+    fillString:      config.get('fillString', '='),
     indent:          config.get('indent', 0),
     width:           config.get('width', 80),
     splitName:       config.get('splitName', true),

@@ -82,7 +82,8 @@ export async function insertSeparators() {
                        .replace(/([A-Z])([A-Z][a-z])/g, "$1 $2")
                        .replace(/[\._]/g, ' ');
     }
-    if(settings.case == 'Uppercase') adjName = adjName.toUpperCase();
+    if(     settings.case == 'Uppercase') adjName = adjName.toUpperCase();
+    else if(settings.case == 'Lowercase') adjName = adjName.toLowerCase();
     else if(settings.case == 'Capitalize') {
       const words = adjName.split(' ');
       let capWords = [];
@@ -94,13 +95,13 @@ export async function insertSeparators() {
     const startCol    = settings.indent < 0 ? funcStartCol : settings.indent;
     const symbolWidth = lang.lineComment.length;
     const bodyWidth   = symbolWidth + 1 + adjName.length + 1;
-    const endCol      = (settings.width > 0) ? settings.width :
+    const endCol      = (settings.width >= 0) ? settings.width :
                           Math.max(...(doc.getText().split(/\r?\n/)
                                           .map(line => line.length)));
     const allFillWidth   = Math.max(endCol - startCol - bodyWidth, 0);
     const leftFillWidth  = Math.floor(allFillWidth / 2);
     const rightFillWidth = allFillWidth - leftFillWidth;
-    const maxFillStr     = settings.fillStr.repeat(1024);
+    const maxFillStr     = settings.fillString.repeat(1024);
     let commentLineText  = `${' '.repeat(startCol)}${lang.lineComment}${
         utils.numberToInvBase4(numOldBlankLines, NUM_INVIS_DIGITS)}${
         maxFillStr.slice(0, leftFillWidth)} ${adjName} ${
