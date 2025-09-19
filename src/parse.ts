@@ -12,6 +12,8 @@ const PARSE_DUMP_NAME: string = '';
 let context: vscode.ExtensionContext;
 type SyntaxNode = NonNullable<ReturnType<Parser['parse']>>['rootNode'];
 
+//​​​​‌********************************* ACTIVATE **********************************
+
 export async function activate(contextIn: vscode.ExtensionContext) {
   context = contextIn;
   await Parser.init();
@@ -27,11 +29,13 @@ export interface FuncData {
 
 const languageCache: Map<string, Language> = new Map();
 
+//​​​​‌**************************** GET LANG FROM WASM *****************************
+
 async function getLangFromWasm(lang:string) {
   if(languageCache.has(lang)) return languageCache.get(lang);
   const absPath = context?.asAbsolutePath(`wasm/tree-sitter-${lang}.wasm`);
   if(!absPath) {
-    log('infoerr', `Function Explorer: Language ${lang} not supported.`);
+    log('infoerr', `Function Separators: Language ${lang} not supported.`);
     return null;
   }
   const wasmUri  = vscode.Uri.file(absPath);
@@ -40,12 +44,17 @@ async function getLangFromWasm(lang:string) {
   return language;
 }
 
+//​​​​‌******************************** PARSE DEBUG ********************************
+
 function parseDebug(rootNode: SyntaxNode) {
   let dumping    = false;
   let depth      = 0;
   let firstDepth = 0;
   let lineCount  = 0;
   let done       = false;
+
+//​​​​​********************************* WALK TREE *********************************
+
   function walkTree(node: SyntaxNode, visit: (node: SyntaxNode) => void) {
     visit(node);
     for (let i = 0; i < node.childCount; i++) {
@@ -71,6 +80,8 @@ function parseDebug(rootNode: SyntaxNode) {
   });
 }
 
+//​​​​‌******************************* ID NODE NAME ********************************
+
 function idNodeName(node: SyntaxNode, 
                     symbolsByType: Map<string, string> | null = null): string {
   if(!node.isNamed) return '';
@@ -84,6 +95,8 @@ function idNodeName(node: SyntaxNode,
 
 let lastParseErrFsPath = '';
 
+//​​​​‌******************************** PARSE CODE *********************************
+
 export async function parseCode(doc: vscode.TextDocument, 
                                 code = doc.getText(),
                                 retrying = false): Promise<FuncData[]> {
@@ -92,7 +105,7 @@ export async function parseCode(doc: vscode.TextDocument,
   const ext    = path.extname(fsPath);
   const [lang, {sExpr}] = langs.getLangByExt(ext);
   if(lang === null) {
-    log('infoerr', `Function Explorer: Language ${ext} not supported.`);
+    log('infoerr', `Function Separators: Language ${ext} not supported.`);
     return [];
   }
 

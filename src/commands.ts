@@ -1,13 +1,16 @@
 import * as vscode from 'vscode';
 import * as parse  from './parse';
 import * as langs  from './languages';
-import {sett}      from './settings';
+import {settings}  from './settings';
 import * as utils  from './utils';
 const { log, start, end } = utils.getLog('cmds');
 
 const NUM_INVIS_DIGITS = 5; // max 4^5 = 1024
 
 const selLimits: [number, number][] = [];
+
+//​​​​​******************************** SET SEL LIMITS *********************************
+
 function setSelLimits (editor: vscode.TextEditor) {
   selLimits.length = 0;
   const selections = editor.selections;
@@ -19,6 +22,9 @@ function setSelLimits (editor: vscode.TextEditor) {
     selLimits.push([startLine, endLine]);
   }
 }
+
+//​​​​​********************************* IN SELECTION **********************************
+
 function inSelection(lineNum: number) {
   if(selLimits.length === 0) return true;
   for(const lim of selLimits) {
@@ -27,7 +33,9 @@ function inSelection(lineNum: number) {
   return false;
 }
 
-export async function insertComments() {
+//​​​​‌******************************** INSERT SEPARATORS ********************************
+
+export async function insertSeparators() {
   const editor = vscode.window.activeTextEditor;  
   if(!editor) return;
   setSelLimits(editor);
@@ -43,7 +51,7 @@ export async function insertComments() {
   const lineComment = String(lang.lineComment)
                             .replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
   const lineCommentRegex = new RegExp(String.raw`^\s*${lineComment}`);
-  await removeComments();
+  await removeSeparators();
   type Edit = { range: vscode.Range; text: string };
   const edits: Edit[] = [];
   const funcs = await parse.parseCode(doc);
@@ -53,7 +61,7 @@ export async function insertComments() {
     if(funcLineStart < 1 || !inSelection(funcLineStart)) continue;
     const posEnd      = doc.positionAt(func.endBody);
     const funcLineEnd = posEnd.line;
-    if(funcLineEnd < (funcLineStart + sett.minFuncHeight)) continue;
+    if(funcLineEnd < (funcLineStart + settings.minFuncHeight)) continue;
     const prevLineText = doc.lineAt(funcLineStart-1).text;
     if(lineCommentRegex.test(prevLineText)             || // has //
        prevLineText.includes(String(lang.openComment)) || // has /*
@@ -69,13 +77,13 @@ export async function insertComments() {
     const funcLineText = doc.lineAt(funcLineStart).text;
     const funcStartCol = funcLineText.search(/\S/);
     let adjName = func.name;
-    if(sett.splitName) {
+    if(settings.splitName) {
       adjName = adjName.replace(/([a-z])([A-Z])/g,      "$1 $2")
                        .replace(/([A-Z])([A-Z][a-z])/g, "$1 $2")
                        .replace(/[\._]/g, ' ');
     }
-    if(sett.case == 'Uppercase') adjName = adjName.toUpperCase();
-    else if(sett.case == 'Capitalize') {
+    if(settings.case == 'Uppercase') adjName = adjName.toUpperCase();
+    else if(settings.case == 'Capitalize') {
       const words = adjName.split(' ');
       let capWords = [];
       for(const word of words)
@@ -83,16 +91,16 @@ export async function insertComments() {
                       word.slice(1) .toLowerCase());
       adjName = capWords.join(' ');
     }
-    const startCol    = sett.indent < 0 ? funcStartCol : sett.indent;
+    const startCol    = settings.indent < 0 ? funcStartCol : settings.indent;
     const symbolWidth = lang.lineComment.length;
     const bodyWidth   = symbolWidth + 1 + adjName.length + 1;
-    const endCol      = (sett.width > 0) ? sett.width :
+    const endCol      = (settings.width > 0) ? settings.width :
                           Math.max(...(doc.getText().split(/\r?\n/)
                                           .map(line => line.length)));
     const allFillWidth   = Math.max(endCol - startCol - bodyWidth, 0);
     const leftFillWidth  = Math.floor(allFillWidth / 2);
     const rightFillWidth = allFillWidth - leftFillWidth;
-    const maxFillStr     = sett.fillStr.repeat(1024);
+    const maxFillStr     = settings.fillStr.repeat(1024);
     let commentLineText  = `${' '.repeat(startCol)}${lang.lineComment}${
         utils.numberToInvBase4(numOldBlankLines, NUM_INVIS_DIGITS)}${
         maxFillStr.slice(0, leftFillWidth)} ${adjName} ${
@@ -100,9 +108,9 @@ export async function insertComments() {
     const start = new vscode.Position(firstOldBlankLineNum, 0);
     const end   = new vscode.Position(funcLineStart,        0);
     const range = new vscode.Range(start, end);
-    let newText = eol.repeat(sett.blankLinesAbove) +
+    let newText = eol.repeat(settings.blankLinesAbove) +
                   commentLineText                  + 
-                  eol.repeat(sett.blankLinesBelow + 1);
+                  eol.repeat(settings.blankLinesBelow + 1);
     edits.push({ range, text: newText });
   }
   await editor.edit(editBuilder => {
@@ -110,10 +118,9 @@ export async function insertComments() {
   }, { undoStopBefore: true, undoStopAfter: true });
 };
 
+//​​​‌​******************************** REMOVE SEPARATORS ********************************
 
-
-
-export async function removeComments() {
+export async function removeSeparators() {
   const editor = vscode.window.activeTextEditor;  
   if(!editor) return;
   setSelLimits(editor);
@@ -163,13 +170,12 @@ export async function removeComments() {
   }, { undoStopBefore: true, undoStopAfter: true });
 }
 
-
-
+//​​​‌​******************************** JUMP PREV NEXT *********************************
 
 export async function jumpPrevNext(next = true, jumpNextEditor = false) {
   let editor = vscode.window.activeTextEditor;  
   if(!editor) return;
-  if(sett.fileWrap && jumpNextEditor) {
+  if(settings.fileWrap && jumpNextEditor) {
     editor = await utils.getAdjacentEditor(editor, next ? "next" : "prev");
     if(!editor) return;
   }
@@ -223,7 +229,7 @@ export async function jumpPrevNext(next = true, jumpNextEditor = false) {
     return;
   }
   let topLineNumber = doc.lineAt(newCommentLineNum).range.start.line;
-  topLineNumber -= sett.blankLinesAbove;
+  topLineNumber -= settings.blankLinesAbove;
   topLineNumber  = Math.max(topLineNumber, 0);
   const range = new vscode.Range(topLineNumber, 0, topLineNumber, 0);
   editor.revealRange(range, vscode.TextEditorRevealType.AtTop);

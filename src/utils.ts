@@ -11,6 +11,8 @@ export function activate(contextIn: vscode.ExtensionContext) {
 
 const outputChannel = vscode.window.createOutputChannel('function-separators');
 
+//​​​​‌************************************ GET LOG *************************************
+
 export function getLog(module: string) : {
   log:   (...args: any[]) => void;
   start: (name: string,     hide?: boolean, msg?: string)     => void;
@@ -91,6 +93,8 @@ export function getLog(module: string) : {
   return { log, start, end };
 }
 
+//​​​​‌****************************** FIND MIDDLE OF TEXT *******************************
+
 export function findMiddleOfText(code: string): number {
   const blankLineRegex = /^\s*$(?:\r?\n|$)/gm;
   const middleIdx = Math.floor(code.length / 2);
@@ -108,6 +112,8 @@ export function findMiddleOfText(code: string): number {
   return closest;
 }
 
+//​​​​‌****************************** NUMBER TO INV BASE4 *******************************
+
 export function numberToInvBase4(num: number, wid: number) {
   const digits    = ['\u200B', '\u200C', '\u200D', '\u2060'];
   const zeroDigit = digits[0];
@@ -120,6 +126,8 @@ export function numberToInvBase4(num: number, wid: number) {
   }
   return str.padStart(wid, zeroDigit);
 }
+
+//​​​​‌******************************* INV BASE4TO NUMBER *******************************
 
 export function invBase4ToNumber(str: string) {
   const digitMap: Record<string, number> = {
@@ -140,6 +148,8 @@ export function invBase4ToNumber(str: string) {
   return num;
 }
 
+//​​​​‌******************************** TOKEN TO DIGITS *********************************
+
 export function tokenToDigits(token: string) {
   const map: Record<string, string> = {
     '\u200B': '0', // Zero Width Space
@@ -156,6 +166,8 @@ export function tokenToDigits(token: string) {
     .join('').padStart(4, '0');
 }
 
+//​​​​‌********************************** TOKEN TO STR **********************************
+
 export function tokenToStr(token: string) {
   if(!token) return '';
   return token.replaceAll('\u200B', '~0')
@@ -168,6 +180,8 @@ export const invRegEx  = new RegExp("[\\u200B\\u200C\\u200D\\u2060]+");
 export const invRegExG = new RegExp("[\\u200B\\u200C\\u200D\\u2060]+", 'g');
 
 type TabItem = { uri: vscode.Uri; column: vscode.ViewColumn | undefined };
+
+//​​​​‌***************************** COLLECT FILE TAB ITEMS *****************************
 
 function collectFileTabItems(): TabItem[] {
   const items: TabItem[] = [];
@@ -188,6 +202,8 @@ function collectFileTabItems(): TabItem[] {
   }
   return items;
 }
+
+//​​​​‌********************************** SAME EDITOR ***********************************
 
 function sameEditor(a: vscode.TextEditor, b: TabItem): boolean {
   return (
