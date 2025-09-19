@@ -166,7 +166,6 @@ export async function removeSeparators() {
 
 
 
-
 export async function jumpPrevNext(next = true, jumpNextEditor = false) {
   let editor = vscode.window.activeTextEditor;  
   if(!editor) return;
@@ -174,7 +173,7 @@ export async function jumpPrevNext(next = true, jumpNextEditor = false) {
     editor = await utils.getAdjacentEditor(editor, next ? "next" : "prev");
     if(!editor) return;
   }
-  const doc     = editor.document;
+  const doc = editor.document;
   const docText = doc.getText();
   let lineNum = 0;
   if(!jumpNextEditor) {
@@ -184,26 +183,32 @@ export async function jumpPrevNext(next = true, jumpNextEditor = false) {
       return; 
     }
     lineNum = firstRange.start.line;
-  }
+  } 
+  else 
+    lineNum = 0;
+  const startLineNum = lineNum;
   let firstNonBlankLine = -1;
   let firstNonBlankText = '';
-  for(; lineNum < doc.lineCount; lineNum++) {
+  for(; lineNum < doc.lineCount && 
+        lineNum < (startLineNum + settings.blankLinesAbove 
+                                + settings.blankLinesBelow); 
+        lineNum++) {
     const lineText = doc.lineAt(lineNum).text;
     if(lineText.trim().length === 0) continue;
     firstNonBlankLine = lineNum;
     firstNonBlankText = lineText;
     break;
   }
-  if(firstNonBlankLine == -1) {
+  if(firstNonBlankLine == -1) firstNonBlankLine = lineNum;
+  const newCommentLineNum = utils.getNextMarkedLine(
+                             docText, firstNonBlankLine, next ? "down" : "up");
+  if(newCommentLineNum == undefined) {
     if(!jumpNextEditor) await jumpPrevNext(next, true);
     return;
   }
+  utils.invRegExG.lastIndex =
+               doc.offsetAt(new vscode.Position(firstNonBlankLine, 0));
   let match;
-  let newCommentLineNum      = -1;
-  const onCommentLine        = utils.invRegEx.test(firstNonBlankText);
-  let nextMatchIsNewComment  = (!onCommentLine || jumpNextEditor);
-  utils.invRegExG.lastIndex  = 
-             doc.offsetAt(new vscode.Position(firstNonBlankLine, 0));
   while ((match = utils.invRegExG.exec(docText)) !== null) {
     const tokenStr = match[0];
     const oldBlankLineCount = utils.invBase4ToNumber(tokenStr);
@@ -213,15 +218,6 @@ export async function jumpPrevNext(next = true, jumpNextEditor = false) {
                 }\nLine: ${utils.tokenToStr(doc.lineAt(newCommentLineNum).text)}`);
       continue;
     }
-    if (nextMatchIsNewComment) {
-      newCommentLineNum = doc.positionAt(match.index).line;
-      break;
-    }
-    nextMatchIsNewComment = true;
-  }
-  if(newCommentLineNum == -1) {
-    if(!jumpNextEditor) await jumpPrevNext(next, true);
-    return;
   }
   let topLineNumber = doc.lineAt(newCommentLineNum).range.start.line;
   topLineNumber -= settings.blankLinesAbove;

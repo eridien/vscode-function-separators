@@ -263,14 +263,16 @@ export function getNextMarkedLine(
     if (invRegEx.test(lines[i])) marked.push(i);
   }
   if (marked.length === 0) return undefined;
-  if (line === -1) {
-    return direction === "down" ? marked[0] : marked[marked.length - 1];
-  }
   if (direction === "down") {
-    for (const m of marked) if (m > line) return m;
+    for (const m of marked) {
+      if (m > line) return m;
+    }
     return undefined;
-  } else {
-    for (let i = marked.length - 1; i >= 0; i--) if (marked[i] < line) return marked[i];
+  } 
+  else {
+    for (let i = marked.length - 1; i >= 0; i--) {
+      if (marked[i] < line) return marked[i];
+    }
     return undefined;
   }
 }
