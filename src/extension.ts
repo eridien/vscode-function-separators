@@ -5,8 +5,6 @@ import * as parse    from './parse';
 import * as settings from './settings';
 const { log, start, end } = getLog('extn');
 
-//​​​​‌********************************* ACTIVATE **********************************
-
 export async function activate(context: vscode.ExtensionContext) {
   log('Extension activated');
 

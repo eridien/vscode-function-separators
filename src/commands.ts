@@ -8,9 +8,6 @@ const { log, start, end } = utils.getLog('cmds');
 const NUM_INVIS_DIGITS = 5; // max 4^5 = 1024
 
 const selLimits: [number, number][] = [];
-
-//​​​​​******************************** SET SEL LIMITS *********************************
-
 function setSelLimits (editor: vscode.TextEditor) {
   selLimits.length = 0;
   const selections = editor.selections;
@@ -22,9 +19,6 @@ function setSelLimits (editor: vscode.TextEditor) {
     selLimits.push([startLine, endLine]);
   }
 }
-
-//​​​​​********************************* IN SELECTION **********************************
-
 function inSelection(lineNum: number) {
   if(selLimits.length === 0) return true;
   for(const lim of selLimits) {
@@ -32,9 +26,7 @@ function inSelection(lineNum: number) {
   }
   return false;
 }
-
-//​​​​‌******************************** INSERT SEPARATORS ********************************
-
+let test;
 export async function insertSeparators() {
   const editor = vscode.window.activeTextEditor;  
   if(!editor) return;
@@ -119,7 +111,8 @@ export async function insertSeparators() {
   }, { undoStopBefore: true, undoStopAfter: true });
 };
 
-//​​​‌​******************************** REMOVE SEPARATORS ********************************
+
+
 
 export async function removeSeparators() {
   const editor = vscode.window.activeTextEditor;  
@@ -171,7 +164,8 @@ export async function removeSeparators() {
   }, { undoStopBefore: true, undoStopAfter: true });
 }
 
-//​​​‌​******************************** JUMP PREV NEXT *********************************
+
+
 
 export async function jumpPrevNext(next = true, jumpNextEditor = false) {
   let editor = vscode.window.activeTextEditor;  

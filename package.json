@@ -10,6 +10,7 @@
   "engines": {
     "vscode": "^1.104.0"
   },
+  "publisher": "eridien",
   "categories": [
     "Other"
   ],
