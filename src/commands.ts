@@ -170,28 +170,8 @@ export async function jumpPrevNext(next = true, jumpNextEditor = false) {
   let editor = vscode.window.activeTextEditor;  
   if(!editor) return;
   if(sett.fileWrap && jumpNextEditor) {
-    const editors = vscode.window.visibleTextEditors;
-    let haveNextEditor = false;
-    let editorIdx = editors.findIndex(ed => ed === editor) + 1;
-    for (; editorIdx < editors.length; editorIdx++) {
-      const text = editors[editorIdx].document.getText();
-      if(utils.invRegExG.test(text)) {
-          haveNextEditor = true;
-          editor = editors[editorIdx];
-          break;
-      }
-    }
-    for (editorIdx = 0; 
-       !haveNextEditor && editorIdx < editors.length; editorIdx++) {
-      const nextEditor = editors[editorIdx];
-      const text       = nextEditor.document.getText();
-      if(nextEditor === editor || utils.invRegExG.test(text)) {
-        haveNextEditor = true;
-        editor = nextEditor;
-        break;
-      }
-    }
-    if(!haveNextEditor) return;
+    editor = await utils.getAdjacentEditor(editor, next ? "next" : "prev");
+    if(!editor) return;
   }
   const doc     = editor.document;
   const docText = doc.getText();
@@ -218,9 +198,9 @@ export async function jumpPrevNext(next = true, jumpNextEditor = false) {
     return;
   }
   let match;
-  let newCommentLineNum = -1;
-  const onCommentLine   = utils.invRegEx.test(firstNonBlankText);
-  let nextMatchIsNewComment = (!onCommentLine || jumpNextEditor);
+  let newCommentLineNum      = -1;
+  const onCommentLine        = utils.invRegEx.test(firstNonBlankText);
+  let nextMatchIsNewComment  = (!onCommentLine || jumpNextEditor);
   utils.invRegExG.lastIndex  = 
              doc.offsetAt(new vscode.Position(firstNonBlankLine, 0));
   while ((match = utils.invRegExG.exec(docText)) !== null) {

@@ -27,9 +27,9 @@ export let sett: FunctionSeparatorsSettings = {
   fillStr:          '*',
   indent:             0, // -1: match func indent
   width:             -1, // -1: widest line in file
-  splitName:      false,
+  splitName:      true,
   case:     'Uppercase',
-  fileWrap:        true,
+  fileWrap:        false,
 };
 
 // let excludeCfg: string;

@@ -166,3 +166,75 @@ export function tokenToStr(token: string) {
 
 export const invRegEx  = new RegExp("[\\u200B\\u200C\\u200D\\u2060]+");
 export const invRegExG = new RegExp("[\\u200B\\u200C\\u200D\\u2060]+", 'g');
+
+type TabItem = { uri: vscode.Uri; column: vscode.ViewColumn | undefined };
+
+function collectFileTabItems(): TabItem[] {
+  const items: TabItem[] = [];
+  const seen = new Set<string>();
+
+  for (const group of vscode.window.tabGroups.all) {
+    for (const tab of group.tabs) {
+      if (tab.input instanceof vscode.TabInputText) {
+        const uri = tab.input.uri;
+        const col = group.viewColumn;
+        const key = `${uri.toString()}#${col ?? "?"}`;
+        if (!seen.has(key)) {
+          seen.add(key);
+          items.push({ uri, column: col });
+        }
+      }
+    }
+  }
+  return items;
+}
+
+function sameEditor(a: vscode.TextEditor, b: TabItem): boolean {
+  return (
+    a.document.uri.toString() === b.uri.toString() &&
+    a.viewColumn === b.column
+  );
+}
+
+/**
+ * Show and return the adjacent editor among those whose text matches invRegExG.
+ * - If none match → returns undefined.
+ * - If only one matches → returns the current editor if it is that one,
+ *      otherwise shows that one.
+ */
+export async function getAdjacentEditor(
+  current: vscode.TextEditor, direction: "next" | "prev" ): 
+                        Promise<vscode.TextEditor | undefined> {
+  const all = collectFileTabItems();
+  if (all.length === 0) return undefined;
+  const matching: TabItem[] = [];
+  for (const it of all) {
+    try {
+      const doc = await vscode.workspace.openTextDocument(it.uri);
+      const text = doc.getText();
+      if (invRegEx.test(text)) matching.push(it);
+    } catch (_) {}
+  }
+  if (matching.length === 0) {
+    return undefined;
+  }
+  if (matching.length === 1) {
+    if (sameEditor(current, matching[0])) return current;
+    return await vscode.window.showTextDocument(matching[0].uri, {
+      viewColumn: matching[0].column ?? vscode.ViewColumn.Active,
+      preserveFocus: false,
+      preview: true,
+    });
+  }
+  const idx = matching.findIndex(it => sameEditor(current, it));
+  let targetIdx = 0;
+  if (idx >= 0) targetIdx = direction === "next"
+                  ? (idx + 1) % matching.length
+                  : (idx - 1 + matching.length) % matching.length;
+  const target = matching[targetIdx];
+  return await vscode.window.showTextDocument(target.uri, {
+    viewColumn: target.column ?? vscode.ViewColumn.Active,
+    preserveFocus: false,
+    preview: true,
+  });
+}
