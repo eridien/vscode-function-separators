@@ -184,8 +184,8 @@ export async function jumpPrevNext(next = true, jumpNextEditor = false) {
     }
     lineNum = firstRange.start.line;
   } 
-  else 
-    lineNum = 0;
+  else
+    lineNum = next ? 0 : doc.lineCount - 1;
   const startLineNum = lineNum;
   let firstNonBlankLine = -1;
   let firstNonBlankText = '';
