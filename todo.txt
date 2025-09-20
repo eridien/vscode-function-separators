@@ -1,10 +1,12 @@
 bugs ...
 
 todo ...
-  name breadcrumbs
-  if original case and name is camelcase, capitalise first word
-  reverse right fill string
   more languages
+
+not needed ...
+  add comment if empty selection in func line
+  name breadcrumbs
+  reverse right fill string
 
 testing ...
 

@@ -81,6 +81,9 @@ export async function insertSeparators() {
     const funcLineText = doc.lineAt(funcLineStart).text;
     const funcStartCol = funcLineText.search(/\S/);
     let adjName = func.name;
+    if(/[a-z][A-Z]/.test(adjName) && settings.case === 'Original') {
+      adjName = adjName.charAt(0).toUpperCase() + adjName.slice(1);
+    }
     if(settings.splitName) {
       adjName = adjName.replace(/([a-z])([A-Z])/g,      "$1 $2")
                        .replace(/([A-Z])([A-Z][a-z])/g, "$1 $2")
