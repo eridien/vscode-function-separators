@@ -31,7 +31,9 @@ const langs: Langs = {
   python: {
     sExpr: `(function_definition name: (identifier) @name ) @body`,
     suffixes: new Set(['.py']),
-    lineComment: '#'
+    lineComment: '#',
+    openComment:  '###',
+    closeComment: '###',
   },
 
 ///////////////////////////// cpp ///////////////////////////

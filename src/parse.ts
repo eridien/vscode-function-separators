@@ -4,7 +4,7 @@ import * as langs                  from './languages';
 import { Tree, QueryMatch,
          Parser, Language, Query } from 'web-tree-sitter';
 import * as utils                  from './utils';
-const {log, start, end} = utils.getLog('pars');
+const {log, start, end} = utils.getLog('lambda');
 
 const PARSE_DUMP_TYPE: string = '';  
 const PARSE_DUMP_NAME: string = '';
