@@ -1,157 +1,1005 @@
-(node:12871) ExperimentalWarning: SQLite is an experimental feature and might change at any time
-(Use `node --trace-warnings ...` to show where the warning was created)
-[extn] Extension activated
-[pars] [
-  {
-    "name": "baz",
-    "startName": 135,
-    "endName": 138,
-    "startBody": 126,
-    "endBody": 889,
-    "nested": false
-  },
-  {
-    "name": "removeDeadShows",
-    "startName": 169,
-    "endName": 184,
-    "startBody": 154,
-    "endBody": 198,
-    "nested": true
-  },
-  {
-    "name": "foo",
-    "startName": 210,
-    "endName": 213,
-    "startBody": 201,
-    "endBody": 230,
-    "nested": true
-  },
-  {
-    "name": "bar",
-    "startName": 245,
-    "endName": 248,
-    "startBody": 236,
-    "endBody": 265,
-    "nested": true
-  },
-  {
-    "name": "setPickups",
-    "startName": 913,
-    "endName": 923,
-    "startBody": 898,
-    "endBody": 1839,
-    "nested": false
-  },
-  {
-    "name": "removeNoMatchsFromTvdbJson",
-    "startName": 1914,
-    "endName": 1940,
-    "startBody": 1899,
-    "endBody": 2330,
-    "nested": false
-  },
-  {
-    "name": "removeDontSavesFromTvdbJson",
-    "startName": 2405,
-    "endName": 2432,
-    "startBody": 2390,
-    "endBody": 2656,
-    "nested": false
-  },
-  {
-    "name": "adjustDeletedFlags",
-    "startName": 2721,
-    "endName": 2739,
-    "startBody": 2706,
-    "endBody": 3371,
-    "nested": false
-  },
-  {
-    "name": "listCountries",
-    "startName": 3446,
-    "endName": 3459,
-    "startBody": 3431,
-    "endBody": 3741,
-    "nested": false
-  },
-  {
-    "name": "setAllFavs",
-    "startName": 3816,
-    "endName": 3826,
-    "startBody": 3801,
-    "endBody": 4010,
-    "nested": false
-  },
-  {
-    "name": "clrEndedContinues",
-    "startName": 4085,
-    "endName": 4102,
-    "startBody": 4070,
-    "endBody": 4390,
-    "nested": false
-  },
-  {
-    "name": "fixShowidInTvdbs",
-    "startName": 4465,
-    "endName": 4481,
-    "startBody": 4450,
-    "endBody": 4998,
-    "nested": false
-  },
-  {
-    "name": "setAllTvdbShowIds",
-    "startName": 5073,
-    "endName": 5090,
-    "startBody": 5058,
-    "endBody": 5280,
-    "nested": false
-  },
-  {
-    "name": "setAllNoEmbyTvdbIds",
-    "startName": 5355,
-    "endName": 5374,
-    "startBody": 5340,
-    "endBody": 5732,
-    "nested": false
-  },
-  {
-    "name": "loadAllRemotes",
-    "startName": 5819,
-    "endName": 5833,
-    "startBody": 5804,
-    "endBody": 6461,
-    "nested": false
-  },
-  {
-    "name": "dateWithTZ",
-    "startName": 6490,
-    "endName": 6500,
-    "startBody": 6470,
-    "endBody": 6918,
-    "nested": false
-  },
-  {
-    "name": "fmtDate",
-    "startName": 6936,
-    "endName": 6943,
-    "startBody": 6927,
-    "endBody": 7360,
-    "nested": false
-  },
-  {
-    "name": "fmtSize",
-    "startName": 7378,
-    "endName": 7385,
-    "startBody": 7369,
-    "endBody": 7664,
-    "nested": false
-  },
-  {
-    "name": "setCondFltr",
-    "startName": 7682,
-    "endName": 7693,
-    "startBody": 7673,
-    "endBody": 11533,
-    "nested": false
-  }
-]
+[lambda] program (0,22753) ?program
+[lambda]     import_statement (0,29) ?import_statement
+[lambda]         import (0,6)
+[lambda]         import_clause (7,12) ?import_clause
+[lambda]             identifier (7,12) ?identifier
+[lambda]         from (17,21)
+[lambda]         string (22,29) ?string
+[lambda]             " (22,23)
+[lambda]             string_fragment (23,28) ?string_fragment
+[lambda]             " (28,29)
+[lambda]     import_statement (30,64) ?import_statement
+[lambda]         import (30,36)
+[lambda]         import_clause (37,46) ?import_clause
+[lambda]             namespace_import (37,46) ?namespace_import
+[lambda]                 * (37,38)
+[lambda]                 as (39,41)
+[lambda]                 identifier (42,46) ?identifier
+[lambda]         from (47,51)
+[lambda]         string (52,63) ?string
+[lambda]             " (52,53)
+[lambda]             string_fragment (53,62) ?string_fragment
+[lambda]             " (62,63)
+[lambda]         ; (63,64)
+[lambda]     import_statement (65,99) ?import_statement
+[lambda]         import (65,71)
+[lambda]         import_clause (72,81) ?import_clause
+[lambda]             namespace_import (72,81) ?namespace_import
+[lambda]                 * (72,73)
+[lambda]                 as (74,76)
+[lambda]                 identifier (77,81) ?identifier
+[lambda]         from (82,86)
+[lambda]         string (87,98) ?string
+[lambda]             " (87,88)
+[lambda]             string_fragment (88,97) ?string_fragment
+[lambda]             " (97,98)
+[lambda]         ; (98,99)
+[lambda]     import_statement (100,134) ?import_statement
+[lambda]         import (100,106)
+[lambda]         import_clause (107,116) ?import_clause
+[lambda]             namespace_import (107,116) ?namespace_import
+[lambda]                 * (107,108)
+[lambda]                 as (109,111)
+[lambda]                 identifier (112,116) ?identifier
+[lambda]         from (117,121)
+[lambda]         string (122,133) ?string
+[lambda]             " (122,123)
+[lambda]             string_fragment (123,132) ?string_fragment
+[lambda]             " (132,133)
+[lambda]         ; (133,134)
+[lambda]     import_statement (135,169) ?import_statement
+[lambda]         import (135,141)
+[lambda]         import_clause (142,151) ?import_clause
+[lambda]             namespace_import (142,151) ?namespace_import
+[lambda]                 * (142,143)
+[lambda]                 as (144,146)
+[lambda]                 identifier (147,151) ?identifier
+[lambda]         from (152,156)
+[lambda]         string (157,168) ?string
+[lambda]             " (157,158)
+[lambda]             string_fragment (158,167) ?string_fragment
+[lambda]             " (167,168)
+[lambda]         ; (168,169)
+[lambda]     class_declaration (171,186) klass?class_declaration
+[lambda]         class (171,176)
+[lambda]         type_identifier (177,182) ?type_identifier
+[lambda]         class_body (183,186) ?class_body
+[lambda]             { (183,184)
+[lambda]             } (185,186)
+[lambda]     lexical_declaration (188,296) ?lexical_declaration
+[lambda]         const (188,193)
+[lambda]         variable_declarator (194,295) gapWorker?variable_declarator
+[lambda]             identifier (194,203) ?identifier
+[lambda]             = (204,205)
+[lambda]             new_expression (209,295) ?new_expression
+[lambda]                 new (209,212)
+[lambda]                 identifier (213,219) ?identifier
+[lambda]                 arguments (219,295) ?arguments
+[lambda]                     ( (219,220)
+[lambda]                     new_expression (220,261) ?new_expression
+[lambda]                         new (220,223)
+[lambda]                         identifier (224,227) ?identifier
+[lambda]                         arguments (227,261) ?arguments
+[lambda]                             ( (227,228)
+[lambda]                             string (228,243) ?string
+[lambda]                                 ' (228,229)
+[lambda]                                 string_fragment (229,242) ?string_fragment
+[lambda]                                 ' (242,243)
+[lambda]                             , (243,244)
+[lambda]                             member_expression (245,260) ?member_expression
+[lambda]                                 meta_property (245,256) ?meta_property
+[lambda]                                     import (245,251)
+[lambda]                                     . (251,252)
+[lambda]                                     meta (252,256)
+[lambda]                                 . (256,257)
+[lambda]                                 property_identifier (257,260) ?property_identifier
+[lambda]                             ) (260,261)
+[lambda]                     , (261,262)
+[lambda]                     object (278,294) ?object
+[lambda]                         { (278,279)
+[lambda]                         pair (279,293) ?pair
+[lambda]                             property_identifier (279,283) ?property_identifier
+[lambda]                             : (283,284)
+[lambda]                             string (285,293) ?string
+[lambda]                                 ' (285,286)
+[lambda]                                 string_fragment (286,292) ?string_fragment
+[lambda]                                 ' (292,293)
+[lambda]                         } (293,294)
+[lambda]                     ) (294,295)
+[lambda]         ; (295,296)
+[lambda]     lexical_declaration (298,323) ?lexical_declaration
+[lambda]         const (298,303)
+[lambda]         variable_declarator (304,322) name?variable_declarator
+[lambda]             identifier (304,308) ?identifier
+[lambda]             = (314,315)
+[lambda]             string (316,322) ?string
+[lambda]                 " (316,317)
+[lambda]                 string_fragment (317,321) ?string_fragment
+[lambda]                 " (321,322)
+[lambda]         ; (322,323)
+[lambda]     lexical_declaration (324,357) ?lexical_declaration
+[lambda]         const (324,329)
+[lambda]         variable_declarator (330,356) pwd?variable_declarator
+[lambda]             identifier (330,333) ?identifier
+[lambda]             = (340,341)
+[lambda]             string (342,356) ?string
+[lambda]                 " (342,343)
+[lambda]                 string_fragment (343,355) ?string_fragment
+[lambda]                 " (355,356)
+[lambda]         ; (356,357)
+[lambda]     lexical_declaration (358,410) ?lexical_declaration
+[lambda]         const (358,363)
+[lambda]         variable_declarator (364,410) apiKey?variable_declarator
+[lambda]             identifier (364,370) ?identifier
+[lambda]             = (374,375)
+[lambda]             string (376,410) ?string
+[lambda]                 " (376,377)
+[lambda]                 string_fragment (377,409) ?string_fragment
+[lambda]                 " (409,410)
+[lambda]     lexical_declaration (411,464) ?lexical_declaration
+[lambda]         const (411,416)
+[lambda]         variable_declarator (417,463) markUsrId?variable_declarator
+[lambda]             identifier (417,426) ?identifier
+[lambda]             = (427,428)
+[lambda]             string (429,463) ?string
+[lambda]                 " (429,430)
+[lambda]                 string_fragment (430,462) ?string_fragment
+[lambda]                 " (462,463)
+[lambda]         ; (463,464)
+[lambda]     lexical_declaration (465,642) ?lexical_declaration
+[lambda]         const (465,470)
+[lambda]         variable_declarator (471,641) authHdr?variable_declarator
+[lambda]             identifier (471,478) ?identifier
+[lambda]             = (481,482)
+[lambda]             binary_expression (483,641) ?binary_expression
+[lambda]                 binary_expression (483,584) ?binary_expression
+[lambda]                     template_string (483,508) ?template_string
+[lambda]                         ` (483,484)
+[lambda]                         string_fragment (484,492) ?string_fragment
+[lambda]                         template_substitution (492,504) ?template_substitution
+[lambda]                             ${ (492,494)
+[lambda]                             identifier (494,503) ?identifier
+[lambda]                             } (503,504)
+[lambda]                         string_fragment (504,507) ?string_fragment
+[lambda]                         ` (507,508)
+[lambda]                     + (524,525)
+[lambda]                     string (544,584) ?string
+[lambda]                         ' (544,545)
+[lambda]                         string_fragment (545,583) ?string_fragment
+[lambda]                         ' (583,584)
+[lambda]                 + (585,586)
+[lambda]                 string (605,641) ?string
+[lambda]                     ' (605,606)
+[lambda]                     string_fragment (606,640) ?string_fragment
+[lambda]                     ' (640,641)
+[lambda]         ; (641,642)
+[lambda]     lexical_declaration (643,705) ?lexical_declaration
+[lambda]         const (643,648)
+[lambda]         variable_declarator (649,704) pruneTvdb?variable_declarator
+[lambda]             identifier (649,658) ?identifier
+[lambda]             = (659,660)
+[lambda]             parenthesized_expression (661,704) ?parenthesized_expression
+[lambda]                 ( (661,662)
+[lambda]                 binary_expression (662,703) ?binary_expression
+[lambda]                     call_expression (662,692) ?call_expression
+[lambda]                         member_expression (662,688) ?member_expression
+[lambda]                             member_expression (662,682) ?member_expression
+[lambda]                                 member_expression (662,677) ?member_expression
+[lambda]                                     identifier (662,668) ?identifier
+[lambda]                                     . (668,669)
+[lambda]                                     property_identifier (669,677) ?property_identifier
+[lambda]                                 . (677,678)
+[lambda]                                 property_identifier (678,682) ?property_identifier
+[lambda]                             . (682,683)
+[lambda]                             property_identifier (683,688) ?property_identifier
+[lambda]                         arguments (688,692) ?arguments
+[lambda]                             ( (688,689)
+[lambda]                             unary_expression (689,691) ?unary_expression
+[lambda]                                 - (689,690)
+[lambda]                                 number (690,691) ?number
+[lambda]                             ) (691,692)
+[lambda]                     == (693,695)
+[lambda]                     string (696,703) ?string
+[lambda]                         ' (696,697)
+[lambda]                         string_fragment (697,702) ?string_fragment
+[lambda]                         ' (702,703)
+[lambda]                 ) (703,704)
+[lambda]         ; (704,705)
+[lambda]     lexical_declaration (707,725) ?lexical_declaration
+[lambda]         let (707,710)
+[lambda]         variable_declarator (711,724) token?variable_declarator
+[lambda]             identifier (711,716) ?identifier
+[lambda]             = (720,721)
+[lambda]             string (722,724) ?string
+[lambda]                 ' (722,723)
+[lambda]                 ' (723,724)
+[lambda]         ; (724,725)
+[lambda]     lexical_declaration (726,746) ?lexical_declaration
+[lambda]         let (726,729)
+[lambda]         variable_declarator (730,745) cred?variable_declarator
+[lambda]             identifier (730,734) ?identifier
+[lambda]             = (739,740)
+[lambda]             null (741,745) ?null
+[lambda]         ; (745,746)
+[lambda]     lexical_declaration (747,767) ?lexical_declaration
+[lambda]         let (747,750)
+[lambda]         variable_declarator (751,766) allTvdb?variable_declarator
+[lambda]             identifier (751,758) ?identifier
+[lambda]             = (760,761)
+[lambda]             null (762,766) ?null
+[lambda]         ; (766,767)
+[lambda]     comment (769,824) ?comment
+[lambda]     lexical_declaration (826,1173) ?lexical_declaration
+[lambda]         const (826,831)
+[lambda]         variable_declarator (832,1173) getToken?variable_declarator
+[lambda]             identifier (832,840) ?identifier
+[lambda]             = (841,842)
+[lambda]             arrow_function (843,1173) ?arrow_function
+[lambda]                 async (843,848)
+[lambda]                 formal_parameters (849,851) ?formal_parameters
+[lambda]                     ( (849,850)
+[lambda]                     ) (850,851)
+[lambda]                 => (852,854)
+[lambda]                 statement_block (855,1173) ?statement_block
+[lambda]                     { (855,856)
+[lambda]                     lexical_declaration (859,1092) ?lexical_declaration
+[lambda]                         const (859,864)
+[lambda]                         variable_declarator (865,1091) config?variable_declarator
+[lambda]                             identifier (865,871) ?identifier
+[lambda]                             = (872,873)
+[lambda]                             object (874,1091) ?object
+[lambda]                                 { (874,875)
+[lambda]                                 pair (880,894) ?pair
+[lambda]                                     property_identifier (880,886) ?property_identifier
+[lambda]                                     : (886,887)
+[lambda]                                     string (888,894) ?string
+[lambda]                                         ' (888,889)
+[lambda]                                         string_fragment (889,893) ?string_fragment
+[lambda]                                         ' (893,894)
+[lambda]                                 , (894,895)
+[lambda]                                 pair (900,1006) ?pair
+[lambda]                                     property_identifier (900,903) ?property_identifier
+[lambda]                                     : (903,904)
+[lambda]                                     binary_expression (905,1006) ?binary_expression
+[lambda]                                         binary_expression (905,974) ?binary_expression
+[lambda]                                             string (905,930) ?string
+[lambda]                                                 " (905,906)
+[lambda]                                                 string_fragment (906,929) ?string_fragment
+[lambda]                                                 " (929,930)
+[lambda]                                             + (931,932)
+[lambda]                                             string (942,974) ?string
+[lambda]                                                 " (942,943)
+[lambda]                                                 string_fragment (943,973) ?string_fragment
+[lambda]                                                 " (973,974)
+[lambda]                                         + (975,976)
+[lambda]                                         template_string (986,1006) ?template_string
+[lambda]                                             ` (986,987)
+[lambda]                                             string_fragment (987,996) ?string_fragment
+[lambda]                                             template_substitution (996,1005) ?template_substitution
+[lambda]                                                 ${ (996,998)
+[lambda]                                                 identifier (998,1004) ?identifier
+[lambda]                                                 } (1004,1005)
+[lambda]                                             ` (1005,1006)
+[lambda]                                 , (1006,1007)
+[lambda]                                 pair (1012,1047) ?pair
+[lambda]                                     property_identifier (1012,1019) ?property_identifier
+[lambda]                                     : (1019,1020)
+[lambda]                                     object (1021,1047) ?object
+[lambda]                                         { (1021,1022)
+[lambda]                                         pair (1023,1045) ?pair
+[lambda]                                             property_identifier (1023,1036) ?property_identifier
+[lambda]                                             : (1036,1037)
+[lambda]                                             identifier (1038,1045) ?identifier
+[lambda]                                         } (1046,1047)
+[lambda]                                 , (1047,1048)
+[lambda]                                 pair (1053,1086) ?pair
+[lambda]                                     property_identifier (1053,1057) ?property_identifier
+[lambda]                                     : (1057,1058)
+[lambda]                                     object (1059,1086) ?object
+[lambda]                                         { (1059,1060)
+[lambda]                                         pair (1061,1075) ?pair
+[lambda]                                             property_identifier (1061,1069) ?property_identifier
+[lambda]                                             : (1069,1070)
+[lambda]                                             identifier (1071,1075) ?identifier
+[lambda]                                         , (1075,1076)
+[lambda]                                         pair (1077,1084) ?pair
+[lambda]                                             property_identifier (1077,1079) ?property_identifier
+[lambda]                                             : (1079,1080)
+[lambda]                                             identifier (1081,1084) ?identifier
+[lambda]                                         } (1085,1086)
+[lambda]                                 , (1086,1087)
+[lambda]                                 } (1090,1091)
+[lambda]                         ; (1091,1092)
+[lambda]                     lexical_declaration (1095,1133) ?lexical_declaration
+[lambda]                         const (1095,1100)
+[lambda]                         variable_declarator (1101,1132) embyShows?variable_declarator
+[lambda]                             identifier (1101,1110) ?identifier
+[lambda]                             = (1111,1112)
+[lambda]                             await_expression (1113,1132) ?await_expression
+[lambda]                                 await (1113,1118)
+[lambda]                                 call_expression (1119,1132) ?call_expression
+[lambda]                                     identifier (1119,1124) ?identifier
+[lambda]                                     arguments (1124,1132) ?arguments
+[lambda]                                         ( (1124,1125)
+[lambda]                                         identifier (1125,1131) ?identifier
+[lambda]                                         ) (1131,1132)
+[lambda]                         ; (1132,1133)
+[lambda]                     expression_statement (1136,1171) ?expression_statement
+[lambda]                         assignment_expression (1136,1170) ?assignment_expression
+[lambda]                             identifier (1136,1141) ?identifier
+[lambda]                             = (1142,1143)
+[lambda]                             member_expression (1144,1170) ?member_expression
+[lambda]                                 member_expression (1144,1158) ?member_expression
+[lambda]                                     identifier (1144,1153) ?identifier
+[lambda]                                     . (1153,1154)
+[lambda]                                     property_identifier (1154,1158) ?property_identifier
+[lambda]                                 . (1158,1159)
+[lambda]                                 property_identifier (1159,1170) ?property_identifier
+[lambda]                         ; (1170,1171)
+[lambda]                     } (1172,1173)
+[lambda]     export_statement (1175,1275) ?export_statement
+[lambda]         export (1175,1181)
+[lambda]         function_declaration (1182,1275) init?function_declaration
+[lambda]             async (1182,1187)
+[lambda]             function (1188,1196)
+[lambda]             identifier (1197,1201) ?identifier
+[lambda]             formal_parameters (1201,1203) ?formal_parameters
+[lambda]                 ( (1201,1202)
+[lambda]                 ) (1202,1203)
+[lambda]             statement_block (1204,1275) ?statement_block
+[lambda]                 { (1204,1205)
+[lambda]                 expression_statement (1208,1225) ?expression_statement
+[lambda]                     await_expression (1208,1224) ?await_expression
+[lambda]                         await (1208,1213)
+[lambda]                         call_expression (1214,1224) ?call_expression
+[lambda]                             identifier (1214,1222) ?identifier
+[lambda]                             arguments (1222,1224) ?arguments
+[lambda]                                 ( (1222,1223)
+[lambda]                                 ) (1223,1224)
+[lambda]                     ; (1224,1225)
+[lambda]                 expression_statement (1228,1254) ?expression_statement
+[lambda]                     assignment_expression (1228,1253) ?assignment_expression
+[lambda]                         identifier (1228,1232) ?identifier
+[lambda]                         = (1233,1234)
+[lambda]                         object (1235,1253) ?object
+[lambda]                             { (1235,1236)
+[lambda]                             shorthand_property_identifier (1236,1245) ?shorthand_property_identifier
+[lambda]                             , (1245,1246)
+[lambda]                             shorthand_property_identifier (1247,1252) ?shorthand_property_identifier
+[lambda]                             } (1252,1253)
+[lambda]                     ; (1253,1254)
+[lambda]                 expression_statement (1257,1273) ?expression_statement
+[lambda]                     call_expression (1257,1272) ?call_expression
+[lambda]                         member_expression (1257,1266) ?member_expression
+[lambda]                             identifier (1257,1261) ?identifier
+[lambda]                             . (1261,1262)
+[lambda]                             property_identifier (1262,1266) ?property_identifier
+[lambda]                         arguments (1266,1272) ?arguments
+[lambda]                             ( (1266,1267)
+[lambda]                             identifier (1267,1271) ?identifier
+[lambda]                             ) (1271,1272)
+[lambda]                     ; (1272,1273)
+[lambda]                 } (1274,1275)
+[lambda]     lexical_declaration (1277,1296) ?lexical_declaration
+[lambda]         let (1277,1280)
+[lambda]         variable_declarator (1281,1295) rejects?variable_declarator
+[lambda]             identifier (1281,1288) ?identifier
+[lambda]             = (1289,1290)
+[lambda]             null (1291,1295) ?null
+[lambda]         ; (1295,1296)
+[lambda]     export_statement (1297,1354) ?export_statement
+[lambda]         export (1297,1303)
+[lambda]         lexical_declaration (1304,1354) ?lexical_declaration
+[lambda]             const (1304,1309)
+[lambda]             variable_declarator (1310,1353) isReject?variable_declarator
+[lambda]                 identifier (1310,1318) ?identifier
+[lambda]                 = (1319,1320)
+[lambda]                 arrow_function (1321,1353) ?arrow_function
+[lambda]                     formal_parameters (1321,1327) ?formal_parameters
+[lambda]                         ( (1321,1322)
+[lambda]                         required_parameter (1322,1326) ?required_parameter
+[lambda]                             identifier (1322,1326) ?identifier
+[lambda]                         ) (1326,1327)
+[lambda]                     => (1328,1330)
+[lambda]                     call_expression (1331,1353) ?call_expression
+[lambda]                         member_expression (1331,1347) ?member_expression
+[lambda]                             identifier (1331,1338) ?identifier
+[lambda]                             . (1338,1339)
+[lambda]                             property_identifier (1339,1347) ?property_identifier
+[lambda]                         arguments (1347,1353) ?arguments
+[lambda]                             ( (1347,1348)
+[lambda]                             identifier (1348,1352) ?identifier
+[lambda]                             ) (1352,1353)
+[lambda]             ; (1353,1354)
+[lambda]     comment (1356,1405) ?comment
+[lambda]     export_statement (1406,9559) ?export_statement
+[lambda]         export (1406,1412)
+[lambda]         function_declaration (1413,9559) loadAllShows?function_declaration
+[lambda]             async (1413,1418)
+[lambda]             function (1419,1427)
+[lambda]             identifier (1428,1440) ?identifier
+[lambda]             formal_parameters (1440,1442) ?formal_parameters
+[lambda]                 ( (1440,1441)
+[lambda]                 ) (1441,1442)
+[lambda]             statement_block (1443,9559) ?statement_block
+[lambda]                 { (1443,1444)
+[lambda]                 expression_statement (1447,1484) ?expression_statement
+[lambda]                     call_expression (1447,1483) ?call_expression
+[lambda]                         member_expression (1447,1458) ?member_expression
+[lambda]                             identifier (1447,1454) ?identifier
+[lambda]                             . (1454,1455)
+[lambda]                             property_identifier (1455,1458) ?property_identifier
+[lambda]                         arguments (1458,1483) ?arguments
+[lambda]                             ( (1458,1459)
+[lambda]                             string (1459,1482) ?string
+[lambda]                                 ' (1459,1460)
+[lambda]                                 string_fragment (1460,1481) ?string_fragment
+[lambda]                                 ' (1481,1482)
+[lambda]                             ) (1482,1483)
+[lambda]                     ; (1483,1484)
+[lambda]                 expression_statement (1488,1522) ?expression_statement
+[lambda]                     assignment_expression (1488,1521) ?assignment_expression
+[lambda]                         identifier (1488,1495) ?identifier
+[lambda]                         = (1496,1497)
+[lambda]                         await_expression (1498,1521) ?await_expression
+[lambda]                             await (1498,1503)
+[lambda]                             call_expression (1504,1521) ?call_expression
+[lambda]                                 member_expression (1504,1519) ?member_expression
+[lambda]                                     identifier (1504,1508) ?identifier
+[lambda]                                     . (1508,1509)
+[lambda]                                     property_identifier (1509,1519) ?property_identifier
+[lambda]                                 arguments (1519,1521) ?arguments
+[lambda]                                     ( (1519,1520)
+[lambda]                                     ) (1520,1521)
+[lambda]                     ; (1521,1522)
+[lambda]                 lexical_declaration (1526,1577) ?lexical_declaration
+[lambda]                     const (1526,1531)
+[lambda]                     variable_declarator (1532,1576) loadAllShowsStartTime?variable_declarator
+[lambda]                         identifier (1532,1553) ?identifier
+[lambda]                         = (1554,1555)
+[lambda]                         call_expression (1556,1576) ?call_expression
+[lambda]                             member_expression (1556,1574) ?member_expression
+[lambda]                                 new_expression (1556,1566) ?new_expression
+[lambda]                                     new (1556,1559)
+[lambda]                                     identifier (1560,1564) ?identifier
+[lambda]                                     arguments (1564,1566) ?arguments
+[lambda]                                         ( (1564,1565)
+[lambda]                                         ) (1565,1566)
+[lambda]                                 . (1566,1567)
+[lambda]                                 property_identifier (1567,1574) ?property_identifier
+[lambda]                             arguments (1574,1576) ?arguments
+[lambda]                                 ( (1574,1575)
+[lambda]                                 ) (1575,1576)
+[lambda]                     ; (1576,1577)
+[lambda]                 lexical_declaration (1581,1672) ?lexical_declaration
+[lambda]                     const (1581,1586)
+[lambda]                     variable_declarator (1587,1671) listPromise?variable_declarator
+[lambda]                         identifier (1587,1598) ?identifier
+[lambda]                         = (1601,1602)
+[lambda]                         call_expression (1603,1671) ?call_expression
+[lambda]                             member_expression (1603,1612) ?member_expression
+[lambda]                                 identifier (1603,1608) ?identifier
+[lambda]                                 . (1608,1609)
+[lambda]                                 property_identifier (1609,1612) ?property_identifier
+[lambda]                             arguments (1612,1671) ?arguments
+[lambda]                                 ( (1612,1613)
+[lambda]                                 call_expression (1638,1670) ?call_expression
+[lambda]                                     member_expression (1638,1654) ?member_expression
+[lambda]                                         identifier (1638,1642) ?identifier
+[lambda]                                         . (1642,1643)
+[lambda]                                         property_identifier (1643,1654) ?property_identifier
+[lambda]                                     arguments (1654,1670) ?arguments
+[lambda]                                         ( (1654,1655)
+[lambda]                                         identifier (1655,1659) ?identifier
+[lambda]                                         , (1659,1660)
+[lambda]                                         number (1661,1662) ?number
+[lambda]                                         , (1662,1663)
+[lambda]                                         number (1664,1669) ?number
+[lambda]                                         ) (1669,1670)
+[lambda]                                 ) (1670,1671)
+[lambda]                     ; (1671,1672)
+[lambda]                 lexical_declaration (1675,1716) ?lexical_declaration
+[lambda]                     const (1675,1680)
+[lambda]                     variable_declarator (1681,1715) seriesPromise?variable_declarator
+[lambda]                         identifier (1681,1694) ?identifier
+[lambda]                         = (1695,1696)
+[lambda]                         call_expression (1697,1715) ?call_expression
+[lambda]                             member_expression (1697,1713) ?member_expression
+[lambda]                                 identifier (1697,1701) ?identifier
+[lambda]                                 . (1701,1702)
+[lambda]                                 property_identifier (1702,1713) ?property_identifier
+[lambda]                             arguments (1713,1715) ?arguments
+[lambda]                                 ( (1713,1714)
+[lambda]                                 ) (1714,1715)
+[lambda]                     ; (1715,1716)
+[lambda]                 lexical_declaration (1720,1765) ?lexical_declaration
+[lambda]                     const (1720,1725)
+[lambda]                     variable_declarator (1726,1764) waitPromise?variable_declarator
+[lambda]                         identifier (1726,1737) ?identifier
+[lambda]                         = (1740,1741)
+[lambda]                         call_expression (1742,1764) ?call_expression
+[lambda]                             member_expression (1742,1762) ?member_expression
+[lambda]                                 identifier (1742,1746) ?identifier
+[lambda]                                 . (1746,1747)
+[lambda]                                 property_identifier (1747,1762) ?property_identifier
+[lambda]                             arguments (1762,1764) ?arguments
+[lambda]                                 ( (1762,1763)
+[lambda]                                 ) (1763,1764)
+[lambda]                     ; (1764,1765)
+[lambda]                 lexical_declaration (1768,1812) ?lexical_declaration
+[lambda]                     const (1768,1773)
+[lambda]                     variable_declarator (1774,1811) blkGapPromise?variable_declarator
+[lambda]                         identifier (1774,1787) ?identifier
+[lambda]                         = (1788,1789)
+[lambda]                         call_expression (1790,1811) ?call_expression
+[lambda]                             member_expression (1790,1809) ?member_expression
+[lambda]                                 identifier (1790,1794) ?identifier
+[lambda]                                 . (1794,1795)
+[lambda]                                 property_identifier (1795,1809) ?property_identifier
+[lambda]                             arguments (1809,1811) ?arguments
+[lambda]                                 ( (1809,1810)
+[lambda]                                 ) (1810,1811)
+[lambda]                     ; (1811,1812)
+[lambda]                 lexical_declaration (1815,1855) ?lexical_declaration
+[lambda]                     const (1815,1820)
+[lambda]                     variable_declarator (1821,1854) rejPromise?variable_declarator
+[lambda]                         identifier (1821,1831) ?identifier
+[lambda]                         = (1835,1836)
+[lambda]                         call_expression (1837,1854) ?call_expression
+[lambda]                             member_expression (1837,1852) ?member_expression
+[lambda]                                 identifier (1837,1841) ?identifier
+[lambda]                                 . (1841,1842)
+[lambda]                                 property_identifier (1842,1852) ?property_identifier
+[lambda]                             arguments (1852,1854) ?arguments
+[lambda]                                 ( (1852,1853)
+[lambda]                                 ) (1853,1854)
+[lambda]                     ; (1854,1855)
+[lambda]                 lexical_declaration (1858,1898) ?lexical_declaration
+[lambda]                     const (1858,1863)
+[lambda]                     variable_declarator (1864,1897) pkupPromise?variable_declarator
+[lambda]                         identifier (1864,1875) ?identifier
+[lambda]                         = (1878,1879)
+[lambda]                         call_expression (1880,1897) ?call_expression
+[lambda]                             member_expression (1880,1895) ?member_expression
+[lambda]                                 identifier (1880,1884) ?identifier
+[lambda]                                 . (1884,1885)
+[lambda]                                 property_identifier (1885,1895) ?property_identifier
+[lambda]                             arguments (1895,1897) ?arguments
+[lambda]                                 ( (1895,1896)
+[lambda]                                 ) (1896,1897)
+[lambda]                     ; (1897,1898)
+[lambda]                 lexical_declaration (1901,1941) ?lexical_declaration
+[lambda]                     const (1901,1906)
+[lambda]                     variable_declarator (1907,1940) noEmbyPromise?variable_declarator
+[lambda]                         identifier (1907,1920) ?identifier
+[lambda]                         = (1921,1922)
+[lambda]                         call_expression (1923,1940) ?call_expression
+[lambda]                             member_expression (1923,1938) ?member_expression
+[lambda]                                 identifier (1923,1927) ?identifier
+[lambda]                                 . (1927,1928)
+[lambda]                                 property_identifier (1928,1938) ?property_identifier
+[lambda]                             arguments (1938,1940) ?arguments
+[lambda]                                 ( (1938,1939)
+[lambda]                                 ) (1939,1940)
+[lambda]                     ; (1940,1941)
+[lambda]                 lexical_declaration (1944,1981) ?lexical_declaration
+[lambda]                     const (1944,1949)
+[lambda]                     variable_declarator (1950,1980) gapPromise?variable_declarator
+[lambda]                         identifier (1950,1960) ?identifier
+[lambda]                         = (1964,1965)
+[lambda]                         call_expression (1966,1980) ?call_expression
+[lambda]                             member_expression (1966,1978) ?member_expression
+[lambda]                                 identifier (1966,1970) ?identifier
+[lambda]                                 . (1970,1971)
+[lambda]                                 property_identifier (1971,1978) ?property_identifier
+[lambda]                             arguments (1978,1980) ?arguments
+[lambda]                                 ( (1978,1979)
+[lambda]                                 ) (1979,1980)
+[lambda]                     ; (1980,1981)
+[lambda]                 lexical_declaration (1985,2309) ?lexical_declaration
+[lambda]                     const (1985,1990)
+[lambda]                     variable_declarator (1991,2308) [embyShows, srvrShows,
+         blockedWaitShows, blockedGapShows,
+         rejectsIn, pickups, noEmbys, gaps]?variable_declarator
+[lambda]                         array_pattern (1991,2102) ?array_pattern
+[lambda]                             [ (1991,1992)
+[lambda]                             identifier (1992,2001) ?identifier
+[lambda]                             , (2001,2002)
+[lambda]                             identifier (2003,2012) ?identifier
+[lambda]                             , (2012,2013)
+[lambda]                             identifier (2024,2040) ?identifier
+[lambda]                             , (2040,2041)
+[lambda]                             identifier (2042,2057) ?identifier
+[lambda]                             , (2057,2058)
+[lambda]                             identifier (2068,2077) ?identifier
+[lambda]                             , (2077,2078)
+[lambda]                             identifier (2079,2086) ?identifier
+[lambda]                             , (2086,2087)
+[lambda]                             identifier (2088,2095) ?identifier
+[lambda]                             , (2095,2096)
+[lambda]                             identifier (2097,2101) ?identifier
+[lambda]                             ] (2101,2102)
+[lambda]                         = (2103,2104)
+[lambda]                         await_expression (2110,2308) ?await_expression
+[lambda]                             await (2110,2115)
+[lambda]                             call_expression (2116,2308) ?call_expression
+[lambda]                                 member_expression (2116,2127) ?member_expression
+[lambda]                                     identifier (2116,2123) ?identifier
+[lambda]                                     . (2123,2124)
+[lambda]                                     property_identifier (2124,2127) ?property_identifier
+[lambda]                                 arguments (2127,2308) ?arguments
+[lambda]                                     ( (2127,2128)
+[lambda]                                     array (2128,2307) ?array
+[lambda]                                         [ (2128,2129)
+[lambda]                                         identifier (2129,2140) ?identifier
+[lambda]                                         , (2140,2141)
+[lambda]                                         identifier (2142,2155) ?identifier
+[lambda]                                         , (2155,2156)
+[lambda]                                         identifier (2181,2192) ?identifier
+[lambda]                                         , (2192,2193)
+[lambda]                                         identifier (2194,2207) ?identifier
+[lambda]                                         , (2207,2208)
+[lambda]                                         identifier (2233,2243) ?identifier
+[lambda]                                         , (2243,2244)
+[lambda]                                         identifier (2245,2256) ?identifier
+[lambda]                                         , (2256,2257)
+[lambda]                                         identifier (2281,2294) ?identifier
+[lambda]                                         , (2294,2295)
+[lambda]                                         identifier (2296,2306) ?identifier
+[lambda]                                         ] (2306,2307)
+[lambda]                                     ) (2307,2308)
+[lambda]                     ; (2308,2309)
+[lambda]                 expression_statement (2312,2331) ?expression_statement
+[lambda]                     assignment_expression (2312,2331) ?assignment_expression
+[lambda]                         identifier (2312,2319) ?identifier
+[lambda]                         = (2320,2321)
+[lambda]                         identifier (2322,2331) ?identifier
+[lambda]                 lexical_declaration (2337,2352) ?lexical_declaration
+[lambda]                     let (2337,2340)
+[lambda]                     variable_declarator (2341,2351) shows?variable_declarator
+[lambda]                         identifier (2341,2346) ?identifier
+[lambda]                         = (2347,2348)
+[lambda]                         array (2349,2351) ?array
+[lambda]                             [ (2349,2350)
+[lambda]                             ] (2350,2351)
+[lambda]                     ; (2351,2352)
+[lambda]                 comment (2354,2397) ?comment
+[lambda]                 comment (2398,2459) ?comment
+[lambda]                 for_in_statement (2462,3468) ?for_in_statement
+[lambda]                     for (2462,2465)
+[lambda]                     ( (2465,2466)
+[lambda]                     let (2466,2469)
+[lambda]                     identifier (2470,2473) ?identifier
+[lambda]                     in (2474,2476)
+[lambda]                     member_expression (2477,2497) ?member_expression
+[lambda]                         member_expression (2477,2491) ?member_expression
+[lambda]                             identifier (2477,2486) ?identifier
+[lambda]                             . (2486,2487)
+[lambda]                             property_identifier (2487,2491) ?property_identifier
+[lambda]                         . (2491,2492)
+[lambda]                         property_identifier (2492,2497) ?property_identifier
+[lambda]                     ) (2497,2498)
+[lambda]                     statement_block (2499,3468) ?statement_block
+[lambda]                         { (2499,2500)
+[lambda]                         lexical_declaration (2505,2542) ?lexical_declaration
+[lambda]                             let (2505,2508)
+[lambda]                             variable_declarator (2509,2541) show?variable_declarator
+[lambda]                                 identifier (2509,2513) ?identifier
+[lambda]                                 = (2514,2515)
+[lambda]                                 subscript_expression (2516,2541) ?subscript_expression
+[lambda]                                     member_expression (2516,2536) ?member_expression
+[lambda]                                         member_expression (2516,2530) ?member_expression
+[lambda]                                             identifier (2516,2525) ?identifier
+[lambda]                                             . (2525,2526)
+[lambda]                                             property_identifier (2526,2530) ?property_identifier
+[lambda]                                         . (2530,2531)
+[lambda]                                         property_identifier (2531,2536) ?property_identifier
+[lambda]                                     [ (2536,2537)
+[lambda]                                     identifier (2537,2540) ?identifier
+[lambda]                                     ] (2540,2541)
+[lambda]                             ; (2541,2542)
+[lambda]                         expression_statement (2548,2583) ?expression_statement
+[lambda]                             call_expression (2548,2582) ?call_expression
+[lambda]                                 member_expression (2548,2561) ?member_expression
+[lambda]                                     identifier (2548,2554) ?identifier
+[lambda]                                     . (2554,2555)
+[lambda]                                     property_identifier (2555,2561) ?property_identifier
+[lambda]                                 arguments (2561,2582) ?arguments
+[lambda]                                     ( (2561,2562)
+[lambda]                                     identifier (2562,2566) ?identifier
+[lambda]                                     , (2566,2567)
+[lambda]                                     member_expression (2568,2581) ?member_expression
+[lambda]                                         identifier (2568,2572) ?identifier
+[lambda]                                         . (2572,2573)
+[lambda]                                         property_identifier (2573,2581) ?property_identifier
+[lambda]                                     ) (2581,2582)
+[lambda]                             ; (2582,2583)
+[lambda]                         expression_statement (2588,2609) ?expression_statement
+[lambda]                             unary_expression (2588,2608) ?unary_expression
+[lambda]                                 delete (2588,2594)
+[lambda]                                 member_expression (2595,2608) ?member_expression
+[lambda]                                     identifier (2595,2599) ?identifier
+[lambda]                                     . (2599,2600)
+[lambda]                                     property_identifier (2600,2608) ?property_identifier
+[lambda]                             ; (2608,2609)
+[lambda]                         for_in_statement (2614,2735) ?for_in_statement
+[lambda]                             for (2614,2617)
+[lambda]                             ( (2617,2618)
+[lambda]                             const (2618,2623)
+[lambda]                             identifier (2624,2628) ?identifier
+[lambda]                             of (2629,2631)
+[lambda]                             array (2632,2663) ?array
+[lambda]                                 [ (2632,2633)
+[lambda]                                 string (2633,2646) ?string
+[lambda]                                     ' (2633,2634)
+[lambda]                                     string_fragment (2634,2645) ?string_fragment
+[lambda]                                     ' (2645,2646)
+[lambda]                                 , (2646,2647)
+[lambda]                                 string (2648,2662) ?string
+[lambda]                                     ' (2648,2649)
+[lambda]                                     string_fragment (2649,2661) ?string_fragment
+[lambda]                                     ' (2661,2662)
+[lambda]                                 ] (2662,2663)
+[lambda]                             ) (2663,2664)
+[lambda]                             statement_block (2665,2735) ?statement_block
+[lambda]                                 { (2665,2666)
+[lambda]                                 if_statement (2673,2729) ?if_statement
+[lambda]                                     if (2673,2675)
+[lambda]                                     parenthesized_expression (2675,2687) ?parenthesized_expression
+[lambda]                                         ( (2675,2676)
+[lambda]                                         subscript_expression (2676,2686) ?subscript_expression
+[lambda]                                             identifier (2676,2680) ?identifier
+[lambda]                                             [ (2680,2681)
+[lambda]                                             identifier (2681,2685) ?identifier
+[lambda]                                             ] (2685,2686)
+[lambda]                                         ) (2686,2687)
+[lambda]                                     expression_statement (2688,2729) ?expression_statement
+[lambda]                                         assignment_expression (2688,2728) ?assignment_expression
+[lambda]                                             subscript_expression (2688,2698) ?subscript_expression
+[lambda]                                                 identifier (2688,2692) ?identifier
+[lambda]                                                 [ (2692,2693)
+[lambda]                                                 identifier (2693,2697) ?identifier
+[lambda]                                                 ] (2697,2698)
+[lambda]                                             = (2699,2700)
+[lambda]                                             call_expression (2701,2728) ?call_expression
+[lambda]                                                 member_expression (2701,2721) ?member_expression
+[lambda]                                                     subscript_expression (2701,2711) ?subscript_expression
+[lambda]                                                         identifier (2701,2705) ?identifier
+[lambda]                                                         [ (2705,2706)
+[lambda]                                                         identifier (2706,2710) ?identifier
+[lambda]                                                         ] (2710,2711)
+[lambda]                                                     . (2711,2712)
+[lambda]                                                     property_identifier (2712,2721) ?property_identifier
+[lambda]                                                 arguments (2721,2728) ?arguments
+[lambda]                                                     ( (2721,2722)
+[lambda]                                                     number (2722,2723) ?number
+[lambda]                                                     , (2723,2724)
+[lambda]                                                     number (2725,2727) ?number
+[lambda]                                                     ) (2727,2728)
+[lambda]                                         ; (2728,2729)
+[lambda]                                 } (2734,2735)
+[lambda]                         lexical_declaration (2740,2788) ?lexical_declaration
+[lambda]                             const (2740,2745)
+[lambda]                             variable_declarator (2746,2787) embyPath?variable_declarator
+[lambda]                                 identifier (2746,2754) ?identifier
+[lambda]                                 = (2759,2760)
+[lambda]                                 call_expression (2761,2787) ?call_expression
+[lambda]                                     member_expression (2761,2785) ?member_expression
+[lambda]                                         call_expression (2761,2781) ?call_expression
+[lambda]                                             member_expression (2761,2776) ?member_expression
+[lambda]                                                 member_expression (2761,2770) ?member_expression
+[lambda]                                                     identifier (2761,2765) ?identifier
+[lambda]                                                     . (2765,2766)
+[lambda]                                                     property_identifier (2766,2770) ?property_identifier
+[lambda]                                                 . (2770,2771)
+[lambda]                                                 property_identifier (2771,2776) ?property_identifier
+[lambda]                                             arguments (2776,2781) ?arguments
+[lambda]                                                 ( (2776,2777)
+[lambda]                                                 string (2777,2780) ?string
+[lambda]                                                     ' (2777,2778)
+[lambda]                                                     string_fragment (2778,2779) ?string_fragment
+[lambda]                                                     ' (2779,2780)
+[lambda]                                                 ) (2780,2781)
+[lambda]                                         . (2781,2782)
+[lambda]                                         property_identifier (2782,2785) ?property_identifier
+[lambda]                                     arguments (2785,2787) ?arguments
+[lambda]                                         ( (2785,2786)
+[lambda]                                         ) (2786,2787)
+[lambda]                             ; (2787,2788)
+[lambda]                         lexical_declaration (2793,2834) ?lexical_declaration
+[lambda]                             const (2793,2798)
+[lambda]                             variable_declarator (2799,2833) showDateSize?variable_declarator
+[lambda]                                 identifier (2799,2811) ?identifier
+[lambda]                                 = (2812,2813)
+[lambda]                                 subscript_expression (2814,2833) ?subscript_expression
+[lambda]                                     identifier (2814,2823) ?identifier
+[lambda]                                     [ (2823,2824)
+[lambda]                                     identifier (2824,2832) ?identifier
+[lambda]                                     ] (2832,2833)
+[lambda]                             ; (2833,2834)
+[lambda]                         if_statement (2839,3050) ?if_statement
+[lambda]                             if (2839,2841)
+[lambda]                             parenthesized_expression (2841,2856) ?parenthesized_expression
+[lambda]                                 ( (2841,2842)
+[lambda]                                 unary_expression (2842,2855) ?unary_expression
+[lambda]                                     ! (2842,2843)
+[lambda]                                     identifier (2843,2855) ?identifier
+[lambda]                                 ) (2855,2856)
+[lambda]                             statement_block (2857,2944) ?statement_block
+[lambda]                                 { (2857,2858)
+[lambda]                                 expression_statement (2865,2885) ?expression_statement
+[lambda]                                     assignment_expression (2865,2884) ?assignment_expression
+[lambda]                                         member_expression (2865,2877) ?member_expression
+[lambda]                                             identifier (2865,2869) ?identifier
+[lambda]                                             . (2869,2870)
+[lambda]                                             property_identifier (2870,2877) ?property_identifier
+[lambda]                                         = (2878,2879)
+[lambda]                                         true (2880,2884) ?true
+[lambda]                                     ; (2884,2885)
+[lambda]                                 expression_statement (2892,2917) ?expression_statement
+[lambda]                                     assignment_expression (2892,2916) ?assignment_expression
+[lambda]                                         member_expression (2892,2901) ?member_expression
+[lambda]                                             identifier (2892,2896) ?identifier
+[lambda]                                             . (2896,2897)
+[lambda]                                             property_identifier (2897,2901) ?property_identifier
+[lambda]                                         = (2902,2903)
+[lambda]                                         string (2904,2916) ?string
+[lambda]                                             ' (2904,2905)
+[lambda]                                             string_fragment (2905,2915) ?string_fragment
+[lambda]                                             ' (2915,2916)
+[lambda]                                     ; (2916,2917)
+[lambda]                                 expression_statement (2924,2938) ?expression_statement
+[lambda]                                     assignment_expression (2924,2937) ?assignment_expression
+[lambda]                                         member_expression (2924,2933) ?member_expression
+[lambda]                                             identifier (2924,2928) ?identifier
+[lambda]                                             . (2928,2929)
+[lambda]                                             property_identifier (2929,2933) ?property_identifier
+[lambda]                                         = (2934,2935)
+[lambda]                                         number (2936,2937) ?number
+[lambda]                                     ; (2937,2938)
+[lambda]                                 } (2943,2944)
+[lambda]                             else_clause (2949,3050) ?else_clause
+[lambda]                                 else (2949,2953)
+[lambda]                                 statement_block (2954,3050) ?statement_block
+[lambda]                                     { (2954,2955)
+[lambda]                                     lexical_declaration (2962,2996) ?lexical_declaration
+[lambda]                                         const (2962,2967)
+[lambda]                                         variable_declarator (2968,2995) [date, size]?variable_declarator
+[lambda]                                             array_pattern (2968,2980) ?array_pattern
+[lambda]                                                 [ (2968,2969)
+[lambda]                                                 identifier (2969,2973) ?identifier
+[lambda]                                                 , (2973,2974)
+[lambda]                                                 identifier (2975,2979) ?identifier
+[lambda]                                                 ] (2979,2980)
+[lambda]                                             = (2981,2982)
+[lambda]                                             identifier (2983,2995) ?identifier
+[lambda]                                         ; (2995,2996)
+[lambda]                                     expression_statement (3003,3020) ?expression_statement
+[lambda]                                         assignment_expression (3003,3019) ?assignment_expression
+[lambda]                                             member_expression (3003,3012) ?member_expression
+[lambda]                                                 identifier (3003,3007) ?identifier
+[lambda]                                                 . (3007,3008)
+[lambda]                                                 property_identifier (3008,3012) ?property_identifier
+[lambda]                                             = (3013,3014)
+[lambda]                                             identifier (3015,3019) ?identifier
+[lambda]                                         ; (3019,3020)
+[lambda]                                     expression_statement (3027,3044) ?expression_statement
+[lambda]                                         assignment_expression (3027,3043) ?assignment_expression
+[lambda]                                             member_expression (3027,3036) ?member_expression
+[lambda]                                                 identifier (3027,3031) ?identifier
+[lambda]                                                 . (3031,3032)
+[lambda]                                                 property_identifier (3032,3036) ?property_identifier
+[lambda]                                             = (3037,3038)
+[lambda]                                             identifier (3039,3043) ?identifier
+[lambda]                                         ; (3043,3044)
+[lambda]                                     } (3049,3050)
+[lambda]                         if_statement (3055,3106) ?if_statement
+[lambda]                             if (3055,3057)
+[lambda]                             parenthesized_expression (3057,3076) ?parenthesized_expression
+[lambda]                                 ( (3057,3058)
+[lambda]                                 unary_expression (3058,3075) ?unary_expression
+[lambda]                                     ! (3058,3059)
+[lambda]                                     member_expression (3059,3075) ?member_expression
+[lambda]                                         identifier (3059,3063) ?identifier
+[lambda]                                         . (3063,3064)
+[lambda]                                         property_identifier (3064,3075) ?property_identifier
+[lambda]                                 ) (3075,3076)
+[lambda]                             expression_statement (3077,3106) ?expression_statement
+[lambda]                                 assignment_expression (3077,3105) ?assignment_expression
+[lambda]                                     member_expression (3077,3093) ?member_expression
+[lambda]                                         identifier (3077,3081) ?identifier
+[lambda]                                         . (3081,3082)
+[lambda]                                         property_identifier (3082,3093) ?property_identifier
+[lambda]                                     = (3094,3095)
+[lambda]                                     member_expression (3096,3105) ?member_expression
+[lambda]                                         identifier (3096,3100) ?identifier
+[lambda]                                         . (3100,3101)
+[lambda]                                         property_identifier (3101,3105) ?property_identifier
+[lambda]                                 ; (3105,3106)
+[lambda]                         lexical_declaration (3112,3142) ?lexical_declaration
+[lambda]                             const (3112,3117)
+[lambda]                             variable_declarator (3118,3141) gapData?variable_declarator
+[lambda]                                 identifier (3118,3125) ?identifier
+[lambda]                                 = (3126,3127)
+[lambda]                                 subscript_expression (3128,3141) ?subscript_expression
+[lambda]                                     identifier (3128,3132) ?identifier
+[lambda]                                     [ (3132,3133)
+[lambda]                                     member_expression (3133,3140) ?member_expression
+[lambda]                                         identifier (3133,3137) ?identifier
+[lambda]                                         . (3137,3138)
+[lambda]                                         property_identifier (3138,3140) ?property_identifier
+[lambda]                                     ] (3140,3141)
+[lambda]                             ; (3141,3142)
+[lambda]                         if_statement (3147,3230) ?if_statement
+[lambda]                             if (3147,3149)
+[lambda]                             parenthesized_expression (3149,3158) ?parenthesized_expression
+[lambda]                                 ( (3149,3150)
+[lambda]                                 identifier (3150,3157) ?identifier
+[lambda]                                 ) (3157,3158)
+[lambda]                             statement_block (3159,3230) ?statement_block
+[lambda]                                 { (3159,3160)
+[lambda]                                 expression_statement (3167,3196) ?expression_statement
+[lambda]                                     call_expression (3167,3195) ?call_expression
+[lambda]                                         member_expression (3167,3180) ?member_expression
+[lambda]                                             identifier (3167,3173) ?identifier
+[lambda]                                             . (3173,3174)
+[lambda]                                             property_identifier (3174,3180) ?property_identifier
+[lambda]                                         arguments (3180,3195) ?arguments
+[lambda]                                             ( (3180,3181)
+[lambda]                                             identifier (3181,3185) ?identifier
+[lambda]                                             , (3185,3186)
+[lambda]                                             identifier (3187,3194) ?identifier
+[lambda]                                             ) (3194,3195)
+[lambda]                                     ; (3195,3196)
+[lambda]                                 expression_statement (3203,3224) ?expression_statement
+[lambda]                                     unary_expression (3203,3223) ?unary_expression
+[lambda]                                         delete (3203,3209)
+[lambda]                                         subscript_expression (3210,3223) ?subscript_expression
+[lambda]                                             identifier (3210,3214) ?identifier
+[lambda]                                             [ (3214,3215)
+[lambda]                                             member_expression (3215,3222) ?member_expression
+[lambda]                                                 identifier (3215,3219) ?identifier
+[lambda]                                                 . (3219,3220)
+[lambda]                                                 property_identifier (3220,3222) ?property_identifier
+[lambda]                                             ] (3222,3223)
+[lambda]                                     ; (3223,3224)
+[lambda]                                 } (3229,3230)
+[lambda]                         lexical_declaration (3236,3291) ?lexical_declaration
+[lambda]                             const (3236,3241)
+[lambda]                             variable_declarator (3242,3290) tvdbId?variable_declarator
+[lambda]                                 identifier (3242,3248) ?identifier
+[lambda]                                 = (3249,3250)
+[lambda]                                 binary_expression (3251,3290) ?binary_expression
+[lambda]                                     member_expression (3251,3274) ?member_expression
+[lambda]                                         member_expression (3251,3268) ?member_expression
+[lambda]                                             identifier (3251,3255) ?identifier
+[lambda]                                             optional_chain (3255,3257) ?optional_chain
+[lambda]                                                 ?. (3255,3257)
+[lambda]                                             property_identifier (3257,3268) ?property_identifier
+[lambda]                                         optional_chain (3268,3270) ?optional_chain
+[lambda]                                             ?. (3268,3270)
+[lambda]                                         property_identifier (3270,3274) ?property_identifier
+[lambda]                                     || (3275,3277)
+[lambda]                                     member_expression (3278,3290) ?member_expression
+[lambda]                                         identifier (3278,3282) ?identifier
+[lambda]                                         optional_chain (3282,3284) ?optional_chain
+[lambda]                                             ?. (3282,3284)
+[lambda]                                         property_identifier (3284,3290) ?property_identifier
+[lambda]                             ; (3290,3291)
+[lambda]                         if_statement (3296,3416) ?if_statement
+[lambda]                             if (3296,3298)
+[lambda]                             parenthesized_expression (3298,3324) ?parenthesized_expression
+[lambda]                                 ( (3298,3299)
+[lambda]                                 binary_expression (3299,3323) ?binary_expression
+[lambda]                                     unary_expression (3299,3306) ?unary_expression
+[lambda]                                         ! (3299,3300)
+[lambda]                                         identifier (3300,3306) ?identifier
+[lambda]                                     || (3307,3309)
+[lambda]                                     binary_expression (3310,3323) ?binary_expression
+[lambda]                                         identifier (3310,3316) ?identifier
+[lambda]                                         == (3317,3319)
+[lambda]                                         string (3320,3323) ?string
+[lambda]                                             ' (3320,3321)
+[lambda]                                             string_fragment (3321,3322) ?string_fragment
+[lambda]                                             ' (3322,3323)
+[lambda] parseCode ended, 196ms

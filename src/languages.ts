@@ -20,6 +20,8 @@ const langs: Langs = {
       (variable_declarator   (identifier)        @name (arrow_function))
       (assignment_expression (identifier)        @name (arrow_function))
       (assignment_expression (member_expression) @name (arrow_function))
+      (class_declaration     (type_identifier)             @name)
+      (method_definition     (property_identifier)   @name)
     ] @body`,
     suffixes: new Set(['.js', '.ts', '.tsx', '.jsx']),
     lineComment:  '//',

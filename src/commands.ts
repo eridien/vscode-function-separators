@@ -63,8 +63,6 @@ export async function insertSeparators() {
     if(funcLineStart < 1 || !inSelection(funcLineStart)) continue;
     const posEnd      = doc.positionAt(func.endBody);
     const funcLineEnd = posEnd.line;
-    log(`func.name ${func.name}  funcLineEnd ${funcLineEnd}  funcLineStart ${funcLineStart
-       } settings.minFuncHeight ${settings.minFuncHeight}`);
     if((funcLineEnd - funcLineStart) < settings.minFuncHeight-1) continue;
     const prevLineText = doc.lineAt(funcLineStart-1).text;
     if(lineCommentRegex.test(prevLineText)             || // has //
