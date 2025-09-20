@@ -1,9 +1,5 @@
 bugs ...
-✖️✖️✖️✖️ INIT ✖️✖️✖️✖️✖️✖
 
-
-
-✖️✖️✖️✖️✖️ INIT ✖️✖️✖️✖️✖️✖
 todo ...
 
 not needed ...A
@@ -12,37 +8,18 @@ not needed ...A
   reverse right fill string
 
 testing ...
-
-  skip insert
-    comments line above
-      */               skip, end jsdoc
-      xxx // comment   don't skip, harmless
-        // comment     skip, already there
-    nested
-    selection
-
-  settings ...
-
-    position
-      indent: 0 2 0
-      width:  0 0 2
-
-    name appearance  ThisIs_AName.forsure
-      splitSeparators: off  off  on   on
-      splitCamel:      off  on   off  on
-      uppercase:       on   off  off  off
-
-    minFuncHeight:   0  2  3
-
-    blankLinesAbove: 0
-    blankLinesBelow: 0
-
-    leftFillString:  =  !@#$%  **
-      
+  all settings
+  chk restore original text on remove
+  comments line above
+    */               skip, end jsdoc
+    xxx // comment   don't skip, harmless
+      // comment     skip, already there
+  nested
+  selection      
   remove
     nested
     selection
-    corrupt line
+    remove corrupt line
       invis alone
       wrong number vis
 
