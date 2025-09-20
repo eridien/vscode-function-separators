@@ -92,7 +92,9 @@ const langs: Langs = {
   rust: {
     sExpr: `(function_item (identifier) @name) @body`,
     suffixes: new Set(['.rs']),
-    lineComment: '//'
+    lineComment:  '//',
+    openComment:  '/*',
+    closeComment: '*/',
   },
 };
 
