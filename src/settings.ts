@@ -7,7 +7,8 @@ interface FunctionSeparatorsSettings {
   includeNested:   boolean;
   blankLinesAbove:  number;
   blankLinesBelow:  number;
-  fillString:          string;
+  leftFillString:   string;
+  rightFillString:  string;
   indent:           number; // -1: match func indent
   width:            number; // -1: widest line in file
   splitName:       boolean;
@@ -20,7 +21,8 @@ export let settings: FunctionSeparatorsSettings = {
   includeNested:  false,
   blankLinesAbove:    1,
   blankLinesBelow:    1,
-  fillString:          '=',
+  leftFillString:   '=',
+  rightFillString:  '=',
   indent:             0, // -1: match func indent
   width:             80, // -1: widest line in file
   splitName:       true,
@@ -31,15 +33,16 @@ export let settings: FunctionSeparatorsSettings = {
 export function loadSettings() {
   const config = vscode.workspace.getConfiguration('function-separators');
   settings = {
-    minFuncHeight:   config.get('minFuncHeight', 3),
-    includeNested:   config.get('includeNested', false),
-    blankLinesAbove: config.get('blankLinesAbove', 1),
-    blankLinesBelow: config.get('blankLinesBelow', 1),
-    fillString:      config.get('fillString', '='),
-    indent:          config.get('indent', 0),
-    width:           config.get('width', 80),
-    splitName:       config.get('splitName', true),
-    case:            config.get('case', 'Uppercase'),
-    fileWrap:        config.get('fileWrap', true),
+    minFuncHeight:   config.get('minFuncHeight',      3),
+    includeNested:   config.get('includeNested',  false),
+    blankLinesAbove: config.get('blankLinesAbove',    1),
+    blankLinesBelow: config.get('blankLinesBelow',    1),
+    leftFillString:  config.get('leftFillString',   '='),
+    rightFillString: config.get('rightFillString',  '='),
+    indent:          config.get('indent',             0),
+    width:           config.get('width',             80),
+    splitName:       config.get('splitName',       true),
+    case:            config.get('case',     'Uppercase'),
+    fileWrap:        config.get('fileWrap',        true),
   };
 }

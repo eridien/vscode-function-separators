@@ -99,20 +99,27 @@
           "title": "Blank Lines Below",
           "description": "Number of blank lines to add below the function separator."
         },
-        "function-separators.fillString": {
+        "function-separators.leftFillString": {
           "type": "string",
           "default": "=",
           "order": 5,
-          "title": "Function Separator Fill String",
-          "description": "The string repeated to the left and right of the function name. It may be multiple characters."
+          "title": "Separator Left Fill String",
+          "description": "The string repeated to the left of the function name. It may be multiple characters."
+        },
+        "function-separators.rightFillString": {
+          "type": "string",
+          "default": "=",
+          "order": 6,
+          "title": "Separator Right Fill String",
+          "description": "The string repeated to the right of the function name. It may be multiple characters."
         },
         "function-separators.indent": {
           "type": "number",
           "default":    0,
           "minimum":   -1,
           "maximum": 1024,
-          "order":      6,
-          "title": "Function Separator Indent",
+          "order":      7,
+          "title": "Separator Indent",
           "description": "Number of spaces to indent the function separator. -1 means match the function's indent."
         },
         "function-separators.width": {
@@ -120,20 +127,20 @@
           "default":   80,
           "minimum":   -1,
           "maximum": 1024,
-          "order":      7,
-          "title": "Width of Function Separator",
+          "order":      8,
+          "title": "Width of Separator",
           "description": "Total width of the function separator including indentation. -1 means match the widest line in the file."
         },
         "function-separators.splitName": {
           "type": "boolean",
           "default":   true,
-          "order":        8,
+          "order":        9,
           "title": "Split Function Name",
           "description": "Split the function name into multiple words by _ and camelcase."
         },
         "function-separators.case": {
           "type":       "string",
-          "order":             9,
+          "order":             10,
           "default": "Uppercase",
           "enum": [ "Original", "Lowercase", "Capitalize", "Uppercase" ],
           "enumDescriptions": [
@@ -148,7 +155,7 @@
         "function-separators.fileWrap": {
           "type":   "boolean",
           "default":     true,
-          "order":         10,
+          "order":         11,
           "title": "Jump Between Files",
           "description": "Jump to the next file when passing the end of the current file instead of wrapping to the top of the current file."
         }

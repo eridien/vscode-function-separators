@@ -103,14 +103,33 @@ export async function insertSeparators() {
     const endCol      = (settings.width >= 0) ? settings.width :
                           Math.max(...(doc.getText().split(/\r?\n/)
                                           .map(line => line.length)));
+
     const allFillWidth   = Math.max(endCol - startCol - bodyWidth, 0);
-    const leftFillWidth  = Math.floor(allFillWidth / 2);
-    const rightFillWidth = allFillWidth - leftFillWidth;
-    const maxFillStr     = settings.fillString.repeat(1024);
+    let leftFillWidth  = Math.floor(allFillWidth / 2);
+    let rightFillWidth = allFillWidth - leftFillWidth;
+    if(settings.leftFillString.length  == 0) 
+      rightFillWidth  = allFillWidth;
+    if(settings.rightFillString.length == 0) 
+      leftFillWidth  = allFillWidth;
+
+    let leftFill = '';
+    if(settings.leftFillString.length > 0) {
+      for(let i=0; i <= leftFillWidth; i += settings.leftFillString.length)
+        leftFill = (leftFill) + settings.leftFillString;
+      leftFill = leftFill.slice(leftFill.length - leftFillWidth);
+    } 
+
+    let rightFill = '';
+    if(settings.rightFillString.length > 0) {
+      for(let i=0; i <= rightFillWidth; i += settings.rightFillString.length)
+        rightFill = settings.rightFillString + rightFill;
+      rightFill = rightFill.slice(0, rightFillWidth);
+    }
+
     let commentLineText  = `${' '.repeat(startCol)}${lang.lineComment}${
-        utils.numberToInvBase4(numOldBlankLines, NUM_INVIS_DIGITS)}${
-        maxFillStr.slice(0, leftFillWidth)} ${adjName} ${
-        maxFillStr.slice(0, rightFillWidth)}`;
+           utils.numberToInvBase4(numOldBlankLines, NUM_INVIS_DIGITS)}${
+                                       leftFill} ${adjName} ${rightFill}`;
+
     const start = new vscode.Position(firstOldBlankLineNum, 0);
     const end   = new vscode.Position(funcLineStart,        0);
     const range = new vscode.Range(start, end);
