@@ -276,3 +276,13 @@ export function getNextMarkedLine(
     return undefined;
   }
 }
+
+function graphemes(str: string): string[] {
+  const seg = new Intl.Segmenter(undefined, { granularity: "grapheme" });
+  return Array.from(seg.segment(str), s => s.segment);
+}
+
+export function removeLastGrapheme(str: string): string {
+  const g = graphemes(str);
+  return g.length > 0 ? g.slice(0, -1).join("") : "";
+}

@@ -117,6 +117,8 @@ export async function insertSeparators() {
       for(let i=0; i <= leftFillWidth; i += settings.leftFillString.length)
         leftFill = (leftFill) + settings.leftFillString;
       leftFill = leftFill.slice(leftFill.length - leftFillWidth);
+      // if a unicode char is cut in half, remove last grapheme
+      leftFill = utils.removeLastGrapheme(leftFill);
     } 
 
     let rightFill = '';
@@ -124,6 +126,8 @@ export async function insertSeparators() {
       for(let i=0; i <= rightFillWidth; i += settings.rightFillString.length)
         rightFill = settings.rightFillString + rightFill;
       rightFill = rightFill.slice(0, rightFillWidth);
+      // if a unicode char is cut in half, remove last grapheme
+      rightFill = utils.removeLastGrapheme(rightFill);
     }
 
     let commentLineText  = `${' '.repeat(startCol)}${lang.lineComment}${
