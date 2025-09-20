@@ -10,5 +10,14 @@
 	"typescript.tsc.autoDetect": "off",
   // "npm.autoDetect": "off",
   "editor.autoIndentOnPasteWithinString": false,
-  "editor.autoIndentOnPaste": true
+  "editor.autoIndentOnPaste": true,
+  "function-separators.width": 55,
+  "function-separators.minFuncHeight": 3,
+  "function-separators.blankLinesAbove": 3,
+  "function-separators.blankLinesBelow": 3,
+  "function-separators.leftFillString": "❌",
+  "function-separators.rightFillString": "❌",
+  "function-separators.case": "Capitalize",
+  "function-separators.splitName": true,
+  "function-separators.indent": 0
 }
