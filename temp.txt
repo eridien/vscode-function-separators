@@ -1,1003 +1,1007 @@
-[pars] program (1,21318) ?program
-[pars]     import_declaration (1,22) ?import_declaration
-[pars]         import (1,7)
-[pars]         scoped_identifier (8,21) Set?scoped_identifier
-[pars]             scoped_identifier (8,17) util?scoped_identifier
-[pars]                 identifier (8,12) ?identifier
-[pars]                 . (12,13)
-[pars]                 identifier (13,17) ?identifier
-[pars]             . (17,18)
-[pars]             identifier (18,21) ?identifier
-[pars]         ; (21,22)
-[pars]     class_declaration (24,21317) ExpressionScriptEngine?class_declaration
-[pars]         modifiers (24,30) ?modifiers
-[pars]             public (24,30)
-[pars]         class (31,36)
-[pars]         identifier (37,59) ?identifier
-[pars]         super_interfaces (60,83) ?super_interfaces
-[pars]             implements (60,70)
-[pars]             type_list (71,83) ?type_list
-[pars]                 type_identifier (71,83) ?type_identifier
-[pars]         class_body (84,21317) ?class_body
-[pars]             { (84,85)
-[pars]             method_declaration (91,143) getType?method_declaration
-[pars]                 modifiers (91,97) ?modifiers
-[pars]                     public (91,97)
-[pars]                 type_identifier (98,104) ?type_identifier
-[pars]                 identifier (105,112) ?identifier
-[pars]                 formal_parameters (112,114) ?formal_parameters
-[pars]                     ( (112,113)
-[pars]                     ) (113,114)
-[pars]                 block (115,143) ?block
-[pars]                     { (115,116)
-[pars]                     return_statement (125,137) ?return_statement
-[pars]                         return (125,131)
-[pars]                         identifier (132,136) ?identifier
-[pars]                         ; (136,137)
-[pars]                     } (142,143)
-[pars]             field_declaration (149,196) ?field_declaration
-[pars]                 modifiers (149,168) ?modifiers
-[pars]                     public (149,155)
-[pars]                     static (156,162)
-[pars]                     final (163,168)
-[pars]                 type_identifier (169,175) ?type_identifier
-[pars]                 variable_declarator (176,195) NAME?variable_declarator
-[pars]                     identifier (176,180) ?identifier
-[pars]                     = (181,182)
-[pars]                     string_literal (183,195) ?string_literal
-[pars]                         " (183,184)
-[pars]                         string_fragment (184,194) ?string_fragment
-[pars]                         " (194,195)
-[pars]                 ; (195,196)
-[pars]             field_declaration (202,3476) ?field_declaration
-[pars]                 modifiers (202,216) ?modifiers
-[pars]                     private (202,209)
-[pars]                     static (210,216)
-[pars]                 generic_type (217,268) ?generic_type
-[pars]                     type_identifier (217,220) ?type_identifier
-[pars]                     type_arguments (220,268) ?type_arguments
-[pars]                         < (220,221)
-[pars]                         generic_type (221,237) ?generic_type
-[pars]                             type_identifier (221,234) ?type_identifier
-[pars]                             type_arguments (234,237) ?type_arguments
-[pars]                                 < (234,235)
-[pars]                                 wildcard (235,236) ?wildcard
-[pars]                                     ? (235,236)
-[pars]                                 > (236,237)
-[pars]                         , (237,238)
-[pars]                         generic_type (239,267) ?generic_type
-[pars]                             type_identifier (239,247) ?type_identifier
-[pars]                             type_arguments (247,267) ?type_arguments
-[pars]                                 < (247,248)
-[pars]                                 type_identifier (248,258) ?type_identifier
-[pars]                                 , (258,259)
-[pars]                                 type_identifier (260,266) ?type_identifier
-[pars]                                 > (266,267)
-[pars]                         > (267,268)
-[pars]                 variable_declarator (269,3475) contexts?variable_declarator
-[pars]                     identifier (269,277) ?identifier
-[pars]                     = (278,279)
-[pars]                     method_invocation (280,3475) of?method_invocation
-[pars]                         identifier (280,283) ?identifier
-[pars]                         . (283,284)
-[pars]                         identifier (284,286) ?identifier
-[pars]                         argument_list (286,3475) ?argument_list
-[pars]                             ( (286,287)
-[pars]                             field_access (296,327) ?field_access
-[pars]                                 identifier (296,319) ?identifier
-[pars]                                 . (319,320)
-[pars]                                 identifier (320,327) ?identifier
-[pars]                             , (327,328)
-[pars]                             method_reference (337,394) ?method_reference
-[pars]                                 identifier (337,359) ?identifier
-[pars]                                 :: (359,361)
-[pars]                                 identifier (361,394) ?identifier
-[pars]                             , (394,395)
-[pars]                             field_access (405,444) ?field_access
-[pars]                                 identifier (405,436) ?identifier
-[pars]                                 . (436,437)
-[pars]                                 identifier (437,444) ?identifier
-[pars]                             , (444,445)
-[pars]                             lambda_expression (454,943) ?lambda_expression
-[pars]                                 formal_parameters (454,471) ?formal_parameters
-[pars]                                     ( (454,455)
-[pars]                                     formal_parameter (455,470) expr?formal_parameter
-[pars]                                         type_identifier (455,465) ?type_identifier
-[pars]                                         identifier (466,470) ?identifier
-[pars]                                     ) (470,471)
-[pars]                                 -> (472,474)
-[pars]                                 block (475,943) ?block
-[pars]                                     { (475,476)
-[pars]                                     local_variable_declaration (489,571) ?local_variable_declaration
-[pars]                                         scoped_type_identifier (489,520) ?scoped_type_identifier
-[pars]                                             type_identifier (489,512) ?type_identifier
-[pars]                                             . (512,513)
-[pars]                                             type_identifier (513,520) ?type_identifier
-[pars]                                         variable_declarator (521,570) factory?variable_declarator
-[pars]                                             identifier (521,528) ?identifier
-[pars]                                             = (529,530)
-[pars]                                             method_invocation (531,570) newBucketAggregationScriptFactory?method_invocation
-[pars]                                                 identifier (531,564) ?identifier
-[pars]                                                 argument_list (564,570) ?argument_list
-[pars]                                                     ( (564,565)
-[pars]                                                     identifier (565,569) ?identifier
-[pars]                                                     ) (569,570)
-[pars]                                         ; (570,571)
-[pars]                                     local_variable_declaration (584,898) ?local_variable_declaration
-[pars]                                         scoped_type_identifier (584,623) ?scoped_type_identifier
-[pars]                                             type_identifier (584,615) ?type_identifier
-[pars]                                             . (615,616)
-[pars]                                             type_identifier (616,623) ?type_identifier
-[pars]                                         variable_declarator (624,897) wrappedFactory?variable_declarator
-[pars]                                             identifier (624,638) ?identifier
-[pars]                                             = (639,640)
-[pars]                                             lambda_expression (641,897) ?lambda_expression
-[pars]                                                 identifier (641,651) ?identifier
-[pars]                                                 -> (652,654)
-[pars]                                                 object_creation_expression (655,897) ?object_creation_expression
-[pars]                                                     new (655,658)
-[pars]                                                     type_identifier (659,690) ?type_identifier
-[pars]                                                     argument_list (690,702) ?argument_list
-[pars]                                                         ( (690,691)
-[pars]                                                         identifier (691,701) ?identifier
-[pars]                                                         ) (701,702)
-[pars]                                                     class_body (703,897) ?class_body
-[pars]                                                         { (703,704)
-[pars]                                                         method_declaration (721,883) execute?method_declaration
-[pars]                                                             modifiers (721,753) ?modifiers
-[pars]  error,
-[pars]                                                                     @ (721,722)
-[pars]                                                                     identifier (722,730) ?identifier
-[pars]                                                                 public (747,753)
-[pars]                                                             boolean_type (754,761) ?boolean_type
-[pars]                                                             identifier (762,769) ?identifier
-[pars]                                                             formal_parameters (769,771) ?formal_parameters
-[pars]                                                                 ( (769,770)
-[pars]                                                                 ) (770,771)
-[pars]                                                             block (772,883) ?block
-[pars]                                                                 { (772,773)
-[pars]                                                                 return_statement (794,865) ?return_statement
-[pars]                                                                     return (794,800)
-[pars]                                                                     binary_expression (801,864) ?binary_expression
-[pars]                                                                         method_invocation (801,857) doubleValue?method_invocation
-[pars]                                                                             method_invocation (801,843) execute?method_invocation
-[pars]                                                                                 method_invocation (801,833) newInstance?method_invocation
-[pars]                                                                                     identifier (801,808) ?identifier
-[pars]                                                                                     . (808,809)
-[pars]                                                                                     identifier (809,820) ?identifier
-[pars]                                                                                     argument_list (820,833) ?argument_list
-[pars]                                                                                         ( (820,821)
-[pars]                                                                                         method_invocation (821,832) getParams?method_invocation
-[pars]                                                                                             identifier (821,830) ?identifier
-[pars]                                                                                             argument_list (830,832) ?argument_list
-[pars]                                                                                                 ( (830,831)
-[pars]                                                                                                 ) (831,832)
-[pars]                                                                                         ) (832,833)
-[pars]                                                                                 . (833,834)
-[pars]                                                                                 identifier (834,841) ?identifier
-[pars]                                                                                 argument_list (841,843) ?argument_list
-[pars]                                                                                     ( (841,842)
-[pars]                                                                                     ) (842,843)
-[pars]                                                                             . (843,844)
-[pars]                                                                             identifier (844,855) ?identifier
-[pars]                                                                             argument_list (855,857) ?argument_list
-[pars]                                                                                 ( (855,856)
-[pars]                                                                                 ) (856,857)
-[pars]                                                                         == (858,860)
-[pars]                                                                         decimal_floating_point_literal (861,864) ?decimal_floating_point_literal
-[pars]                                                                     ; (864,865)
-[pars]                                                                 } (882,883)
-[pars]                                                         } (896,897)
-[pars]                                         ; (897,898)
-[pars]                                     return_statement (911,933) ?return_statement
-[pars]                                         return (911,917)
-[pars]                                         identifier (918,932) ?identifier
-[pars]                                         ; (932,933)
-[pars]                                     } (942,943)
-[pars]                             , (943,944)
-[pars]                             field_access (954,974) ?field_access
-[pars]                                 identifier (954,966) ?identifier
-[pars]                                 . (966,967)
-[pars]                                 identifier (967,974) ?identifier
-[pars]                             , (974,975)
-[pars]                             lambda_expression (984,1366) ?lambda_expression
-[pars]                                 formal_parameters (984,1001) ?formal_parameters
-[pars]                                     ( (984,985)
-[pars]                                     formal_parameter (985,1000) expr?formal_parameter
-[pars]                                         type_identifier (985,995) ?type_identifier
-[pars]                                         identifier (996,1000) ?identifier
-[pars]                                     ) (1000,1001)
-[pars]                                 -> (1002,1004)
-[pars]                                 object_creation_expression (1005,1366) ?object_creation_expression
-[pars]                                     new (1005,1008)
-[pars]                                     scoped_type_identifier (1009,1029) ?scoped_type_identifier
-[pars]                                         type_identifier (1009,1021) ?type_identifier
-[pars]                                         . (1021,1022)
-[pars]                                         type_identifier (1022,1029) ?type_identifier
-[pars]                                     argument_list (1029,1031) ?argument_list
-[pars]                                         ( (1029,1030)
-[pars]                                         ) (1030,1031)
-[pars]                                     class_body (1032,1366) ?class_body
-[pars]                                         { (1032,1033)
-[pars]                                         method_declaration (1046,1151) isResultDeterministic?method_declaration
-[pars]                                             modifiers (1046,1074) ?modifiers
-[pars]  error,
-[pars]                                                     @ (1046,1047)
-[pars]                                                     identifier (1047,1055) ?identifier
-[pars]                                                 public (1068,1074)
-[pars]                                             boolean_type (1075,1082) ?boolean_type
-[pars]                                             identifier (1083,1104) ?identifier
-[pars]                                             formal_parameters (1104,1106) ?formal_parameters
-[pars]                                                 ( (1104,1105)
-[pars]                                                 ) (1105,1106)
-[pars]                                             block (1107,1151) ?block
-[pars]                                                 { (1107,1108)
-[pars]                                                 return_statement (1125,1137) ?return_statement
-[pars]                                                     return (1125,1131)
-[pars]                                                     true (1132,1136) ?true
-[pars]                                                     ; (1136,1137)
-[pars]                                                 } (1150,1151)
-[pars]                                         method_declaration (1165,1356) newFactory?method_declaration
-[pars]                                             modifiers (1165,1193) ?modifiers
-[pars]  error,
-[pars]                                                     @ (1165,1166)
-[pars]                                                     identifier (1166,1174) ?identifier
-[pars]                                                 public (1187,1193)
-[pars]                                             scoped_type_identifier (1194,1218) ?scoped_type_identifier
-[pars]                                                 type_identifier (1194,1206) ?type_identifier
-[pars]                                                 . (1206,1207)
-[pars]                                                 type_identifier (1207,1218) ?type_identifier
-[pars]                                             identifier (1219,1229) ?identifier
-[pars]                                             formal_parameters (1229,1278) ?formal_parameters
-[pars]                                                 ( (1229,1230)
-[pars]                                                 formal_parameter (1230,1256) params?formal_parameter
-[pars]                                                     generic_type (1230,1249) ?generic_type
-[pars]                                                         type_identifier (1230,1233) ?type_identifier
-[pars]                                                         type_arguments (1233,1249) ?type_arguments
-[pars]                                                             < (1233,1234)
-[pars]                                                             type_identifier (1234,1240) ?type_identifier
-[pars]                                                             , (1240,1241)
-[pars]                                                             type_identifier (1242,1248) ?type_identifier
-[pars]                                                             > (1248,1249)
-[pars]                                                     identifier (1250,1256) ?identifier
-[pars]                                                 , (1256,1257)
-[pars]                                                 formal_parameter (1258,1277) lookup?formal_parameter
-[pars]                                                     type_identifier (1258,1270) ?type_identifier
-[pars]                                                     identifier (1271,1277) ?identifier
-[pars]                                                 ) (1277,1278)
-[pars]                                             block (1279,1356) ?block
-[pars]                                                 { (1279,1280)
-[pars]                                                 return_statement (1297,1342) ?return_statement
-[pars]                                                     return (1297,1303)
-[pars]                                                     method_invocation (1304,1341) newFilterScript?method_invocation
-[pars]                                                         identifier (1304,1319) ?identifier
-[pars]                                                         argument_list (1319,1341) ?argument_list
-[pars]                                                             ( (1319,1320)
-[pars]                                                             identifier (1320,1324) ?identifier
-[pars]                                                             , (1324,1325)
-[pars]                                                             identifier (1326,1332) ?identifier
-[pars]                                                             , (1332,1333)
-[pars]                                                             identifier (1334,1340) ?identifier
-[pars]                                                             ) (1340,1341)
-[pars]                                                     ; (1341,1342)
-[pars]                                                 } (1355,1356)
-[pars]                                         } (1365,1366)
-[pars]                             , (1366,1367)
-[pars]                             field_access (1377,1396) ?field_access
-[pars]                                 identifier (1377,1388) ?identifier
-[pars]                                 . (1388,1389)
-[pars]                                 identifier (1389,1396) ?identifier
-[pars]                             , (1396,1397)
-[pars]                             lambda_expression (1406,1785) ?lambda_expression
-[pars]                                 formal_parameters (1406,1423) ?formal_parameters
-[pars]                                     ( (1406,1407)
-[pars]                                     formal_parameter (1407,1422) expr?formal_parameter
-[pars]                                         type_identifier (1407,1417) ?type_identifier
-[pars]                                         identifier (1418,1422) ?identifier
-[pars]                                     ) (1422,1423)
-[pars]                                 -> (1424,1426)
-[pars]                                 object_creation_expression (1427,1785) ?object_creation_expression
-[pars]                                     new (1427,1430)
-[pars]                                     scoped_type_identifier (1431,1450) ?scoped_type_identifier
-[pars]                                         type_identifier (1431,1442) ?type_identifier
-[pars]                                         . (1442,1443)
-[pars]                                         type_identifier (1443,1450) ?type_identifier
-[pars]                                     argument_list (1450,1452) ?argument_list
-[pars]                                         ( (1450,1451)
-[pars]                                         ) (1451,1452)
-[pars]                                     class_body (1453,1785) ?class_body
-[pars]                                         { (1453,1454)
-[pars]                                         method_declaration (1467,1656) newFactory?method_declaration
-[pars]                                             modifiers (1467,1495) ?modifiers
-[pars]  error,
-[pars]                                                     @ (1467,1468)
-[pars]                                                     identifier (1468,1476) ?identifier
-[pars]                                                 public (1489,1495)
-[pars]                                             scoped_type_identifier (1496,1519) ?scoped_type_identifier
-[pars]                                                 type_identifier (1496,1507) ?type_identifier
-[pars]                                                 . (1507,1508)
-[pars]                                                 type_identifier (1508,1519) ?type_identifier
-[pars]                                             identifier (1520,1530) ?identifier
-[pars]                                             formal_parameters (1530,1579) ?formal_parameters
-[pars]                                                 ( (1530,1531)
-[pars]                                                 formal_parameter (1531,1557) params?formal_parameter
-[pars]                                                     generic_type (1531,1550) ?generic_type
-[pars]                                                         type_identifier (1531,1534) ?type_identifier
-[pars]                                                         type_arguments (1534,1550) ?type_arguments
-[pars]                                                             < (1534,1535)
-[pars]                                                             type_identifier (1535,1541) ?type_identifier
-[pars]                                                             , (1541,1542)
-[pars]                                                             type_identifier (1543,1549) ?type_identifier
-[pars]                                                             > (1549,1550)
-[pars]                                                     identifier (1551,1557) ?identifier
-[pars]                                                 , (1557,1558)
-[pars]                                                 formal_parameter (1559,1578) lookup?formal_parameter
-[pars]                                                     type_identifier (1559,1571) ?type_identifier
-[pars]                                                     identifier (1572,1578) ?identifier
-[pars]                                                 ) (1578,1579)
-[pars]                                             block (1580,1656) ?block
-[pars]                                                 { (1580,1581)
-[pars]                                                 return_statement (1598,1642) ?return_statement
-[pars]                                                     return (1598,1604)
-[pars]                                                     method_invocation (1605,1641) newScoreScript?method_invocation
-[pars]                                                         identifier (1605,1619) ?identifier
-[pars]                                                         argument_list (1619,1641) ?argument_list
-[pars]                                                             ( (1619,1620)
-[pars]                                                             identifier (1620,1624) ?identifier
-[pars]                                                             , (1624,1625)
-[pars]                                                             identifier (1626,1632) ?identifier
-[pars]                                                             , (1632,1633)
-[pars]                                                             identifier (1634,1640) ?identifier
-[pars]                                                             ) (1640,1641)
-[pars]                                                     ; (1641,1642)
-[pars]                                                 } (1655,1656)
-[pars]                                         method_declaration (1670,1775) isResultDeterministic?method_declaration
-[pars]                                             modifiers (1670,1698) ?modifiers
-[pars]  error,
-[pars]                                                     @ (1670,1671)
-[pars]                                                     identifier (1671,1679) ?identifier
-[pars]                                                 public (1692,1698)
-[pars]                                             boolean_type (1699,1706) ?boolean_type
-[pars]                                             identifier (1707,1728) ?identifier
-[pars]                                             formal_parameters (1728,1730) ?formal_parameters
-[pars]                                                 ( (1728,1729)
-[pars]                                                 ) (1729,1730)
-[pars]                                             block (1731,1775) ?block
-[pars]                                                 { (1731,1732)
-[pars]                                                 return_statement (1749,1761) ?return_statement
-[pars]                                                     return (1749,1755)
-[pars]                                                     true (1756,1760) ?true
-[pars]                                                     ; (1760,1761)
-[pars]                                                 } (1774,1775)
-[pars]                                         } (1784,1785)
-[pars]                             , (1785,1786)
-[pars]                             field_access (1796,1823) ?field_access
-[pars]                                 identifier (1796,1815) ?identifier
-[pars]                                 . (1815,1816)
-[pars]                                 identifier (1816,1823) ?identifier
-[pars]                             , (1823,1824)
-[pars]                             lambda_expression (1833,1938) ?lambda_expression
-[pars]                                 formal_parameters (1833,1850) ?formal_parameters
-[pars]                                     ( (1833,1834)
-[pars]                                     formal_parameter (1834,1849) expr?formal_parameter
-[pars]                                         type_identifier (1834,1844) ?type_identifier
-[pars]                                         identifier (1845,1849) ?identifier
-[pars]                                     ) (1849,1850)
-[pars]                                 -> (1851,1853)
-[pars]                                 cast_expression (1854,1938) ?cast_expression
-[pars]                                     ( (1854,1855)
-[pars]                                     scoped_type_identifier (1855,1882) ?scoped_type_identifier
-[pars]                                         type_identifier (1855,1874) ?type_identifier
-[pars]                                         . (1874,1875)
-[pars]                                         type_identifier (1875,1882) ?type_identifier
-[pars]                                     ) (1882,1883)
-[pars]                                     lambda_expression (1884,1938) ?lambda_expression
-[pars]  error,
-[pars]                                             ( (1884,1885)
-[pars]                                             identifier (1885,1886) ?identifier
-[pars]                                             , (1886,1887)
-[pars]                                             identifier (1888,1894) ?identifier
-[pars]                                             ) (1894,1895)
-[pars]                                         -> (1896,1898)
-[pars]                                         method_invocation (1899,1938) newTermsSetQueryScript?method_invocation
-[pars]                                             identifier (1899,1921) ?identifier
-[pars]                                             argument_list (1921,1938) ?argument_list
-[pars]                                                 ( (1921,1922)
-[pars]                                                 identifier (1922,1926) ?identifier
-[pars]                                                 , (1926,1927)
-[pars]                                                 identifier (1928,1934) ?identifier
-[pars]                                                 , (1934,1935)
-[pars]                                                 identifier (1936,1937) ?identifier
-[pars]                                                 ) (1937,1938)
-[pars]                             , (1938,1939)
-[pars]                             field_access (1949,1974) ?field_access
-[pars]                                 identifier (1949,1966) ?identifier
-[pars]                                 . (1966,1967)
-[pars]                                 identifier (1967,1974) ?identifier
-[pars]                             , (1974,1975)
-[pars]                             lambda_expression (1984,2381) ?lambda_expression
-[pars]                                 formal_parameters (1984,2001) ?formal_parameters
-[pars]                                     ( (1984,1985)
-[pars]                                     formal_parameter (1985,2000) expr?formal_parameter
-[pars]                                         type_identifier (1985,1995) ?type_identifier
-[pars]                                         identifier (1996,2000) ?identifier
-[pars]                                     ) (2000,2001)
-[pars]                                 -> (2002,2004)
-[pars]                                 object_creation_expression (2005,2381) ?object_creation_expression
-[pars]                                     new (2005,2008)
-[pars]                                     scoped_type_identifier (2009,2034) ?scoped_type_identifier
-[pars]                                         type_identifier (2009,2026) ?type_identifier
-[pars]                                         . (2026,2027)
-[pars]                                         type_identifier (2027,2034) ?type_identifier
-[pars]                                     argument_list (2034,2036) ?argument_list
-[pars]                                         ( (2034,2035)
-[pars]                                         ) (2035,2036)
-[pars]                                     class_body (2037,2381) ?class_body
-[pars]                                         { (2037,2038)
-[pars]                                         method_declaration (2051,2252) newFactory?method_declaration
-[pars]                                             modifiers (2051,2079) ?modifiers
-[pars]  error,
-[pars]                                                     @ (2051,2052)
-[pars]                                                     identifier (2052,2060) ?identifier
-[pars]                                                 public (2073,2079)
-[pars]                                             scoped_type_identifier (2080,2109) ?scoped_type_identifier
-[pars]                                                 type_identifier (2080,2097) ?type_identifier
-[pars]                                                 . (2097,2098)
-[pars]                                                 type_identifier (2098,2109) ?type_identifier
-[pars]                                             identifier (2110,2120) ?identifier
-[pars]                                             formal_parameters (2120,2169) ?formal_parameters
-[pars]                                                 ( (2120,2121)
-[pars]                                                 formal_parameter (2121,2147) params?formal_parameter
-[pars]                                                     generic_type (2121,2140) ?generic_type
-[pars]                                                         type_identifier (2121,2124) ?type_identifier
-[pars]                                                         type_arguments (2124,2140) ?type_arguments
-[pars]                                                             < (2124,2125)
-[pars]                                                             type_identifier (2125,2131) ?type_identifier
-[pars]                                                             , (2131,2132)
-[pars]                                                             type_identifier (2133,2139) ?type_identifier
-[pars]                                                             > (2139,2140)
-[pars]                                                     identifier (2141,2147) ?identifier
-[pars]                                                 , (2147,2148)
-[pars]                                                 formal_parameter (2149,2168) lookup?formal_parameter
-[pars]                                                     type_identifier (2149,2161) ?type_identifier
-[pars]                                                     identifier (2162,2168) ?identifier
-[pars]                                                 ) (2168,2169)
-[pars]                                             block (2170,2252) ?block
-[pars]                                                 { (2170,2171)
-[pars]                                                 return_statement (2188,2238) ?return_statement
-[pars]                                                     return (2188,2194)
-[pars]                                                     method_invocation (2195,2237) newAggregationScript?method_invocation
-[pars]                                                         identifier (2195,2215) ?identifier
-[pars]                                                         argument_list (2215,2237) ?argument_list
-[pars]                                                             ( (2215,2216)
-[pars]                                                             identifier (2216,2220) ?identifier
-[pars]                                                             , (2220,2221)
-[pars]                                                             identifier (2222,2228) ?identifier
-[pars]                                                             , (2228,2229)
-[pars]                                                             identifier (2230,2236) ?identifier
-[pars]                                                             ) (2236,2237)
-[pars]                                                     ; (2237,2238)
-[pars]                                                 } (2251,2252)
-[pars]                                         method_declaration (2266,2371) isResultDeterministic?method_declaration
-[pars]                                             modifiers (2266,2294) ?modifiers
-[pars]  error,
-[pars]                                                     @ (2266,2267)
-[pars]                                                     identifier (2267,2275) ?identifier
-[pars]                                                 public (2288,2294)
-[pars]                                             boolean_type (2295,2302) ?boolean_type
-[pars]                                             identifier (2303,2324) ?identifier
-[pars]                                             formal_parameters (2324,2326) ?formal_parameters
-[pars]                                                 ( (2324,2325)
-[pars]                                                 ) (2325,2326)
-[pars]                                             block (2327,2371) ?block
-[pars]                                                 { (2327,2328)
-[pars]                                                 return_statement (2345,2357) ?return_statement
-[pars]                                                     return (2345,2351)
-[pars]                                                     true (2352,2356) ?true
-[pars]                                                     ; (2356,2357)
-[pars]                                                 } (2370,2371)
-[pars]                                         } (2380,2381)
-[pars]                             , (2381,2382)
-[pars]                             field_access (2392,2416) ?field_access
-[pars]                                 identifier (2392,2408) ?identifier
-[pars]                                 . (2408,2409)
-[pars]                                 identifier (2409,2416) ?identifier
-[pars]                             , (2416,2417)
-[pars]                             lambda_expression (2426,2814) ?lambda_expression
-[pars]                                 formal_parameters (2426,2443) ?formal_parameters
-[pars]                                     ( (2426,2427)
-[pars]                                     formal_parameter (2427,2442) expr?formal_parameter
-[pars]                                         type_identifier (2427,2437) ?type_identifier
-[pars]                                         identifier (2438,2442) ?identifier
-[pars]                                     ) (2442,2443)
-[pars]                                 -> (2444,2446)
-[pars]                                 object_creation_expression (2447,2814) ?object_creation_expression
-[pars]                                     new (2447,2450)
-[pars]                                     scoped_type_identifier (2451,2475) ?scoped_type_identifier
-[pars]                                         type_identifier (2451,2467) ?type_identifier
-[pars]                                         . (2467,2468)
-[pars]                                         type_identifier (2468,2475) ?type_identifier
-[pars]                                     argument_list (2475,2477) ?argument_list
-[pars]                                         ( (2475,2476)
-[pars]                                         ) (2476,2477)
-[pars]                                     class_body (2478,2814) ?class_body
-[pars]                                         { (2478,2479)
-[pars]                                         method_declaration (2492,2685) newFactory?method_declaration
-[pars]                                             modifiers (2492,2520) ?modifiers
-[pars]  error,
-[pars]                                                     @ (2492,2493)
-[pars]                                                     identifier (2493,2501) ?identifier
-[pars]                                                 public (2514,2520)
-[pars]                                             scoped_type_identifier (2521,2549) ?scoped_type_identifier
-[pars]                                                 type_identifier (2521,2537) ?type_identifier
-[pars]                                                 . (2537,2538)
-[pars]                                                 type_identifier (2538,2549) ?type_identifier
-[pars]                                             identifier (2550,2560) ?identifier
-[pars]                                             formal_parameters (2560,2609) ?formal_parameters
-[pars]                                                 ( (2560,2561)
-[pars]                                                 formal_parameter (2561,2587) params?formal_parameter
-[pars]                                                     generic_type (2561,2580) ?generic_type
-[pars]                                                         type_identifier (2561,2564) ?type_identifier
-[pars]                                                         type_arguments (2564,2580) ?type_arguments
-[pars]                                                             < (2564,2565)
-[pars]                                                             type_identifier (2565,2571) ?type_identifier
-[pars]                                                             , (2571,2572)
-[pars]                                                             type_identifier (2573,2579) ?type_identifier
-[pars]                                                             > (2579,2580)
-[pars]                                                     identifier (2581,2587) ?identifier
-[pars]                                                 , (2587,2588)
-[pars]                                                 formal_parameter (2589,2608) lookup?formal_parameter
-[pars]                                                     type_identifier (2589,2601) ?type_identifier
-[pars]                                                     identifier (2602,2608) ?identifier
-[pars]                                                 ) (2608,2609)
-[pars]                                             block (2610,2685) ?block
-[pars]                                                 { (2610,2611)
-[pars]                                                 return_statement (2628,2671) ?return_statement
-[pars]                                                     return (2628,2634)
-[pars]                                                     method_invocation (2635,2670) newSortScript?method_invocation
-[pars]                                                         identifier (2635,2648) ?identifier
-[pars]                                                         argument_list (2648,2670) ?argument_list
-[pars]                                                             ( (2648,2649)
-[pars]                                                             identifier (2649,2653) ?identifier
-[pars]                                                             , (2653,2654)
-[pars]                                                             identifier (2655,2661) ?identifier
-[pars]                                                             , (2661,2662)
-[pars]                                                             identifier (2663,2669) ?identifier
-[pars]                                                             ) (2669,2670)
-[pars]                                                     ; (2670,2671)
-[pars]                                                 } (2684,2685)
-[pars]                                         method_declaration (2699,2804) isResultDeterministic?method_declaration
-[pars]                                             modifiers (2699,2727) ?modifiers
-[pars]  error,
-[pars]                                                     @ (2699,2700)
-[pars]                                                     identifier (2700,2708) ?identifier
-[pars]                                                 public (2721,2727)
-[pars]                                             boolean_type (2728,2735) ?boolean_type
-[pars]                                             identifier (2736,2757) ?identifier
-[pars]                                             formal_parameters (2757,2759) ?formal_parameters
-[pars]                                                 ( (2757,2758)
-[pars]                                                 ) (2758,2759)
-[pars]                                             block (2760,2804) ?block
-[pars]                                                 { (2760,2761)
-[pars]                                                 return_statement (2778,2790) ?return_statement
-[pars]                                                     return (2778,2784)
-[pars]                                                     true (2785,2789) ?true
-[pars]                                                     ; (2789,2790)
-[pars]                                                 } (2803,2804)
-[pars]                                         } (2813,2814)
-[pars]                             , (2814,2815)
-[pars]                             field_access (2825,2844) ?field_access
-[pars]                                 identifier (2825,2836) ?identifier
-[pars]                                 . (2836,2837)
-[pars]                                 identifier (2837,2844) ?identifier
-[pars]                             , (2844,2845)
-[pars]                             lambda_expression (2854,3233) ?lambda_expression
-[pars]                                 formal_parameters (2854,2871) ?formal_parameters
-[pars]                                     ( (2854,2855)
-[pars]                                     formal_parameter (2855,2870) expr?formal_parameter
-[pars]                                         type_identifier (2855,2865) ?type_identifier
-[pars]                                         identifier (2866,2870) ?identifier
-[pars]                                     ) (2870,2871)
-[pars]                                 -> (2872,2874)
-[pars]                                 object_creation_expression (2875,3233) ?object_creation_expression
-[pars]                                     new (2875,2878)
-[pars]                                     scoped_type_identifier (2879,2898) ?scoped_type_identifier
-[pars]                                         type_identifier (2879,2890) ?type_identifier
-[pars]                                         . (2890,2891)
-[pars]                                         type_identifier (2891,2898) ?type_identifier
-[pars]                                     argument_list (2898,2900) ?argument_list
-[pars]                                         ( (2898,2899)
-[pars]                                         ) (2899,2900)
-[pars]                                     class_body (2901,3233) ?class_body
-[pars]                                         { (2901,2902)
-[pars]                                         method_declaration (2915,3104) newFactory?method_declaration
-[pars]                                             modifiers (2915,2943) ?modifiers
-[pars]  error,
-[pars]                                                     @ (2915,2916)
-[pars]                                                     identifier (2916,2924) ?identifier
-[pars]                                                 public (2937,2943)
-[pars]                                             scoped_type_identifier (2944,2967) ?scoped_type_identifier
-[pars]                                                 type_identifier (2944,2955) ?type_identifier
-[pars]                                                 . (2955,2956)
-[pars]                                                 type_identifier (2956,2967) ?type_identifier
-[pars]                                             identifier (2968,2978) ?identifier
-[pars]                                             formal_parameters (2978,3027) ?formal_parameters
-[pars]                                                 ( (2978,2979)
-[pars]                                                 formal_parameter (2979,3005) params?formal_parameter
-[pars]                                                     generic_type (2979,2998) ?generic_type
-[pars]                                                         type_identifier (2979,2982) ?type_identifier
-[pars]                                                         type_arguments (2982,2998) ?type_arguments
-[pars]                                                             < (2982,2983)
-[pars]                                                             type_identifier (2983,2989) ?type_identifier
-[pars]                                                             , (2989,2990)
-[pars]                                                             type_identifier (2991,2997) ?type_identifier
-[pars]                                                             > (2997,2998)
-[pars]                                                     identifier (2999,3005) ?identifier
-[pars]                                                 , (3005,3006)
-[pars]                                                 formal_parameter (3007,3026) lookup?formal_parameter
-[pars]                                                     type_identifier (3007,3019) ?type_identifier
-[pars]                                                     identifier (3020,3026) ?identifier
-[pars]                                                 ) (3026,3027)
-[pars]                                             block (3028,3104) ?block
-[pars]                                                 { (3028,3029)
-[pars]                                                 return_statement (3046,3090) ?return_statement
-[pars]                                                     return (3046,3052)
-[pars]                                                     method_invocation (3053,3089) newFieldScript?method_invocation
-[pars]                                                         identifier (3053,3067) ?identifier
-[pars]                                                         argument_list (3067,3089) ?argument_list
-[pars]                                                             ( (3067,3068)
-[pars]                                                             identifier (3068,3072) ?identifier
-[pars]                                                             , (3072,3073)
-[pars]                                                             identifier (3074,3080) ?identifier
-[pars]                                                             , (3080,3081)
-[pars]                                                             identifier (3082,3088) ?identifier
-[pars]                                                             ) (3088,3089)
-[pars]                                                     ; (3089,3090)
-[pars]                                                 } (3103,3104)
-[pars]                                         method_declaration (3118,3223) isResultDeterministic?method_declaration
-[pars]                                             modifiers (3118,3146) ?modifiers
-[pars]  error,
-[pars]                                                     @ (3118,3119)
-[pars]                                                     identifier (3119,3127) ?identifier
-[pars]                                                 public (3140,3146)
-[pars]                                             boolean_type (3147,3154) ?boolean_type
-[pars]                                             identifier (3155,3176) ?identifier
-[pars]                                             formal_parameters (3176,3178) ?formal_parameters
-[pars]                                                 ( (3176,3177)
-[pars]                                                 ) (3177,3178)
-[pars]                                             block (3179,3223) ?block
-[pars]                                                 { (3179,3180)
-[pars]                                                 return_statement (3197,3209) ?return_statement
-[pars]                                                     return (3197,3203)
-[pars]                                                     true (3204,3208) ?true
-[pars]                                                     ; (3208,3209)
-[pars]                                                 } (3222,3223)
-[pars]                                         } (3232,3233)
-[pars]                             , (3233,3234)
-[pars]                             field_access (3244,3270) ?field_access
-[pars]                                 identifier (3244,3262) ?identifier
-[pars]                                 . (3262,3263)
-[pars]                                 identifier (3263,3270) ?identifier
-[pars]                             , (3270,3271)
-[pars]                             lambda_expression (3280,3469) ?lambda_expression
-[pars]                                 formal_parameters (3280,3297) ?formal_parameters
-[pars]                                     ( (3280,3281)
-[pars]                                     formal_parameter (3281,3296) expr?formal_parameter
-[pars]                                         type_identifier (3281,3291) ?type_identifier
-[pars]                                         identifier (3292,3296) ?identifier
-[pars]                                     ) (3296,3297)
-[pars]                                 -> (3298,3300)
-[pars]                                 object_creation_expression (3301,3469) ?object_creation_expression
-[pars]                                     new (3301,3304)
-[pars]                                     type_identifier (3305,3333) ?type_identifier
-[pars]                                     argument_list (3333,3339) ?argument_list
-[pars]                                         ( (3333,3334)
-[pars]                                         identifier (3334,3338) ?identifier
-[pars]                                         ) (3338,3339)
-[pars]                                     class_body (3340,3469) ?class_body
-[pars]                                         { (3340,3341)
-[pars]                                         method_declaration (3354,3459) isResultDeterministic?method_declaration
-[pars]                                             modifiers (3354,3382) ?modifiers
-[pars]  error,
-[pars]                                                     @ (3354,3355)
-[pars]                                                     identifier (3355,3363) ?identifier
-[pars]                                                 public (3376,3382)
-[pars]                                             boolean_type (3383,3390) ?boolean_type
-[pars]                                             identifier (3391,3412) ?identifier
-[pars]                                             formal_parameters (3412,3414) ?formal_parameters
-[pars]                                                 ( (3412,3413)
-[pars]                                                 ) (3413,3414)
-[pars]                                             block (3415,3459) ?block
-[pars]                                                 { (3415,3416)
-[pars]                                                 return_statement (3433,3445) ?return_statement
-[pars]                                                     return (3433,3439)
-[pars]                                                     true (3440,3444) ?true
-[pars]                                                     ; (3444,3445)
-[pars]                                                 } (3458,3459)
-[pars]                                         } (3468,3469)
-[pars]                             ) (3474,3475)
-[pars]                 ; (3475,3476)
-[pars]             method_declaration (3482,4321) compile?method_declaration
-[pars]                 modifiers (3482,3502) ?modifiers
-[pars]  error,
-[pars]                         @ (3482,3483)
-[pars]                         identifier (3483,3491) ?identifier
-[pars]                     public (3496,3502)
-[pars]                 type_parameters (3503,3506) ?type_parameters
-[pars]                     < (3503,3504)
-[pars]                     type_parameter (3504,3505) ?type_parameter
-[pars]                         type_identifier (3504,3505) ?type_identifier
-[pars]                     > (3505,3506)
-[pars]                 type_identifier (3507,3508) ?type_identifier
-[pars]                 identifier (3509,3516) ?identifier
-[pars]                 formal_parameters (3516,3610) ?formal_parameters
-[pars]                     ( (3516,3517)
-[pars]                     formal_parameter (3517,3534) scriptName?formal_parameter
-[pars]                         type_identifier (3517,3523) ?type_identifier
-[pars]                         identifier (3524,3534) ?identifier
-[pars]                     , (3534,3535)
-[pars]                     formal_parameter (3536,3555) scriptSource?formal_parameter
-[pars]                         type_identifier (3536,3542) ?type_identifier
-[pars]                         identifier (3543,3555) ?identifier
-[pars]                     , (3555,3556)
-[pars]                     formal_parameter (3557,3581) context?formal_parameter
-[pars]                         generic_type (3557,3573) ?generic_type
-[pars]                             type_identifier (3557,3570) ?type_identifier
-[pars]                             type_arguments (3570,3573) ?type_arguments
-[pars]                                 < (3570,3571)
-[pars]                                 type_identifier (3571,3572) ?type_identifier
-[pars]                                 > (3572,3573)
-[pars]                         identifier (3574,3581) ?identifier
-[pars]                     , (3581,3582)
-[pars]                     formal_parameter (3583,3609) params?formal_parameter
-[pars]                         generic_type (3583,3602) ?generic_type
-[pars]                             type_identifier (3583,3586) ?type_identifier
-[pars]                             type_arguments (3586,3602) ?type_arguments
-[pars]                                 < (3586,3587)
-[pars]                                 type_identifier (3587,3593) ?type_identifier
-[pars]                                 , (3593,3594)
-[pars]                                 type_identifier (3595,3601) ?type_identifier
-[pars]                                 > (3601,3602)
-[pars]                         identifier (3603,3609) ?identifier
-[pars]                     ) (3609,3610)
-[pars]                 block (3611,4321) ?block
-[pars]                     { (3611,3612)
-[pars]                     expression_statement (3621,3647) ?expression_statement
-[pars]                         method_invocation (3621,3646) check?method_invocation
-[pars]                             identifier (3621,3638) ?identifier
-[pars]                             . (3638,3639)
-[pars]                             identifier (3639,3644) ?identifier
-[pars]                             argument_list (3644,3646) ?argument_list
-[pars]                                 ( (3644,3645)
-[pars]                                 ) (3645,3646)
-[pars]                         ; (3646,3647)
-[pars]                     local_variable_declaration (3656,3672) ?local_variable_declaration
-[pars]                         type_identifier (3656,3666) ?type_identifier
-[pars]                         variable_declarator (3667,3671) expr?variable_declarator
-[pars]                             identifier (3667,3671) ?identifier
-[pars]                         ; (3671,3672)
-[pars]                     try_statement (3681,4039) ?try_statement
-[pars]                         try (3681,3684)
-[pars]                         block (3685,3910) ?block
-[pars]                             { (3685,3686)
-[pars]                             line_comment (3699,3801) ?line_comment
-[pars]                             expression_statement (3814,3900) ?expression_statement
-[pars]                                 assignment_expression (3814,3899) ?assignment_expression
-[pars]                                     identifier (3814,3818) ?identifier
-[pars]                                     = (3819,3820)
-[pars]                                     method_invocation (3821,3899) compile?method_invocation
-[pars]                                         identifier (3821,3839) ?identifier
-[pars]                                         . (3839,3840)
-[pars]                                         identifier (3840,3847) ?identifier
-[pars]                                         argument_list (3847,3899) ?argument_list
-[pars]                                             ( (3847,3848)
-[pars]                                             identifier (3848,3860) ?identifier
-[pars]                                             , (3860,3861)
-[pars]                                             field_access (3862,3898) ?field_access
-[pars]                                                 identifier (3862,3880) ?identifier
-[pars]                                                 . (3880,3881)
-[pars]                                                 identifier (3881,3898) ?identifier
-[pars]                                             ) (3898,3899)
-[pars]                                 ; (3899,3900)
-[pars]                             } (3909,3910)
-[pars]                         catch_clause (3911,4039) ?catch_clause
-[pars]                             catch (3911,3916)
-[pars]                             ( (3917,3918)
-[pars]                             catch_formal_parameter (3918,3934) e?catch_formal_parameter
-[pars]                                 catch_type (3918,3932) ?catch_type
-[pars]                                     type_identifier (3918,3932) ?type_identifier
-[pars]                                 identifier (3933,3934) ?identifier
-[pars]                             ) (3934,3935)
-[pars]                             block (3936,4039) ?block
-[pars]                                 { (3936,3937)
-[pars]                                 throw_statement (3950,4029) ?throw_statement
-[pars]                                     throw (3950,3955)
-[pars]                                     method_invocation (3956,4028) convertToScriptException?method_invocation
-[pars]                                         identifier (3956,3980) ?identifier
-[pars]                                         argument_list (3980,4028) ?argument_list
-[pars]                                             ( (3980,3981)
-[pars]                                             string_literal (3981,3996) ?string_literal
-[pars]                                                 " (3981,3982)
-[pars]                                                 string_fragment (3982,3995) ?string_fragment
-[pars]                                                 " (3995,3996)
-[pars]                                             , (3996,3997)
-[pars]                                             identifier (3998,4010) ?identifier
-[pars]                                             , (4010,4011)
-[pars]                                             identifier (4012,4024) ?identifier
-[pars]                                             , (4024,4025)
-[pars]                                             identifier (4026,4027) ?identifier
-[pars]                                             ) (4027,4028)
-[pars]                                     ; (4028,4029)
-[pars]                                 } (4038,4039)
-[pars]                     if_statement (4048,4238) ?if_statement
-[pars]                         if (4048,4050)
-[pars]                         parenthesized_expression (4051,4091) ?parenthesized_expression
-[pars]                             ( (4051,4052)
-[pars]                             binary_expression (4052,4090) ?binary_expression
-[pars]                                 method_invocation (4052,4081) containsKey?method_invocation
-[pars]                                     identifier (4052,4060) ?identifier
-[pars]                                     . (4060,4061)
-[pars]                                     identifier (4061,4072) ?identifier
-[pars]                                     argument_list (4072,4081) ?argument_list
-[pars]                                         ( (4072,4073)
-[pars]                                         identifier (4073,4080) ?identifier
-[pars]                                         ) (4080,4081)
-[pars]                                 == (4082,4084)
-[pars]                                 false (4085,4090) ?false
-[pars]                             ) (4090,4091)
-[pars]                         block (4092,4238) ?block
-[pars]                             { (4092,4093)
-[pars]                             throw_statement (4106,4228) ?throw_statement
-[pars]                                 throw (4106,4111)
-[pars]                                 object_creation_expression (4112,4227) ?object_creation_expression
-[pars]                                     new (4112,4115)
-[pars]                                     type_identifier (4116,4140) ?type_identifier
-[pars]                                     argument_list (4140,4227) ?argument_list
-[pars]                                         ( (4140,4141)
-[pars]                                         binary_expression (4141,4226) ?binary_expression
-[pars]                                             binary_expression (4141,4220) ?binary_expression
-[pars]                                                 string_literal (4141,4205) ?string_literal
-[pars]                                                     " (4141,4142)
-[pars]                                                     string_fragment (4142,4204) ?string_fragment
-[pars]                                                     " (4204,4205)
-[pars]                                                 + (4206,4207)
-[pars]                                                 field_access (4208,4220) ?field_access
-[pars]                                                     identifier (4208,4215) ?identifier
-[pars]                                                     . (4215,4216)
-[pars]                                                     identifier (4216,4220) ?identifier
-[pars]                                             + (4221,4222)
-[pars]                                             string_literal (4223,4226) ?string_literal
-[pars]                                                 " (4223,4224)
-[pars]                                                 string_fragment (4224,4225) ?string_fragment
-[pars]                                                 " (4225,4226)
-[pars]                                         ) (4226,4227)
-[pars]                                 ; (4227,4228)
-[pars]                             } (4237,4238)
-[pars]                     return_statement (4247,4315) ?return_statement
-[pars]                         return (4247,4253)
-[pars]                         method_invocation (4254,4314) cast?method_invocation
-[pars]                             field_access (4254,4274) ?field_access
-[pars]                                 identifier (4254,4261) ?identifier
-[pars]                                 . (4261,4262)
-[pars]                                 identifier (4262,4274) ?identifier
-[pars]                             . (4274,4275)
-[pars]                             identifier (4275,4279) ?identifier
-[pars]                             argument_list (4279,4314) ?argument_list
-[pars]                                 ( (4279,4280)
-[pars]                                 method_invocation (4280,4313) apply?method_invocation
-[pars]                                     method_invocation (4280,4301) get?method_invocation
-[pars]                                         identifier (4280,4288) ?identifier
-[pars]                                         . (4288,4289)
-[pars]                                         identifier (4289,4292) ?identifier
-[pars]                                         argument_list (4292,4301) ?argument_list
-[pars]                                             ( (4292,4293)
-[pars]                                             identifier (4293,4300) ?identifier
-[pars]                                             ) (4300,4301)
-[pars]                                     . (4301,4302)
-[pars]                                     identifier (4302,4307) ?identifier
-[pars]                                     argument_list (4307,4313) ?argument_list
-[pars]                                         ( (4307,4308)
-[pars]                                         identifier (4308,4312) ?identifier
-[pars]                                         ) (4312,4313)
-[pars]                                 ) (4313,4314)
-[pars]                         ; (4314,4315)
-[pars]                     } (4320,4321)
-[pars]             method_declaration (4327,4434) getSupportedContexts?method_declaration
-[pars]                 modifiers (4327,4347) ?modifiers
-[pars]  error,
-[pars]                         @ (4327,4328)
-[pars]                         identifier (4328,4336) ?identifier
-[pars]                     public (4341,4347)
-[pars]                 generic_type (4348,4369) ?generic_type
-[pars]                     type_identifier (4348,4351) ?type_identifier
-[pars]                     type_arguments (4351,4369) ?type_arguments
-[pars]                         < (4351,4352)
-[pars]                         generic_type (4352,4368) ?generic_type
-[pars]                             type_identifier (4352,4365) ?type_identifier
-[pars]                             type_arguments (4365,4368) ?type_arguments
-[pars]                                 < (4365,4366)
-[pars]                                 wildcard (4366,4367) ?wildcard
-[pars]                                     ? (4366,4367)
-[pars]                                 > (4367,4368)
-[pars]                         > (4368,4369)
-[pars]                 identifier (4370,4390) ?identifier
-[pars]                 formal_parameters (4390,4392) ?formal_parameters
-[pars]                     ( (4390,4391)
-[pars]                     ) (4391,4392)
-[pars]                 block (4393,4434) ?block
-[pars]                     { (4393,4394)
-[pars]                     return_statement (4403,4428) ?return_statement
-[pars]                         return (4403,4409)
-[pars]                         method_invocation (4410,4427) keySet?method_invocation
-[pars]                             identifier (4410,4418) ?identifier
-[pars]                             . (4418,4419)
-[pars]                             identifier (4419,4425) ?identifier
-[pars]                             argument_list (4425,4427) ?argument_list
-[pars]                                 ( (4425,4426)
-[pars]                                 ) (4426,4427)
-[pars]                         ; (4427,4428)
-[pars]                     } (4433,4434)
-[pars]             method_declaration (4440,6764) newBucketAggregationScriptFactory?method_declaration
-[pars]                 modifiers (4440,4454) ?modifiers
-[pars]                     private (4440,4447)
-[pars]                     static (4448,4454)
-[pars]                 scoped_type_identifier (4455,4486) ?scoped_type_identifier
-[pars]                     type_identifier (4455,4478) ?type_identifier
-[pars]                     . (4478,4479)
-[pars]                     type_identifier (4479,4486) ?type_identifier
-[pars]                 identifier (4487,4520) ?identifier
-[pars]                 formal_parameters (4520,4537) ?formal_parameters
-[pars]                     ( (4520,4521)
-[pars]                     formal_parameter (4521,4536) expr?formal_parameter
-[pars]                         type_identifier (4521,4531) ?type_identifier
-[pars]                         identifier (4532,4536) ?identifier
-[pars]                     ) (4536,4537)
-[pars]                 block (4538,6764) ?block
-[pars]                     { (4538,4539)
-[pars]                     return_statement (4548,6758) ?return_statement
-[pars]                         return (4548,4554)
-[pars]                         lambda_expression (4555,6757) ?lambda_expression
-[pars]                             identifier (4555,4565) ?identifier
-[pars]                             -> (4566,4568)
-[pars]                             block (4569,6757) ?block
-[pars]                                 { (4569,4570)
-[pars]                                 local_variable_declaration (4583,4692) ?local_variable_declaration
-[pars]                                     array_type (4583,4613) ?array_type
-[pars]                                         type_identifier (4583,4611) ?type_identifier
-[pars]                                         dimensions (4611,4613) ?dimensions
-[pars]                                             [ (4611,4612)
-[pars]                                             ] (4612,4613)
-[pars]                                     variable_declarator (4614,4691) functionValuesArray?variable_declarator
-[pars]                                         identifier (4614,4633) ?identifier
-[pars]                                         = (4634,4635)
-[pars]                                         array_creation_expression (4636,4691) ?array_creation_expression
-[pars]                                             new (4636,4639)
-[pars]                                             type_identifier (4640,4668) ?type_identifier
-[pars]                                             dimensions_expr (4668,4691) ?dimensions_expr
-[pars]                                                 [ (4668,4669)
-[pars]                                                 field_access (4669,4690) ?field_access
-[pars]                                                     field_access (4669,4683) ?field_access
-[pars]                                                         identifier (4669,4673) ?identifier
-[pars]                                                         . (4673,4674)
-[pars]                                                         identifier (4674,4683) ?identifier
-[pars]                                                     . (4683,4684)
-[pars]                                                     identifier (4684,4690) ?identifier
-[pars]                                                 ] (4690,4691)
-[pars]                                     ; (4691,4692)
-[pars]                                 local_variable_declaration (4705,4783) ?local_variable_declaration
-[pars]                                     generic_type (4705,4746) ?generic_type
-[pars]                                         type_identifier (4705,4708) ?type_identifier
-[pars]                                         type_arguments (4708,4746) ?type_arguments
-[pars]                                             < (4708,4709)
-[pars]                                             type_identifier (4709,4715) ?type_identifier
-[pars]                                             , (4715,4716)
-[pars]                                             type_identifier (4717,4745) ?type_identifier
-[pars]                                             > (4745,4746)
-[pars]                                     variable_declarator (4747,4782) functionValuesMap?variable_declarator
-[pars]                                         identifier (4747,4764) ?identifier
-[pars]                                         = (4765,4766)
-[pars]                                         object_creation_expression (4767,4782) ?object_creation_expression
-[pars]                                             new (4767,4770)
-[pars]                                             generic_type (4771,4780) ?generic_type
-[pars]                                                 type_identifier (4771,4778) ?type_identifier
-[pars] parseCode ended, 265ms
+[extn] Extension deactivated
+(node:27191) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+[extn] Extension activated
+[pars] source_file (1,56680) ?source_file
+[pars]     assignment_statement (1,42) ?assignment_statement
+[pars]         expression_list (1,20) ?expression_list
+[pars]             identifier (1,20) ?identifier
+[pars]         = (21,22)
+[pars]         expression_list (23,42) ?expression_list
+[pars]             interpreted_string_literal (23,42) ?interpreted_string_literal
+[pars]                 " (23,24)
+[pars]                 interpreted_string_literal_content (24,41) ?interpreted_string_literal_content
+[pars]                 " (41,42)
+[pars]     import_declaration (44,65) ?import_declaration
+[pars]         import (44,50)
+[pars]         import_spec_list (51,65) ?import_spec_list
+[pars]             ( (51,52)
+[pars]             import_spec (54,63) ?import_spec
+[pars]                 interpreted_string_literal (54,63) ?interpreted_string_literal
+[pars]                     " (54,55)
+[pars]                     interpreted_string_literal_content (55,62) ?interpreted_string_literal_content
+[pars]                     " (62,63)
+[pars]             ) (64,65)
+[pars]     package_clause (67,78) ?package_clause
+[pars]         package (67,74)
+[pars]         package_identifier (75,78) ?package_identifier
+[pars]     import_declaration (80,599) ?import_declaration
+[pars]         import (80,86)
+[pars]         import_spec_list (87,599) ?import_spec_list
+[pars]             ( (87,88)
+[pars]             import_spec (90,99) ?import_spec
+[pars]                 interpreted_string_literal (90,99) ?interpreted_string_literal
+[pars]                     " (90,91)
+[pars]                     interpreted_string_literal_content (91,98) ?interpreted_string_literal_content
+[pars]                     " (98,99)
+[pars]             import_spec (101,114) ?import_spec
+[pars]                 interpreted_string_literal (101,114) ?interpreted_string_literal
+[pars]                     " (101,102)
+[pars]                     interpreted_string_literal_content (102,113) ?interpreted_string_literal_content
+[pars]                     " (113,114)
+[pars]             import_spec (116,131) ?import_spec
+[pars]                 interpreted_string_literal (116,131) ?interpreted_string_literal
+[pars]                     " (116,117)
+[pars]                     interpreted_string_literal_content (117,130) ?interpreted_string_literal_content
+[pars]                     " (130,131)
+[pars]             import_spec (133,145) ?import_spec
+[pars]                 interpreted_string_literal (133,145) ?interpreted_string_literal
+[pars]                     " (133,134)
+[pars]                     interpreted_string_literal_content (134,144) ?interpreted_string_literal_content
+[pars]                     " (144,145)
+[pars]             import_spec (147,164) ?import_spec
+[pars]                 interpreted_string_literal (147,164) ?interpreted_string_literal
+[pars]                     " (147,148)
+[pars]                     interpreted_string_literal_content (148,163) ?interpreted_string_literal_content
+[pars]                     " (163,164)
+[pars]             import_spec (166,180) ?import_spec
+[pars]                 interpreted_string_literal (166,180) ?interpreted_string_literal
+[pars]                     " (166,167)
+[pars]                     interpreted_string_literal_content (167,179) ?interpreted_string_literal_content
+[pars]                     " (179,180)
+[pars]             import_spec (182,197) ?import_spec
+[pars]                 interpreted_string_literal (182,197) ?interpreted_string_literal
+[pars]                     " (182,183)
+[pars]                     interpreted_string_literal_content (183,196) ?interpreted_string_literal_content
+[pars]                     " (196,197)
+[pars]             import_spec (199,204) ?import_spec
+[pars]                 interpreted_string_literal (199,204) ?interpreted_string_literal
+[pars]                     " (199,200)
+[pars]                     interpreted_string_literal_content (200,203) ?interpreted_string_literal_content
+[pars]                     " (203,204)
+[pars]             import_spec (206,211) ?import_spec
+[pars]                 interpreted_string_literal (206,211) ?interpreted_string_literal
+[pars]                     " (206,207)
+[pars]                     interpreted_string_literal_content (207,210) ?interpreted_string_literal_content
+[pars]                     " (210,211)
+[pars]             import_spec (213,223) ?import_spec
+[pars]                 interpreted_string_literal (213,223) ?interpreted_string_literal
+[pars]                     " (213,214)
+[pars]                     interpreted_string_literal_content (214,222) ?interpreted_string_literal_content
+[pars]                     " (222,223)
+[pars]             import_spec (225,234) ?import_spec
+[pars]                 interpreted_string_literal (225,234) ?interpreted_string_literal
+[pars]                     " (225,226)
+[pars]                     interpreted_string_literal_content (226,233) ?interpreted_string_literal_content
+[pars]                     " (233,234)
+[pars]             import_spec (236,240) ?import_spec
+[pars]                 interpreted_string_literal (236,240) ?interpreted_string_literal
+[pars]                     " (236,237)
+[pars]                     interpreted_string_literal_content (237,239) ?interpreted_string_literal_content
+[pars]                     " (239,240)
+[pars]             import_spec (242,248) ?import_spec
+[pars]                 interpreted_string_literal (242,248) ?interpreted_string_literal
+[pars]                     " (242,243)
+[pars]                     interpreted_string_literal_content (243,247) ?interpreted_string_literal_content
+[pars]                     " (247,248)
+[pars]             import_spec (250,259) ?import_spec
+[pars]                 interpreted_string_literal (250,259) ?interpreted_string_literal
+[pars]                     " (250,251)
+[pars]                     interpreted_string_literal_content (251,258) ?interpreted_string_literal_content
+[pars]                     " (258,259)
+[pars]             import_spec (261,270) ?import_spec
+[pars]                 interpreted_string_literal (261,270) ?interpreted_string_literal
+[pars]                     " (261,262)
+[pars]                     interpreted_string_literal_content (262,269) ?interpreted_string_literal_content
+[pars]                     " (269,270)
+[pars]             import_spec (272,278) ?import_spec
+[pars]                 interpreted_string_literal (272,278) ?interpreted_string_literal
+[pars]                     " (272,273)
+[pars]                     interpreted_string_literal_content (273,277) ?interpreted_string_literal_content
+[pars]                     " (277,278)
+[pars]             import_spec (280,286) ?import_spec
+[pars]                 interpreted_string_literal (280,286) ?interpreted_string_literal
+[pars]                     " (280,281)
+[pars]                     interpreted_string_literal_content (281,285) ?interpreted_string_literal_content
+[pars]                     " (285,286)
+[pars]             import_spec (288,297) ?import_spec
+[pars]                 interpreted_string_literal (288,297) ?interpreted_string_literal
+[pars]                     " (288,289)
+[pars]                     interpreted_string_literal_content (289,296) ?interpreted_string_literal_content
+[pars]                     " (296,297)
+[pars]             import_spec (300,330) ?import_spec
+[pars]                 interpreted_string_literal (300,330) ?interpreted_string_literal
+[pars]                     " (300,301)
+[pars]                     interpreted_string_literal_content (301,329) ?interpreted_string_literal_content
+[pars]                     " (329,330)
+[pars]             import_spec (332,367) ?import_spec
+[pars]                 interpreted_string_literal (332,367) ?interpreted_string_literal
+[pars]                     " (332,333)
+[pars]                     interpreted_string_literal_content (333,366) ?interpreted_string_literal_content
+[pars]                     " (366,367)
+[pars]             import_spec (369,408) ?import_spec
+[pars]                 interpreted_string_literal (369,408) ?interpreted_string_literal
+[pars]                     " (369,370)
+[pars]                     interpreted_string_literal_content (370,407) ?interpreted_string_literal_content
+[pars]                     " (407,408)
+[pars]             import_spec (410,445) ?import_spec
+[pars]                 interpreted_string_literal (410,445) ?interpreted_string_literal
+[pars]                     " (410,411)
+[pars]                     interpreted_string_literal_content (411,444) ?interpreted_string_literal_content
+[pars]                     " (444,445)
+[pars]             import_spec (447,496) ?import_spec
+[pars]                 interpreted_string_literal (447,496) ?interpreted_string_literal
+[pars]                     " (447,448)
+[pars]                     interpreted_string_literal_content (448,495) ?interpreted_string_literal_content
+[pars]                     " (495,496)
+[pars]             import_spec (498,545) ?import_spec
+[pars]                 interpreted_string_literal (498,545) ?interpreted_string_literal
+[pars]                     " (498,499)
+[pars]                     interpreted_string_literal_content (499,544) ?interpreted_string_literal_content
+[pars]                     " (544,545)
+[pars]             import_spec (547,571) ?import_spec
+[pars]                 interpreted_string_literal (547,571) ?interpreted_string_literal
+[pars]                     " (547,548)
+[pars]                     interpreted_string_literal_content (548,570) ?interpreted_string_literal_content
+[pars]                     " (570,571)
+[pars]             import_spec (573,597) ?import_spec
+[pars]                 interpreted_string_literal (573,597) ?interpreted_string_literal
+[pars]                     " (573,574)
+[pars]                     interpreted_string_literal_content (574,596) ?interpreted_string_literal_content
+[pars]                     " (596,597)
+[pars]             ) (598,599)
+[pars]     const_declaration (601,2635) ?const_declaration
+[pars]         const (601,606)
+[pars]         ( (607,608)
+[pars]         const_spec (610,649) EnvVaultAddress?const_spec
+[pars]             identifier (610,625) ?identifier
+[pars]             = (635,636)
+[pars]             expression_list (637,649) ?expression_list
+[pars]                 interpreted_string_literal (637,649) ?interpreted_string_literal
+[pars]                     " (637,638)
+[pars]                     interpreted_string_literal_content (638,648) ?interpreted_string_literal_content
+[pars]                     " (648,649)
+[pars]         const_spec (651,696) EnvVaultAgentAddr?const_spec
+[pars]             identifier (651,668) ?identifier
+[pars]             = (676,677)
+[pars]             expression_list (678,696) ?expression_list
+[pars]                 interpreted_string_literal (678,696) ?interpreted_string_literal
+[pars]                     " (678,679)
+[pars]                     interpreted_string_literal_content (679,695) ?interpreted_string_literal_content
+[pars]                     " (695,696)
+[pars]         const_spec (698,739) EnvVaultCACert?const_spec
+[pars]             identifier (698,712) ?identifier
+[pars]             = (723,724)
+[pars]             expression_list (725,739) ?expression_list
+[pars]                 interpreted_string_literal (725,739) ?interpreted_string_literal
+[pars]                     " (725,726)
+[pars]                     interpreted_string_literal_content (726,738) ?interpreted_string_literal_content
+[pars]                     " (738,739)
+[pars]         const_spec (741,788) EnvVaultCACertBytes?const_spec
+[pars]             identifier (741,760) ?identifier
+[pars]             = (766,767)
+[pars]             expression_list (768,788) ?expression_list
+[pars]                 interpreted_string_literal (768,788) ?interpreted_string_literal
+[pars]                     " (768,769)
+[pars]                     interpreted_string_literal_content (769,787) ?interpreted_string_literal_content
+[pars]                     " (787,788)
+[pars]         const_spec (790,831) EnvVaultCAPath?const_spec
+[pars]             identifier (790,804) ?identifier
+[pars]             = (815,816)
+[pars]             expression_list (817,831) ?expression_list
+[pars]                 interpreted_string_literal (817,831) ?interpreted_string_literal
+[pars]                     " (817,818)
+[pars]                     interpreted_string_literal_content (818,830) ?interpreted_string_literal_content
+[pars]                     " (830,831)
+[pars]         const_spec (833,879) EnvVaultClientCert?const_spec
+[pars]             identifier (833,851) ?identifier
+[pars]             = (858,859)
+[pars]             expression_list (860,879) ?expression_list
+[pars]                 interpreted_string_literal (860,879) ?interpreted_string_literal
+[pars]                     " (860,861)
+[pars]                     interpreted_string_literal_content (861,878) ?interpreted_string_literal_content
+[pars]                     " (878,879)
+[pars]         const_spec (881,926) EnvVaultClientKey?const_spec
+[pars]             identifier (881,898) ?identifier
+[pars]             = (906,907)
+[pars]             expression_list (908,926) ?expression_list
+[pars]                 interpreted_string_literal (908,926) ?interpreted_string_literal
+[pars]                     " (908,909)
+[pars]                     interpreted_string_literal_content (909,925) ?interpreted_string_literal_content
+[pars]                     " (925,926)
+[pars]         const_spec (928,977) EnvVaultClientTimeout?const_spec
+[pars]             identifier (928,949) ?identifier
+[pars]             = (953,954)
+[pars]             expression_list (955,977) ?expression_list
+[pars]                 interpreted_string_literal (955,977) ?interpreted_string_literal
+[pars]                     " (955,956)
+[pars]                     interpreted_string_literal_content (956,976) ?interpreted_string_literal_content
+[pars]                     " (976,977)
+[pars]         const_spec (979,1021) EnvVaultHeaders?const_spec
+[pars]             identifier (979,994) ?identifier
+[pars]             = (1004,1005)
+[pars]             expression_list (1006,1021) ?expression_list
+[pars]                 interpreted_string_literal (1006,1021) ?interpreted_string_literal
+[pars]                     " (1006,1007)
+[pars]                     interpreted_string_literal_content (1007,1020) ?interpreted_string_literal_content
+[pars]                     " (1020,1021)
+[pars]         const_spec (1023,1068) EnvVaultSRVLookup?const_spec
+[pars]             identifier (1023,1040) ?identifier
+[pars]             = (1048,1049)
+[pars]             expression_list (1050,1068) ?expression_list
+[pars]                 interpreted_string_literal (1050,1068) ?interpreted_string_literal
+[pars]                     " (1050,1051)
+[pars]                     interpreted_string_literal_content (1051,1067) ?interpreted_string_literal_content
+[pars]                     " (1067,1068)
+[pars]         const_spec (1070,1116) EnvVaultSkipVerify?const_spec
+[pars]             identifier (1070,1088) ?identifier
+[pars]             = (1095,1096)
+[pars]             expression_list (1097,1116) ?expression_list
+[pars]                 interpreted_string_literal (1097,1116) ?interpreted_string_literal
+[pars]                     " (1097,1098)
+[pars]                     interpreted_string_literal_content (1098,1115) ?interpreted_string_literal_content
+[pars]                     " (1115,1116)
+[pars]         const_spec (1118,1162) EnvVaultNamespace?const_spec
+[pars]             identifier (1118,1135) ?identifier
+[pars]             = (1143,1144)
+[pars]             expression_list (1145,1162) ?expression_list
+[pars]                 interpreted_string_literal (1145,1162) ?interpreted_string_literal
+[pars]                     " (1145,1146)
+[pars]                     interpreted_string_literal_content (1146,1161) ?interpreted_string_literal_content
+[pars]                     " (1161,1162)
+[pars]         const_spec (1164,1214) EnvVaultTLSServerName?const_spec
+[pars]             identifier (1164,1185) ?identifier
+[pars]             = (1189,1190)
+[pars]             expression_list (1191,1214) ?expression_list
+[pars]                 interpreted_string_literal (1191,1214) ?interpreted_string_literal
+[pars]                     " (1191,1192)
+[pars]                     interpreted_string_literal_content (1192,1213) ?interpreted_string_literal_content
+[pars]                     " (1213,1214)
+[pars]         const_spec (1216,1259) EnvVaultWrapTTL?const_spec
+[pars]             identifier (1216,1231) ?identifier
+[pars]             = (1241,1242)
+[pars]             expression_list (1243,1259) ?expression_list
+[pars]                 interpreted_string_literal (1243,1259) ?interpreted_string_literal
+[pars]                     " (1243,1244)
+[pars]                     interpreted_string_literal_content (1244,1258) ?interpreted_string_literal_content
+[pars]                     " (1258,1259)
+[pars]         const_spec (1261,1307) EnvVaultMaxRetries?const_spec
+[pars]             identifier (1261,1279) ?identifier
+[pars]             = (1286,1287)
+[pars]             expression_list (1288,1307) ?expression_list
+[pars]                 interpreted_string_literal (1288,1307) ?interpreted_string_literal
+[pars]                     " (1288,1289)
+[pars]                     interpreted_string_literal_content (1289,1306) ?interpreted_string_literal_content
+[pars]                     " (1306,1307)
+[pars]         const_spec (1309,1349) EnvVaultToken?const_spec
+[pars]             identifier (1309,1322) ?identifier
+[pars]             = (1334,1335)
+[pars]             expression_list (1336,1349) ?expression_list
+[pars]                 interpreted_string_literal (1336,1349) ?interpreted_string_literal
+[pars]                     " (1336,1337)
+[pars]                     interpreted_string_literal_content (1337,1348) ?interpreted_string_literal_content
+[pars]                     " (1348,1349)
+[pars]         const_spec (1351,1389) EnvVaultMFA?const_spec
+[pars]             identifier (1351,1362) ?identifier
+[pars]             = (1376,1377)
+[pars]             expression_list (1378,1389) ?expression_list
+[pars]                 interpreted_string_literal (1378,1389) ?interpreted_string_literal
+[pars]                     " (1378,1379)
+[pars]                     interpreted_string_literal_content (1379,1388) ?interpreted_string_literal_content
+[pars]                     " (1388,1389)
+[pars]         const_spec (1391,1436) EnvRateLimit?const_spec
+[pars]             identifier (1391,1403) ?identifier
+[pars]             = (1416,1417)
+[pars]             expression_list (1418,1436) ?expression_list
+[pars]                 interpreted_string_literal (1418,1436) ?interpreted_string_literal
+[pars]                     " (1418,1419)
+[pars]                     interpreted_string_literal_content (1419,1435) ?interpreted_string_literal_content
+[pars]                     " (1435,1436)
+[pars]         const_spec (1438,1483) EnvHTTPProxy?const_spec
+[pars]             identifier (1438,1450) ?identifier
+[pars]             = (1463,1464)
+[pars]             expression_list (1465,1483) ?expression_list
+[pars]                 interpreted_string_literal (1465,1483) ?interpreted_string_literal
+[pars]                     " (1465,1466)
+[pars]                     interpreted_string_literal_content (1466,1482) ?interpreted_string_literal_content
+[pars]                     " (1482,1483)
+[pars]         const_spec (1485,1530) EnvVaultProxyAddr?const_spec
+[pars]             identifier (1485,1502) ?identifier
+[pars]             = (1510,1511)
+[pars]             expression_list (1512,1530) ?expression_list
+[pars]                 interpreted_string_literal (1512,1530) ?interpreted_string_literal
+[pars]                     " (1512,1513)
+[pars]                     interpreted_string_literal_content (1513,1529) ?interpreted_string_literal_content
+[pars]                     " (1529,1530)
+[pars]         const_spec (1532,1584) EnvVaultDisableRedirects?const_spec
+[pars]             identifier (1532,1556) ?identifier
+[pars]             = (1557,1558)
+[pars]             expression_list (1559,1584) ?expression_list
+[pars]                 interpreted_string_literal (1559,1584) ?interpreted_string_literal
+[pars]                     " (1559,1560)
+[pars]                     interpreted_string_literal_content (1560,1583) ?interpreted_string_literal_content
+[pars]                     " (1583,1584)
+[pars]         const_spec (1586,1628) HeaderIndex?const_spec
+[pars]             identifier (1586,1597) ?identifier
+[pars]             = (1611,1612)
+[pars]             expression_list (1613,1628) ?expression_list
+[pars]                 interpreted_string_literal (1613,1628) ?interpreted_string_literal
+[pars]                     " (1613,1614)
+[pars]                     interpreted_string_literal_content (1614,1627) ?interpreted_string_literal_content
+[pars]                     " (1627,1628)
+[pars]         const_spec (1630,1674) HeaderForward?const_spec
+[pars]             identifier (1630,1643) ?identifier
+[pars]             = (1655,1656)
+[pars]             expression_list (1657,1674) ?expression_list
+[pars]                 interpreted_string_literal (1657,1674) ?interpreted_string_literal
+[pars]                     " (1657,1658)
+[pars]                     interpreted_string_literal_content (1658,1673) ?interpreted_string_literal_content
+[pars]                     " (1673,1674)
+[pars]         const_spec (1676,1725) HeaderInconsistent?const_spec
+[pars]             identifier (1676,1694) ?identifier
+[pars]             = (1701,1702)
+[pars]             expression_list (1703,1725) ?expression_list
+[pars]                 interpreted_string_literal (1703,1725) ?interpreted_string_literal
+[pars]                     " (1703,1704)
+[pars]                     interpreted_string_literal_content (1704,1724) ?interpreted_string_literal_content
+[pars]                     " (1724,1725)
+[pars]         comment (1728,1799) ?comment
+[pars]         comment (1801,1828) ?comment
+[pars]         const_spec (1830,1871) NamespaceHeaderName?const_spec
+[pars]             identifier (1830,1849) ?identifier
+[pars]             = (1850,1851)
+[pars]             expression_list (1852,1871) ?expression_list
+[pars]                 interpreted_string_literal (1852,1871) ?interpreted_string_literal
+[pars]                     " (1852,1853)
+[pars]                     interpreted_string_literal_content (1853,1870) ?interpreted_string_literal_content
+[pars]                     " (1870,1871)
+[pars]         comment (1874,1939) ?comment
+[pars]         const_spec (1941,1973) AuthHeaderName?const_spec
+[pars]             identifier (1941,1955) ?identifier
+[pars]             = (1956,1957)
+[pars]             expression_list (1958,1973) ?expression_list
+[pars]                 interpreted_string_literal (1958,1973) ?interpreted_string_literal
+[pars]                     " (1958,1959)
+[pars]                     interpreted_string_literal_content (1959,1972) ?interpreted_string_literal_content
+[pars]                     " (1972,1973)
+[pars]         comment (1976,2044) ?comment
+[pars]         comment (2046,2065) ?comment
+[pars]         const_spec (2067,2104) RequestHeaderName?const_spec
+[pars]             identifier (2067,2084) ?identifier
+[pars]             = (2085,2086)
+[pars]             expression_list (2087,2104) ?expression_list
+[pars]                 interpreted_string_literal (2087,2104) ?interpreted_string_literal
+[pars]                     " (2087,2088)
+[pars]                     interpreted_string_literal_content (2088,2103) ?interpreted_string_literal_content
+[pars]                     " (2103,2104)
+[pars]         const_spec (2107,2633) TLSErrorString?const_spec
+[pars]             identifier (2107,2121) ?identifier
+[pars]             = (2122,2123)
+[pars]             expression_list (2124,2633) ?expression_list
+[pars]                 binary_expression (2124,2633) ?binary_expression
+[pars]                     binary_expression (2124,2562) ?binary_expression
+[pars]                         binary_expression (2124,2504) ?binary_expression
+[pars]                             binary_expression (2124,2438) ?binary_expression
+[pars]                                 binary_expression (2124,2382) ?binary_expression
+[pars]                                     binary_expression (2124,2343) ?binary_expression
+[pars]                                         binary_expression (2124,2271) ?binary_expression
+[pars]                                             interpreted_string_literal (2124,2197) ?interpreted_string_literal
+[pars]                                                 " (2124,2125)
+[pars]                                                 interpreted_string_literal_content (2125,2194) ?interpreted_string_literal_content
+[pars]                                                 escape_sequence (2194,2196) ?escape_sequence
+[pars]                                                 " (2196,2197)
+[pars]                                             + (2198,2199)
+[pars]                                             interpreted_string_literal (2202,2271) ?interpreted_string_literal
+[pars]                                                 " (2202,2203)
+[pars]                                                 interpreted_string_literal_content (2203,2268) ?interpreted_string_literal_content
+[pars]                                                 escape_sequence (2268,2270) ?escape_sequence
+[pars]                                                 " (2270,2271)
+[pars]                                         + (2272,2273)
+[pars]                                         interpreted_string_literal (2276,2343) ?interpreted_string_literal
+[pars]                                             " (2276,2277)
+[pars]                                             interpreted_string_literal_content (2277,2340) ?interpreted_string_literal_content
+[pars]                                             escape_sequence (2340,2342) ?escape_sequence
+[pars]                                             " (2342,2343)
+[pars]                                     + (2344,2345)
+[pars]                                     interpreted_string_literal (2348,2382) ?interpreted_string_literal
+[pars]                                         " (2348,2349)
+[pars]                                         interpreted_string_literal_content (2349,2377) ?interpreted_string_literal_content
+[pars]                                         escape_sequence (2377,2379) ?escape_sequence
+[pars]                                         escape_sequence (2379,2381) ?escape_sequence
+[pars]                                         " (2381,2382)
+[pars]                                 + (2383,2384)
+[pars]                                 interpreted_string_literal (2387,2438) ?interpreted_string_literal
+[pars]                                     " (2387,2388)
+[pars]                                     interpreted_string_literal_content (2388,2433) ?interpreted_string_literal_content
+[pars]                                     escape_sequence (2433,2435) ?escape_sequence
+[pars]                                     escape_sequence (2435,2437) ?escape_sequence
+[pars]                                     " (2437,2438)
+[pars]                             + (2439,2440)
+[pars]                             interpreted_string_literal (2443,2504) ?interpreted_string_literal
+[pars]                                 " (2443,2444)
+[pars]                                 interpreted_string_literal_content (2444,2497) ?interpreted_string_literal_content
+[pars]                                 escape_sequence (2497,2499) ?escape_sequence
+[pars]                                 escape_sequence (2499,2501) ?escape_sequence
+[pars]                                 escape_sequence (2501,2503) ?escape_sequence
+[pars]                                 " (2503,2504)
+[pars]                         + (2505,2506)
+[pars]                         interpreted_string_literal (2509,2562) ?interpreted_string_literal
+[pars]                             " (2509,2510)
+[pars]                             interpreted_string_literal_content (2510,2557) ?interpreted_string_literal_content
+[pars]                             escape_sequence (2557,2559) ?escape_sequence
+[pars]                             escape_sequence (2559,2561) ?escape_sequence
+[pars]                             " (2561,2562)
+[pars]                     + (2563,2564)
+[pars]                     interpreted_string_literal (2567,2633) ?interpreted_string_literal
+[pars]                         " (2567,2568)
+[pars]                         interpreted_string_literal_content (2568,2632) ?interpreted_string_literal_content
+[pars]                         " (2632,2633)
+[pars]         ) (2634,2635)
+[pars]     type_declaration (2637,2684) ?type_declaration
+[pars]         type (2637,2641)
+[pars]         type_spec (2642,2684) Rectangle?type_spec
+[pars]             type_identifier (2642,2651) ?type_identifier
+[pars]             struct_type (2652,2684) ?struct_type
+[pars]                 struct (2652,2658)
+[pars]                 field_declaration_list (2659,2684) ?field_declaration_list
+[pars]                     { (2659,2660)
+[pars]                     field_declaration (2665,2682) Width?field_declaration
+[pars]                         field_identifier (2665,2670) ?field_identifier
+[pars]                         , (2670,2671)
+[pars]                         field_identifier (2672,2678) ?field_identifier
+[pars]                         type_identifier (2679,2682) ?type_identifier
+[pars]                     } (2683,2684)
+[pars]     method_declaration (2686,2749) Area?method_declaration
+[pars]         func (2686,2690)
+[pars]         parameter_list (2691,2704) ?parameter_list
+[pars]             ( (2691,2692)
+[pars]             parameter_declaration (2692,2703) r?parameter_declaration
+[pars]                 identifier (2692,2693) ?identifier
+[pars]                 type_identifier (2694,2703) ?type_identifier
+[pars]             ) (2703,2704)
+[pars]         field_identifier (2705,2709) ?field_identifier
+[pars]         parameter_list (2709,2711) ?parameter_list
+[pars]             ( (2709,2710)
+[pars]             ) (2710,2711)
+[pars]         type_identifier (2712,2715) ?type_identifier
+[pars]         block (2716,2749) ?block
+[pars]             { (2716,2717)
+[pars]             return_statement (2722,2747) ?return_statement
+[pars]                 return (2722,2728)
+[pars]                 expression_list (2729,2747) ?expression_list
+[pars]                     binary_expression (2729,2747) ?binary_expression
+[pars]                         selector_expression (2729,2736) ?selector_expression
+[pars]                             identifier (2729,2730) ?identifier
+[pars]                             . (2730,2731)
+[pars]                             field_identifier (2731,2736) ?field_identifier
+[pars]                         * (2737,2738)
+[pars]                         selector_expression (2739,2747) ?selector_expression
+[pars]                             identifier (2739,2740) ?identifier
+[pars]                             . (2740,2741)
+[pars]                             field_identifier (2741,2747) ?field_identifier
+[pars]             } (2748,2749)
+[pars]     comment (2752,2772) ?comment
+[pars]     const_declaration (2773,2913) ?const_declaration
+[pars]         const (2773,2778)
+[pars]         ( (2779,2780)
+[pars]         const_spec (2782,2823) EnvVaultAgentAddress?const_spec
+[pars]             identifier (2782,2802) ?identifier
+[pars]             = (2803,2804)
+[pars]             expression_list (2805,2823) ?expression_list
+[pars]                 interpreted_string_literal (2805,2823) ?interpreted_string_literal
+[pars]                     " (2805,2806)
+[pars]                     interpreted_string_literal_content (2806,2822) ?interpreted_string_literal_content
+[pars]                     " (2822,2823)
+[pars]         const_spec (2825,2867) EnvVaultInsecure?const_spec
+[pars]             identifier (2825,2841) ?identifier
+[pars]             = (2846,2847)
+[pars]             expression_list (2848,2867) ?expression_list
+[pars]                 interpreted_string_literal (2848,2867) ?interpreted_string_literal
+[pars]                     " (2848,2849)
+[pars]                     interpreted_string_literal_content (2849,2866) ?interpreted_string_literal_content
+[pars]                     " (2866,2867)
+[pars]         const_spec (2870,2911) DefaultAddress?const_spec
+[pars]             identifier (2870,2884) ?identifier
+[pars]             = (2885,2886)
+[pars]             expression_list (2887,2911) ?expression_list
+[pars]                 interpreted_string_literal (2887,2911) ?interpreted_string_literal
+[pars]                     " (2887,2888)
+[pars]                     interpreted_string_literal_content (2888,2910) ?interpreted_string_literal_content
+[pars]                     " (2910,2911)
+[pars]         ) (2912,2913)
+[pars]     comment (2915,2987) ?comment
+[pars]     comment (2988,3065) ?comment
+[pars]     comment (3066,3145) ?comment
+[pars]     comment (3146,3221) ?comment
+[pars]     comment (3222,3299) ?comment
+[pars]     comment (3300,3333) ?comment
+[pars]     type_declaration (3334,3393) ?type_declaration
+[pars]         type (3334,3338)
+[pars]         type_spec (3339,3393) WrappingLookupFunc?type_spec
+[pars]             type_identifier (3339,3357) ?type_identifier
+[pars]             function_type (3358,3393) ?function_type
+[pars]                 func (3358,3362)
+[pars]                 parameter_list (3362,3386) ?parameter_list
+[pars]                     ( (3362,3363)
+[pars]                     parameter_declaration (3363,3385) operation?parameter_declaration
+[pars]                         identifier (3363,3372) ?identifier
+[pars]                         , (3372,3373)
+[pars]                         identifier (3374,3378) ?identifier
+[pars]                         type_identifier (3379,3385) ?type_identifier
+[pars]                     ) (3385,3386)
+[pars]                 type_identifier (3387,3393) ?type_identifier
+[pars]     comment (3395,3453) ?comment
+[pars]     type_declaration (3454,8039) ?type_declaration
+[pars]         type (3454,3458)
+[pars]         type_spec (3459,8039) Config?type_spec
+[pars]             type_identifier (3459,3465) ?type_identifier
+[pars]             struct_type (3466,8039) ?struct_type
+[pars]                 struct (3466,3472)
+[pars]                 field_declaration_list (3473,8039) ?field_declaration_list
+[pars]                     { (3473,3474)
+[pars]                     field_declaration (3476,3499) modifyLock?field_declaration
+[pars]                         field_identifier (3476,3486) ?field_identifier
+[pars]                         qualified_type (3487,3499) RWMutex?qualified_type
+[pars]                             package_identifier (3487,3491) ?package_identifier
+[pars]                             . (3491,3492)
+[pars]                             type_identifier (3492,3499) ?type_identifier
+[pars]                     comment (3502,3574) ?comment
+[pars]                     comment (3576,3643) ?comment
+[pars]                     comment (3645,3714) ?comment
+[pars]                     comment (3716,3730) ?comment
+[pars]                     field_declaration (3732,3746) Address?field_declaration
+[pars]                         field_identifier (3732,3739) ?field_identifier
+[pars]                         type_identifier (3740,3746) ?type_identifier
+[pars]                     comment (3749,3822) ?comment
+[pars]                     comment (3824,3875) ?comment
+[pars]                     field_declaration (3877,3896) AgentAddress?field_declaration
+[pars]                         field_identifier (3877,3889) ?field_identifier
+[pars]                         type_identifier (3890,3896) ?type_identifier
+[pars]                     comment (3899,3972) ?comment
+[pars]                     comment (3974,4048) ?comment
+[pars]                     comment (4050,4125) ?comment
+[pars]                     comment (4127,4201) ?comment
+[pars]                     comment (4203,4230) ?comment
+[pars]                     field_declaration (4232,4255) HttpClient?field_declaration
+[pars]                         field_identifier (4232,4242) ?field_identifier
+[pars]                         pointer_type (4243,4255) ?pointer_type
+[pars]                             * (4243,4244)
+[pars]                             qualified_type (4244,4255) Client?qualified_type
+[pars]                                 package_identifier (4244,4248) ?package_identifier
+[pars]                                 . (4248,4249)
+[pars]                                 type_identifier (4249,4255) ?type_identifier
+[pars]                     comment (4258,4334) ?comment
+[pars]                     comment (4336,4383) ?comment
+[pars]                     field_declaration (4385,4411) MinRetryWait?field_declaration
+[pars]                         field_identifier (4385,4397) ?field_identifier
+[pars]                         qualified_type (4398,4411) Duration?qualified_type
+[pars]                             package_identifier (4398,4402) ?package_identifier
+[pars]                             . (4402,4403)
+[pars]                             type_identifier (4403,4411) ?type_identifier
+[pars]                     comment (4414,4490) ?comment
+[pars]                     comment (4492,4539) ?comment
+[pars]                     field_declaration (4541,4567) MaxRetryWait?field_declaration
+[pars]                         field_identifier (4541,4553) ?field_identifier
+[pars]                         qualified_type (4554,4567) Duration?qualified_type
+[pars]                             package_identifier (4554,4558) ?package_identifier
+[pars]                             . (4558,4559)
+[pars]                             type_identifier (4559,4567) ?type_identifier
+[pars]                     comment (4570,4640) ?comment
+[pars]                     comment (4642,4715) ?comment
+[pars]                     comment (4717,4736) ?comment
+[pars]                     field_declaration (4738,4752) MaxRetries?field_declaration
+[pars]                         field_identifier (4738,4748) ?field_identifier
+[pars]                         type_identifier (4749,4752) ?type_identifier
+[pars]                     comment (4755,4825) ?comment
+[pars]                     comment (4827,4898) ?comment
+[pars]                     comment (4900,4970) ?comment
+[pars]                     comment (4972,5037) ?comment
+[pars]                     comment (5039,5065) ?comment
+[pars]                     field_declaration (5067,5088) Timeout?field_declaration
+[pars]                         field_identifier (5067,5074) ?field_identifier
+[pars]                         qualified_type (5075,5088) Duration?qualified_type
+[pars]                             package_identifier (5075,5079) ?package_identifier
+[pars]                             . (5079,5080)
+[pars]                             type_identifier (5080,5088) ?type_identifier
+[pars]                     comment (5091,5164) ?comment
+[pars]                     comment (5166,5174) ?comment
+[pars]                     field_declaration (5176,5187) Error?field_declaration
+[pars]                         field_identifier (5176,5181) ?field_identifier
+[pars]                         type_identifier (5182,5187) ?type_identifier
+[pars]                     comment (5190,5255) ?comment
+[pars]                     field_declaration (5257,5286) Backoff?field_declaration
+[pars]                         field_identifier (5257,5264) ?field_identifier
+[pars]                         qualified_type (5265,5286) Backoff?qualified_type
+[pars]                             package_identifier (5265,5278) ?package_identifier
+[pars]                             . (5278,5279)
+[pars]                             type_identifier (5279,5286) ?type_identifier
+[pars]                     comment (5289,5357) ?comment
+[pars]                     field_declaration (5359,5394) CheckRetry?field_declaration
+[pars]                         field_identifier (5359,5369) ?field_identifier
+[pars]                         qualified_type (5370,5394) CheckRetry?qualified_type
+[pars]                             package_identifier (5370,5383) ?package_identifier
+[pars]                             . (5383,5384)
+[pars]                             type_identifier (5384,5394) ?type_identifier
+[pars]                     comment (5397,5469) ?comment
+[pars]                     field_declaration (5471,5505) Logger?field_declaration
+[pars]                         field_identifier (5471,5477) ?field_identifier
+[pars]                         qualified_type (5478,5505) LeveledLogger?qualified_type
+[pars]                             package_identifier (5478,5491) ?package_identifier
+[pars]                             . (5491,5492)
+[pars]                             type_identifier (5492,5505) ?type_identifier
+[pars]                     comment (5508,5558) ?comment
+[pars]                     comment (5560,5619) ?comment
+[pars]                     comment (5621,5685) ?comment
+[pars]                     comment (5687,5748) ?comment
+[pars]                     comment (5750,5787) ?comment
+[pars]                     field_declaration (5789,5810) Limiter?field_declaration
+[pars]                         field_identifier (5789,5796) ?field_identifier
+[pars]                         pointer_type (5797,5810) ?pointer_type
+[pars]                             * (5797,5798)
+[pars]                             qualified_type (5798,5810) Limiter?qualified_type
+[pars]                                 package_identifier (5798,5802) ?package_identifier
+[pars]                                 . (5802,5803)
+[pars]                                 type_identifier (5803,5810) ?type_identifier
+[pars]                     comment (5813,5885) ?comment
+[pars]                     comment (5887,5953) ?comment
+[pars]                     comment (5955,6010) ?comment
+[pars]                     comment (6012,6014) ?comment
+[pars]                     comment (6016,6087) ?comment
+[pars]                     comment (6089,6157) ?comment
+[pars]                     field_declaration (6159,6180) OutputCurlString?field_declaration
+[pars]                         field_identifier (6159,6175) ?field_identifier
+[pars]                         type_identifier (6176,6180) ?type_identifier
+[pars]                     comment (6183,6251) ?comment
+[pars]                     comment (6253,6321) ?comment
+[pars]                     comment (6323,6389) ?comment
+[pars]                     comment (6391,6393) ?comment
+[pars]                     comment (6395,6466) ?comment
+[pars]                     comment (6468,6536) ?comment
+[pars]                     field_declaration (6538,6555) OutputPolicy?field_declaration
+[pars]                         field_identifier (6538,6550) ?field_identifier
+[pars]                         type_identifier (6551,6555) ?type_identifier
+[pars]                     comment (6558,6634) ?comment
+[pars]                     comment (6636,6712) ?comment
+[pars]                     comment (6714,6767) ?comment
+[pars]                     field_declaration (6769,6805) curlCACert?field_declaration
+[pars]                         field_identifier (6769,6779) ?field_identifier
+[pars]                         , (6779,6780)
+[pars]                         field_identifier (6781,6791) ?field_identifier
+[pars]                         type_identifier (6799,6805) ?type_identifier
+[pars]                     field_declaration (6807,6843) curlClientCert?field_declaration
+[pars]                         field_identifier (6807,6821) ?field_identifier
+[pars]                         , (6821,6822)
+[pars]                         field_identifier (6823,6836) ?field_identifier
+[pars]                         type_identifier (6837,6843) ?type_identifier
+[pars]                     comment (6846,6919) ?comment
+[pars]                     field_declaration (6921,6935) SRVLookup?field_declaration
+[pars]                         field_identifier (6921,6930) ?field_identifier
+[pars]                         type_identifier (6931,6935) ?type_identifier
+[pars]                     comment (6938,7008) ?comment
+[pars]                     comment (7010,7023) ?comment
+[pars]                     field_declaration (7025,7042) CloneHeaders?field_declaration
+[pars]                         field_identifier (7025,7037) ?field_identifier
+[pars]                         type_identifier (7038,7042) ?type_identifier
+[pars]                     comment (7045,7071) ?comment
+[pars]                     field_declaration (7073,7088) CloneToken?field_declaration
+[pars]                         field_identifier (7073,7083) ?field_identifier
+[pars]                         type_identifier (7084,7088) ?type_identifier
+[pars]                     comment (7091,7134) ?comment
+[pars]                     field_declaration (7136,7155) CloneTLSConfig?field_declaration
+[pars]                         field_identifier (7136,7150) ?field_identifier
+[pars]                         type_identifier (7151,7155) ?type_identifier
+[pars]                     comment (7158,7222) ?comment
+[pars]                     comment (7224,7291) ?comment
+[pars]                     comment (7293,7362) ?comment
+[pars]                     comment (7364,7366) ?comment
+[pars]                     comment (7368,7444) ?comment
+[pars]                     comment (7446,7514) ?comment
+[pars]                     comment (7516,7564) ?comment
+[pars]                     field_declaration (7566,7585) ReadYourWrites?field_declaration
+[pars]                         field_identifier (7566,7580) ?field_identifier
+[pars]                         type_identifier (7581,7585) ?type_identifier
+[pars]                     comment (7588,7654) ?comment
+[pars]                     comment (7656,7726) ?comment
+[pars]                     comment (7728,7803) ?comment
+[pars]                     comment (7805,7813) ?comment
+[pars]                     comment (7815,7817) ?comment
+[pars]                     comment (7819,7889) ?comment
+[pars]                     comment (7891,7966) ?comment
+[pars]                     comment (7968,7984) ?comment
+[pars]                     field_declaration (7986,8007) DisableRedirects?field_declaration
+[pars]                         field_identifier (7986,8002) ?field_identifier
+[pars]                         type_identifier (8003,8007) ?type_identifier
+[pars]                     field_declaration (8009,8037) clientTLSConfig?field_declaration
+[pars]                         field_identifier (8009,8024) ?field_identifier
+[pars]                         pointer_type (8026,8037) ?pointer_type
+[pars]                             * (8026,8027)
+[pars]                             qualified_type (8027,8037) Config?qualified_type
+[pars]                                 package_identifier (8027,8030) ?package_identifier
+[pars]                                 . (8030,8031)
+[pars]                                 type_identifier (8031,8037) ?type_identifier
+[pars]                     } (8038,8039)
+[pars]     comment (8041,8120) ?comment
+[pars]     comment (8121,8155) ?comment
+[pars]     type_declaration (8156,8953) ?type_declaration
+[pars]         type (8156,8160)
+[pars]         type_spec (8161,8953) TLSConfig?type_spec
+[pars]             type_identifier (8161,8170) ?type_identifier
+[pars]             struct_type (8171,8953) ?struct_type
+[pars]                 struct (8171,8177)
+[pars]                 field_declaration_list (8178,8953) ?field_declaration_list
+[pars]                     { (8178,8179)
+[pars]                     comment (8181,8253) ?comment
+[pars]                     comment (8255,8324) ?comment
+[pars]                     comment (8326,8340) ?comment
+[pars]                     field_declaration (8342,8355) CACert?field_declaration
+[pars]                         field_identifier (8342,8348) ?field_identifier
+[pars]                         type_identifier (8349,8355) ?type_identifier
+[pars]                     comment (8358,8432) ?comment
+[pars]                     comment (8434,8449) ?comment
+[pars]                     field_declaration (8451,8469) CACertBytes?field_declaration
+[pars]                         field_identifier (8451,8462) ?field_identifier
+[pars]                         slice_type (8463,8469) ?slice_type
+[pars]                             [ (8463,8464)
+[pars]                             ] (8464,8465)
+[pars]                             type_identifier (8465,8469) ?type_identifier
+[pars]                     comment (8472,8547) ?comment
+[pars]                     comment (8549,8585) ?comment
+[pars]                     field_declaration (8587,8600) CAPath?field_declaration
+[pars]                         field_identifier (8587,8593) ?field_identifier
+[pars]                         type_identifier (8594,8600) ?type_identifier
+[pars]                     comment (8603,8671) ?comment
+[pars]                     field_declaration (8673,8690) ClientCert?field_declaration
+[pars]                         field_identifier (8673,8683) ?field_identifier
+[pars]                         type_identifier (8684,8690) ?type_identifier
+[pars]                     comment (8693,8760) ?comment
+[pars]                     field_declaration (8762,8778) ClientKey?field_declaration
+[pars]                         field_identifier (8762,8771) ?field_identifier
+[pars]                         type_identifier (8772,8778) ?type_identifier
+[pars]                     comment (8781,8854) ?comment
+[pars]                     comment (8856,8863) ?comment
+[pars]                     field_declaration (8865,8885) TLSServerName?field_declaration
+[pars]                         field_identifier (8865,8878) ?field_identifier
+[pars]                         type_identifier (8879,8885) ?type_identifier
+[pars]                     comment (8888,8936) ?comment
+[pars]                     field_declaration (8938,8951) Insecure?field_declaration
+[pars]                         field_identifier (8938,8946) ?field_identifier
+[pars]                         type_identifier (8947,8951) ?type_identifier
+[pars]                     } (8952,8953)
+[pars]     comment (8955,9025) ?comment
+[pars]     comment (9026,9078) ?comment
+[pars]     comment (9079,9081) ?comment
+[pars]     comment (9082,9161) ?comment
+[pars]     comment (9162,9211) ?comment
+[pars]     comment (9212,9214) ?comment
+[pars]     comment (9215,9328) ?comment
+[pars]     function_declaration (9329,10699) DefaultConfig?function_declaration
+[pars]         func (9329,9333)
+[pars]         identifier (9334,9347) ?identifier
+[pars]         parameter_list (9347,9349) ?parameter_list
+[pars]             ( (9347,9348)
+[pars]             ) (9348,9349)
+[pars]         pointer_type (9350,9357) ?pointer_type
+[pars]             * (9350,9351)
+[pars]             type_identifier (9351,9357) ?type_identifier
+[pars]         block (9358,10699) ?block
+[pars]             { (9358,9359)
+[pars]             short_var_declaration (9361,9658) ?short_var_declaration
+[pars]                 expression_list (9361,9367) ?expression_list
+[pars]                     identifier (9361,9367) ?identifier
+[pars]                 := (9368,9370)
+[pars]                 expression_list (9371,9658) ?expression_list
+[pars]                     unary_expression (9371,9658) ?unary_expression
+[pars]                         & (9371,9372)
+[pars]                         composite_literal (9372,9658) ?composite_literal
+[pars]                             type_identifier (9372,9378) ?type_identifier
+[pars]                             literal_value (9378,9658) ?literal_value
+[pars]                                 { (9378,9379)
+[pars]                                 keyed_element (9382,9410) ?keyed_element
+[pars]                                     literal_element (9382,9389) ?literal_element
+[pars]                                         identifier (9382,9389) ?identifier
+[pars]                                     : (9389,9390)
+[pars]                                     literal_element (9396,9410) ?literal_element
+[pars]                                         identifier (9396,9410) ?identifier
+[pars]                                 , (9410,9411)
+[pars]                                 keyed_element (9414,9459) ?keyed_element
+[pars]                                     literal_element (9414,9424) ?literal_element
+[pars]                                         identifier (9414,9424) ?identifier
+[pars]                                     : (9424,9425)
+[pars]                                     literal_element (9428,9459) ?literal_element
+[pars]                                         call_expression (9428,9459) ?call_expression
+[pars]                                             selector_expression (9428,9457) ?selector_expression
+[pars]                                                 identifier (9428,9437) ?identifier
+[pars]                                                 . (9437,9438)
+[pars]                                                 field_identifier (9438,9457) ?field_identifier
+[pars]                                             argument_list (9457,9459) ?argument_list
+[pars]                                                 ( (9457,9458)
+[pars]                                                 ) (9458,9459)
+[pars]                                 , (9459,9460)
+[pars]                                 keyed_element (9463,9493) ?keyed_element
+[pars]                                     literal_element (9463,9470) ?literal_element
+[pars]                                         identifier (9463,9470) ?identifier
+[pars]                                     : (9470,9471)
+[pars]                                     literal_element (9477,9493) ?literal_element
+[pars]                                         binary_expression (9477,9493) ?binary_expression
+[pars]                                             selector_expression (9477,9488) ?selector_expression
+[pars]                                                 identifier (9477,9481) ?identifier
+[pars]                                                 . (9481,9482)
+[pars]                                                 field_identifier (9482,9488) ?field_identifier
+[pars]                                             * (9489,9490)
+[pars]                                             int_literal (9491,9493) ?int_literal
+[pars]                                 , (9493,9494)
+[pars]                                 keyed_element (9497,9534) ?keyed_element
+[pars]                                     literal_element (9497,9509) ?literal_element
+[pars]                                         identifier (9497,9509) ?identifier
+[pars]                                     : (9509,9510)
+[pars]                                     literal_element (9511,9534) ?literal_element
+[pars]                                         binary_expression (9511,9534) ?binary_expression
+[pars]                                             selector_expression (9511,9527) ?selector_expression
+[pars]                                                 identifier (9511,9515) ?identifier
+[pars]                                                 . (9515,9516)
+[pars]                                                 field_identifier (9516,9527) ?field_identifier
+[pars]                                             * (9528,9529)
+[pars]                                             int_literal (9530,9534) ?int_literal
+[pars]                                 , (9534,9535)
+[pars]                                 keyed_element (9538,9575) ?keyed_element
+[pars]                                     literal_element (9538,9550) ?literal_element
+[pars]                                         identifier (9538,9550) ?identifier
+[pars]                                     : (9550,9551)
+[pars]                                     literal_element (9552,9575) ?literal_element
+[pars]                                         binary_expression (9552,9575) ?binary_expression
+[pars]                                             selector_expression (9552,9568) ?selector_expression
+[pars]                                                 identifier (9552,9556) ?identifier
+[pars]                                                 . (9556,9557)
+[pars]                                                 field_identifier (9557,9568) ?field_identifier
+[pars]                                             * (9569,9570)
+[pars]                                             int_literal (9571,9575) ?int_literal
+[pars]                                 , (9575,9576)
+[pars]                                 keyed_element (9579,9594) ?keyed_element
+[pars]                                     literal_element (9579,9589) ?literal_element
+[pars]                                         identifier (9579,9589) ?identifier
+[pars]                                     : (9589,9590)
+[pars]                                     literal_element (9593,9594) ?literal_element
+[pars]                                         int_literal (9593,9594) ?int_literal
+[pars]                                 , (9594,9595)
+[pars]                                 keyed_element (9598,9654) ?keyed_element
+[pars]                                     literal_element (9598,9605) ?literal_element
+[pars]                                         identifier (9598,9605) ?identifier
+[pars]                                     : (9605,9606)
+[pars]                                     literal_element (9612,9654) ?literal_element
+[pars]                                         selector_expression (9612,9654) ?selector_expression
+[pars]                                             identifier (9612,9625) ?identifier
+[pars]                                             . (9625,9626)
+[pars]                                             field_identifier (9626,9654) ?field_identifier
+[pars]                                 , (9654,9655)
+[pars]                                 } (9657,9658)
+[pars]             short_var_declaration (9661,9719) ?short_var_declaration
+[pars]                 expression_list (9661,9670) ?expression_list
+[pars]                     identifier (9661,9670) ?identifier
+[pars]                 := (9671,9673)
+[pars]                 expression_list (9674,9719) ?expression_list
+[pars]                     type_assertion_expression (9674,9719) ?type_assertion_expression
+[pars]                         selector_expression (9674,9701) ?selector_expression
+[pars]                             selector_expression (9674,9691) ?selector_expression
+[pars]                                 identifier (9674,9680) ?identifier
+[pars]                                 . (9680,9681)
+[pars]                                 field_identifier (9681,9691) ?field_identifier
+[pars]                             . (9691,9692)
+[pars]                             field_identifier (9692,9701) ?field_identifier
+[pars]                         . (9701,9702)
+[pars]                         ( (9702,9703)
+[pars]                         pointer_type (9703,9718) ?pointer_type
+[pars]                             * (9703,9704)
+[pars]                             qualified_type (9704,9718) Transport?qualified_type
+[pars]                                 package_identifier (9704,9708) ?package_identifier
+[pars]                                 . (9708,9709)
+[pars]                                 type_identifier (9709,9718) ?type_identifier
+[pars]                         ) (9718,9719)
+[pars]             assignment_statement (9721,9769) ?assignment_statement
+[pars]                 expression_list (9721,9750) ?expression_list
+[pars]                     selector_expression (9721,9750) ?selector_expression
+[pars]                         identifier (9721,9730) ?identifier
+[pars]                         . (9730,9731)
+[pars]                         field_identifier (9731,9750) ?field_identifier
+[pars]                 = (9751,9752)
+[pars]                 expression_list (9753,9769) ?expression_list
+[pars]                     binary_expression (9753,9769) ?binary_expression
+[pars]                         int_literal (9753,9755) ?int_literal
+[pars]                         * (9756,9757)
+[pars]                         selector_expression (9758,9769) ?selector_expression
+[pars]                             identifier (9758,9762) ?identifier
+[pars]                             . (9762,9763)
+[pars]                             field_identifier (9763,9769) ?field_identifier
+[pars]             assignment_statement (9771,9846) ?assignment_statement
+[pars]                 expression_list (9771,9796) ?expression_list
+[pars]                     selector_expression (9771,9796) ?selector_expression
+[pars]                         identifier (9771,9780) ?identifier
+[pars]                         . (9780,9781)
+[pars]                         field_identifier (9781,9796) ?field_identifier
+[pars]                 = (9797,9798)
+[pars]                 expression_list (9799,9846) ?expression_list
+[pars]                     unary_expression (9799,9846) ?unary_expression
+[pars]                         & (9799,9800)
+[pars]                         composite_literal (9800,9846) ?composite_literal
+[pars]                             qualified_type (9800,9810) Config?qualified_type
+[pars]                                 package_identifier (9800,9803) ?package_identifier
+[pars]                                 . (9803,9804)
+[pars]                                 type_identifier (9804,9810) ?type_identifier
+[pars]                             literal_value (9810,9846) ?literal_value
+[pars]                                 { (9810,9811)
+[pars]                                 keyed_element (9814,9842) ?keyed_element
+[pars]                                     literal_element (9814,9824) ?literal_element
+[pars]                                         identifier (9814,9824) ?identifier
+[pars]                                     : (9824,9825)
+[pars]                                     literal_element (9826,9842) ?literal_element
+[pars]                                         selector_expression (9826,9842) ?selector_expression
+[pars]                                             identifier (9826,9829) ?identifier
+[pars]                                             . (9829,9830)
+[pars]                                             field_identifier (9830,9842) ?field_identifier
+[pars]                                 , (9842,9843)
+[pars]                                 } (9845,9846)
+[pars]             if_statement (9848,9947) ?if_statement
+[pars]                 if (9848,9850)
+[pars]                 short_var_declaration (9851,9893) ?short_var_declaration
+[pars]                     expression_list (9851,9854) ?expression_list
+[pars]                         identifier (9851,9854) ?identifier
+[pars]                     := (9855,9857)
+[pars]                     expression_list (9858,9893) ?expression_list
+[pars]                         call_expression (9858,9893) ?call_expression
+[pars]                             selector_expression (9858,9882) ?selector_expression
+[pars]                                 identifier (9858,9863) ?identifier
+[pars]                                 . (9863,9864)
+[pars]                                 field_identifier (9864,9882) ?field_identifier
+[pars]                             argument_list (9882,9893) ?argument_list
+[pars]                                 ( (9882,9883)
+[pars]                                 identifier (9883,9892) ?identifier
+[pars]                                 ) (9892,9893)
+[pars]                 ; (9893,9894)
+[pars]                 binary_expression (9895,9905) ?binary_expression
+[pars]                     identifier (9895,9898) ?identifier
+[pars]                     != (9899,9901)
+[pars]                     nil (9902,9905) ?nil
+[pars]                 block (9906,9947) ?block
+[pars]                     { (9906,9907)
+[pars]                     assignment_statement (9910,9928) ?assignment_statement
+[pars]                         expression_list (9910,9922) ?expression_list
+[pars]                             selector_expression (9910,9922) ?selector_expression
+[pars]                                 identifier (9910,9916) ?identifier
+[pars]                                 . (9916,9917)
+[pars]                                 field_identifier (9917,9922) ?field_identifier
+[pars]                         = (9923,9924)
+[pars]                         expression_list (9925,9928) ?expression_list
+[pars]                             identifier (9925,9928) ?identifier
+[pars]                     return_statement (9931,9944) ?return_statement
+[pars]                         return (9931,9937)
+[pars]                         expression_list (9938,9944) ?expression_list
+[pars]                             identifier (9938,9944) ?identifier
+[pars]                     } (9946,9947)
+[pars]             if_statement (9950,10038) ?if_statement
+[pars]                 if (9950,9952)
+[pars]                 short_var_declaration (9953,9984) ?short_var_declaration
+[pars]                     expression_list (9953,9956) ?expression_list
+[pars]                         identifier (9953,9956) ?identifier
+[pars]                     := (9957,9959)
+[pars]                     expression_list (9960,9984) ?expression_list
+[pars]                         call_expression (9960,9984) ?call_expression
+[pars]                             selector_expression (9960,9982) ?selector_expression
+[pars]                                 identifier (9960,9966) ?identifier
+[pars]                                 . (9966,9967)
+[pars]                                 field_identifier (9967,9982) ?field_identifier
+[pars]                             argument_list (9982,9984) ?argument_list
+[pars]                                 ( (9982,9983)
+[pars]                                 ) (9983,9984)
+[pars]                 ; (9984,9985)
+[pars]                 binary_expression (9986,9996) ?binary_expression
+[pars]                     identifier (9986,9989) ?identifier
+[pars] parseCode ended, 776ms

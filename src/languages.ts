@@ -66,16 +66,26 @@ const langs: Langs = {
 
 ///////////////////////////// c-sharp ///////////////////////////
   "c-sharp": {
-    sExpr: `(method_declaration name: (identifier) @name)  @body`,
+    sExpr: `[
+      (method_declaration (identifier) @name )  
+      (class_declaration  (identifier) @name)
+    ] @body`,
     suffixes: new Set(['.cs']),
-    lineComment: '//'
+    lineComment: '//',
+    openComment:  '/*',
+    closeComment: '*/',
   },
 
 ///////////////////////////// go ///////////////////////////
   go: {
-    sExpr: `(function_declaration name: (identifier) @name) @body`,
+    sExpr: `[
+      (function_declaration name: (identifier)       @name) 
+      (method_declaration   name: (field_identifier) @name)
+    ] @body`,
     suffixes: new Set(['.go']),
-    lineComment: '//'
+    lineComment:  '//',
+    openComment:  '/*',
+    closeComment: '*/',
   },
 
 ///////////////////////////// rust ///////////////////////////

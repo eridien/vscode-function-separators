@@ -7,7 +7,7 @@ import * as utils                  from './utils';
 const {log, start, end} = utils.getLog('pars');
 
 const DUMP_NODES: boolean     = false;
-const PARSE_DUMP_TYPE: string = '';  
+const PARSE_DUMP_TYPE: string = 'x';  
 const PARSE_DUMP_NAME: string = '';
 
 let context: vscode.ExtensionContext;
