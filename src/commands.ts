@@ -146,19 +146,20 @@ export async function removeSeparators() {
          [new vscode.Range(commentLineNum, 0, commentLineNum + 1, 0), 0]);
       continue;
     }
-    if(!inSelection(commentLineNum)) continue;
+    let botBlankLine;
+    for(botBlankLine = commentLineNum+1;
+        doc.lineAt(botBlankLine).text.trim() === '';
+        botBlankLine++) {
+    }
+    if(!inSelection(commentLineNum) && 
+       !inSelection(botBlankLine)) continue;
+    botBlankLine--;
     let topBlankLine;
     for(topBlankLine = commentLineNum-1;
         doc.lineAt(topBlankLine).text.trim() === '';
         topBlankLine--) {
     }
     topBlankLine++;
-    let botBlankLine;
-    for(botBlankLine = commentLineNum+1;
-        doc.lineAt(botBlankLine).text.trim() === '';
-        botBlankLine++) {
-    }
-    botBlankLine--;
     rangesToDelete.push(
       [new vscode.Range(topBlankLine, 0, botBlankLine+1, 0), oldBlankLineCount]);
   }
