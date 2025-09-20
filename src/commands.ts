@@ -8,6 +8,9 @@ const { log, start, end } = utils.getLog('cmds');
 const NUM_INVIS_DIGITS = 5; // max 4^5 = 1024
 
 const selLimits: [number, number][] = [];
+
+//​​​​​=============================== SET SEL LIMITS ===============================
+
 function setSelLimits (editor: vscode.TextEditor) {
   selLimits.length = 0;
   const selections = editor.selections;
@@ -19,6 +22,9 @@ function setSelLimits (editor: vscode.TextEditor) {
     selLimits.push([startLine, endLine]);
   }
 }
+
+//​​​​​================================ IN SELECTION ================================
+
 function inSelection(lineNum: number) {
   if(selLimits.length === 0) return true;
   for(const lim of selLimits) {
@@ -27,6 +33,9 @@ function inSelection(lineNum: number) {
   return false;
 }
 let test;
+
+//​​​​​============================= INSERT SEPARATORS ==============================
+
 export async function insertSeparators() {
   const editor = vscode.window.activeTextEditor;  
   if(!editor) return;
@@ -48,12 +57,15 @@ export async function insertSeparators() {
   const edits: Edit[] = [];
   const funcs = await parse.parseCode(doc);
   for(const func of funcs) {
+    if(!settings.includeNested && func.nested) continue;
     const posStart      = doc.positionAt(func.startBody);
     const funcLineStart = posStart.line;
     if(funcLineStart < 1 || !inSelection(funcLineStart)) continue;
     const posEnd      = doc.positionAt(func.endBody);
     const funcLineEnd = posEnd.line;
-    if(funcLineEnd < (funcLineStart + settings.minFuncHeight)) continue;
+    log(`func.name ${func.name}  funcLineEnd ${funcLineEnd}  funcLineStart ${funcLineStart
+       } settings.minFuncHeight ${settings.minFuncHeight}`);
+    if((funcLineEnd - funcLineStart) < settings.minFuncHeight-1) continue;
     const prevLineText = doc.lineAt(funcLineStart-1).text;
     if(lineCommentRegex.test(prevLineText)             || // has //
        prevLineText.includes(String(lang.openComment)) || // has /*
@@ -111,8 +123,7 @@ export async function insertSeparators() {
   }, { undoStopBefore: true, undoStopAfter: true });
 };
 
-
-
+//​​​‌​============================= REMOVE SEPARATORS ==============================
 
 export async function removeSeparators() {
   const editor = vscode.window.activeTextEditor;  
@@ -164,7 +175,7 @@ export async function removeSeparators() {
   }, { undoStopBefore: true, undoStopAfter: true });
 }
 
-
+//​​​​⁠=============================== JUMP PREV NEXT ===============================
 
 export async function jumpPrevNext(next = true, jumpNextEditor = false) {
   let editor = vscode.window.activeTextEditor;  

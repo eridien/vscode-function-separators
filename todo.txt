@@ -4,11 +4,11 @@ bugs ...
   min func hgt 1 doesn't include: const openWs = () => {ws = new WebSocket(URL)};
 
 todo ...
+  name breadcrumbs
   if original case and name is camelcase, capitalise first word
   reverse right fill string
   add comment if empty selection in func line
   more languages
-  handle nested
   remove comment when either comment line or func line in selection
 
 testing ...

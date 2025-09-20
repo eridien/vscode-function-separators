@@ -79,7 +79,7 @@
           "default": false,
           "order": 2,
           "title": "Include Nested Functions",
-          "description": "Include nested functions when adding separators."
+          "description": "When enabled, add separators to nested functions."
         },
         "function-separators.blankLinesAbove": {
           "type": "number",

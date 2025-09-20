@@ -25,6 +25,7 @@ export interface FuncData {
   endName:   number;
   startBody: number;
   endBody:   number;
+  nested:    boolean;
 }
 
 const languageCache: Map<string, Language> = new Map();
@@ -160,6 +161,7 @@ export async function parseCode(doc: vscode.TextDocument,
     return [];
   }
   const nodes: FuncData[] = [];
+  let currentRootEnd = -1;
   for(let matchIdx = 0; matchIdx < matches.length; matchIdx++) {
     const match = matches[matchIdx];
     if(match.captures.length !== 2) {
@@ -174,11 +176,13 @@ export async function parseCode(doc: vscode.TextDocument,
     const endName     = nameCapture.node.endIndex;
     const startBody   = bodyCapture.node.startIndex;
     const endBody     = bodyCapture.node.endIndex;
-      // log('nomod', `match ${matchIdx}, name=${name}, `+
+    // log('nomod', `match ${matchIdx}, name=${name}, `+
     //                `startName=${startName}`);
-    nodes.push({name, startName, endName, startBody, endBody});
+    const nested = startBody < currentRootEnd;
+    if (!nested) currentRootEnd = endBody;
+    nodes.push({name, startName, endName, startBody, endBody, nested});
   }
-  nodes.sort((a, b) => a.startName - b.startName);
+  // nodes.sort((a, b) => a.startName - b.startName);
   end('parseCode', false);
   return nodes;
 }
