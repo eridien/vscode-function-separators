@@ -6,7 +6,7 @@ import { Tree, QueryMatch,
 import * as utils                  from './utils';
 const {log, start, end} = utils.getLog('pars');
 
-const DUMP_NODES: boolean     = true;
+const DUMP_NODES: boolean     = false;
 const PARSE_DUMP_TYPE: string = '';  
 const PARSE_DUMP_NAME: string = '';
 
@@ -185,7 +185,7 @@ export async function parseCode(doc: vscode.TextDocument,
   }
   // nodes.sort((a, b) => a.startName - b.startName);
   if(DUMP_NODES && nodes.length > 0) {
-    log(nodes);
+    log('nomod', nodes);
   }
   end('parseCode', false);
   return nodes;

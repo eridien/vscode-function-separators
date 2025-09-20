@@ -1,0 +1,299 @@
+[pars] [
+  {
+    "name": "add",
+    "startName": 61,
+    "endName": 64,
+    "startBody": 57,
+    "endBody": 117,
+    "nested": false
+  },
+  {
+    "name": "find_best_app",
+    "startName": 1167,
+    "endName": 1180,
+    "startBody": 1163,
+    "endBody": 1992,
+    "nested": false
+  },
+  {
+    "name": "_called_with_wrong_args",
+    "startName": 1998,
+    "endName": 2021,
+    "startBody": 1994,
+    "endBody": 3692,
+    "nested": false
+  },
+  {
+    "name": "find_app_by_string",
+    "startName": 3699,
+    "endName": 3717,
+    "startBody": 3695,
+    "endBody": 6338,
+    "nested": false
+  },
+  {
+    "name": "prepare_import",
+    "startName": 6345,
+    "endName": 6359,
+    "startBody": 6341,
+    "endBody": 7099,
+    "nested": false
+  },
+  {
+    "name": "locate_app",
+    "startName": 7118,
+    "endName": 7128,
+    "startBody": 7114,
+    "endBody": 7232,
+    "nested": false
+  },
+  {
+    "name": "locate_app",
+    "startName": 7251,
+    "endName": 7261,
+    "startBody": 7247,
+    "endBody": 7372,
+    "nested": false
+  },
+  {
+    "name": "locate_app",
+    "startName": 7379,
+    "endName": 7389,
+    "startBody": 7375,
+    "endBody": 8266,
+    "nested": false
+  },
+  {
+    "name": "get_version",
+    "startName": 8273,
+    "endName": 8284,
+    "startBody": 8269,
+    "endBody": 8714,
+    "nested": false
+  },
+  {
+    "name": "__init__",
+    "startName": 9418,
+    "endName": 9426,
+    "startBody": 9414,
+    "endBody": 10463,
+    "nested": false
+  },
+  {
+    "name": "load_app",
+    "startName": 10473,
+    "endName": 10481,
+    "startBody": 10469,
+    "endBody": 11990,
+    "nested": false
+  },
+  {
+    "name": "with_appcontext",
+    "startName": 12119,
+    "endName": 12134,
+    "startBody": 12115,
+    "endBody": 13022,
+    "nested": false
+  },
+  {
+    "name": "decorator",
+    "startName": 12695,
+    "endName": 12704,
+    "startBody": 12691,
+    "endBody": 12951,
+    "nested": true
+  },
+  {
+    "name": "command",
+    "startName": 13330,
+    "endName": 13337,
+    "startBody": 13326,
+    "endBody": 14025,
+    "nested": false
+  },
+  {
+    "name": "decorator",
+    "startName": 13777,
+    "endName": 13786,
+    "startBody": 13773,
+    "endBody": 13999,
+    "nested": true
+  },
+  {
+    "name": "group",
+    "startName": 14035,
+    "endName": 14040,
+    "startBody": 14031,
+    "endBody": 14470,
+    "nested": false
+  },
+  {
+    "name": "_set_app",
+    "startName": 14477,
+    "endName": 14485,
+    "startBody": 14473,
+    "endBody": 14694,
+    "nested": false
+  },
+  {
+    "name": "_set_debug",
+    "startName": 15429,
+    "endName": 15439,
+    "startBody": 15425,
+    "endBody": 16033,
+    "nested": false
+  },
+  {
+    "name": "_env_file_callback",
+    "startName": 16179,
+    "endName": 16197,
+    "startBody": 16175,
+    "endBody": 16932,
+    "nested": false
+  },
+  {
+    "name": "__init__",
+    "startName": 18964,
+    "endName": 18972,
+    "startBody": 18960,
+    "endBody": 20271,
+    "nested": false
+  },
+  {
+    "name": "_load_plugin_commands",
+    "startName": 20281,
+    "endName": 20302,
+    "startBody": 20277,
+    "endBody": 20547,
+    "nested": false
+  },
+  {
+    "name": "get_command",
+    "startName": 20557,
+    "endName": 20568,
+    "startBody": 20553,
+    "endBody": 21640,
+    "nested": false
+  },
+  {
+    "name": "list_commands",
+    "startName": 21650,
+    "endName": 21663,
+    "startBody": 21646,
+    "endBody": 22526,
+    "nested": false
+  },
+  {
+    "name": "make_context",
+    "startName": 22536,
+    "endName": 22548,
+    "startBody": 22532,
+    "endBody": 23328,
+    "nested": false
+  },
+  {
+    "name": "parse_args",
+    "startName": 23338,
+    "endName": 23348,
+    "startBody": 23334,
+    "endBody": 23891,
+    "nested": false
+  },
+  {
+    "name": "_path_is_ancestor",
+    "startName": 23898,
+    "endName": 23915,
+    "startBody": 23894,
+    "endBody": 24190,
+    "nested": false
+  },
+  {
+    "name": "load_dotenv",
+    "startName": 24197,
+    "endName": 24208,
+    "startBody": 24193,
+    "endBody": 26397,
+    "nested": false
+  },
+  {
+    "name": "show_server_banner",
+    "startName": 26404,
+    "endName": 26422,
+    "startBody": 26400,
+    "endBody": 26820,
+    "nested": false
+  },
+  {
+    "name": "__init__",
+    "startName": 27065,
+    "endName": 27073,
+    "startBody": 27061,
+    "endBody": 27172,
+    "nested": false
+  },
+  {
+    "name": "convert",
+    "startName": 27182,
+    "endName": 27189,
+    "startBody": 27178,
+    "endBody": 28255,
+    "nested": false
+  },
+  {
+    "name": "_validate_key",
+    "startName": 28262,
+    "endName": 28275,
+    "startBody": 28258,
+    "endBody": 29391,
+    "nested": false
+  },
+  {
+    "name": "convert",
+    "startName": 29630,
+    "endName": 29637,
+    "startBody": 29626,
+    "endBody": 29973,
+    "nested": false
+  },
+  {
+    "name": "run_command",
+    "startName": 31521,
+    "endName": 31532,
+    "startBody": 31517,
+    "endBody": 33169,
+    "nested": false
+  },
+  {
+    "name": "app",
+    "startName": 32437,
+    "endName": 32440,
+    "startBody": 32433,
+    "endBody": 32588,
+    "nested": true
+  },
+  {
+    "name": "shell_command",
+    "startName": 33309,
+    "endName": 33322,
+    "startBody": 33305,
+    "endBody": 34882,
+    "nested": false
+  },
+  {
+    "name": "routes_command",
+    "startName": 35341,
+    "endName": 35355,
+    "startBody": 35337,
+    "endBody": 36758,
+    "nested": false
+  },
+  {
+    "name": "main",
+    "startName": 37033,
+    "endName": 37037,
+    "startBody": 37029,
+    "endBody": 37063,
+    "nested": false
+  }
+]
+[pars] parseCode ended, 27ms

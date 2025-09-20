@@ -31,9 +31,13 @@ const langs: Langs = {
 
 ///////////////////////////// python ///////////////////////////
   python: {
-    sExpr: `(function_definition name: (identifier) @name ) @body`,
+    sExpr: `[
+      (function_definition name: (identifier) @name ) 
+      (class_definition    name: (identifier) @name ) 
+    
+    ] @body`,
     suffixes: new Set(['.py']),
-    lineComment: '#',
+    lineComment:    '#',
     openComment:  '###',
     closeComment: '###',
   },
@@ -43,14 +47,21 @@ const langs: Langs = {
     sExpr: `(function_definition 
               (function_declarator (identifier) @name)) @body`,
     suffixes: new Set(['.c','.cpp']),
-    lineComment: '//'
+    lineComment:  '//',
+    openComment:  '/*',
+    closeComment: '*/',
   },
 
 ///////////////////////////// java ///////////////////////////
   java: {
-    sExpr: `(method_declaration (identifier) @name )  @body`,
+    sExpr: `[
+      (method_declaration (identifier) @name )  
+      (class_declaration  (identifier) @name)
+    ] @body`,
     suffixes: new Set(['.java']),
-    lineComment: '//'
+    lineComment:  '//',
+    openComment:  '/*',
+    closeComment: '*/',
   },
 
 ///////////////////////////// c-sharp ///////////////////////////
