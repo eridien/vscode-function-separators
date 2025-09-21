@@ -51,23 +51,23 @@ There are invisible zero-width chars hidden immediately after the comment marker
 
 ### Settings
 
--  *Minimum Function Height:* Only add separators to functions with at least this many lines of code.
+-  *Minimum Function Height:* Only add separators to functions with at least this many lines of code. Default: 3.
   
--  *Include Nested Functions:* When enabled, add separators to nested functions.
+-  *Include Nested Functions:* When enabled, add separators to nested functions. Default: false.
   
-- *Blank Lines Above:* Number of blank lines to add above the function separator.
+- *Blank Lines Above:* Number of blank lines to add above the function separator. Default: 1.
 
-- *Blank Lines Below:* Number of blank lines to add below the function separator. 
+- *Blank Lines Below:* Number of blank lines to add below the function separator. Default: 1.
   
-- *Separator Left Fill String:* The string repeated to the left of the function name. It may be multiple characters. 
+- *Separator Left Fill String:* The string repeated to the left of the function name. It may be multiple characters. Default: "=".
   
-- *Separator Right Fill String:* The string repeated to the right of the function name. It may be multiple characters. 
+- *Separator Right Fill String:* The string repeated to the right of the function name. It may be multiple characters.  Default: "=".
   
-- *Separator Indent:* Number of spaces to indent the function separator. -1 means match the function's indent. 
+- *Separator Indent:* Number of spaces to indent the function separator. -1 means match the function's indent.  Default: 0.
   
-- *Width of Separator:* Total width of the function separator including indentation. -1 means match the widest line in the file. 
+- *Width of Separator:* Total width of the function separator including indentation. -1 means match the widest line in the file.  Default: 80.
   
-- *Split Function Name:* Split the function name into multiple words by _ and camelcase. 
+- *Split Function Name:* Split the function name into multiple words by _ and camelcase.  Default: true.
   
 - *Function Name Case:* 
   - Original: Keep the original case of the function name.
@@ -76,9 +76,9 @@ There are invisible zero-width chars hidden immediately after the comment marker
   
   - Capitalize: Capitalize each word in the function name.
   
-  - Uppercase: Convert entire function name to uppercase.
+  - Uppercase (default): Convert entire function name to uppercase.
   
-- *Jump Between Files:* Jump to the next file when passing the end of the current file instead of wrapping to the top of the current file. 
+- *Jump Between Files:* Jump to the next file when passing the end of the current file instead of wrapping to the top of the current file. Default: false. 
 
 
 ### Author: Mark Hahn (eridien)
