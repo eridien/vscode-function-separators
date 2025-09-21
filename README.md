@@ -83,9 +83,9 @@ There are invisible zero-width chars hidden immediately after the comment marker
 
 #### Author: Mark Hahn (eridien)
 
-#### Marketplace: https://marketplace.visualstudio.com/items?itemName=eridien.vscode-function-explorer
+#### Marketplace: https://marketplace.visualstudio.com/items?itemName=eridien.vscode-function-separators
 
-#### Open VSX: https://open-vsx.org/extension/eridien/vscode-function-explorer
+#### Open VSX: https://open-vsx.org/extension/eridien/vscode-function-separators
 
 #### Repo: https://github.com/mark-hahn/vscode-function-separators.git
 
