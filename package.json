@@ -2,6 +2,7 @@
   "name": "vscode-function-separators",
   "displayName": "Function Separators",
   "description": "Add simple comment line separators above each function to make them stand out. Also jump between the separators.",
+  "icon": "images/icon.png",
   "repository": {
     "type": "git",
     "url": "https://github.com/mark-hahn/vscode-function-separators.git"
