@@ -1,10 +1,12 @@
 bugs ...
   //​​​​​=> => => => => = INSERT SEPARATORS <= <= <= <= <= <
-  export async function insertSeparators() {
+       export async function insertSeparators() {
 
+  no split of fooBarBaz => Foobarbaz
+  
 todo ...
 
-not needed ...A
+not needed ...
   add comment if empty selection in func line
   name breadcrumbs
   reverse right fill string
